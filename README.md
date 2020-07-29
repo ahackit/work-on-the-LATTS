@@ -16,19 +16,19 @@ See below for all my brain dumps
 ## General Programming
 
 ## General Web Knowledge
-[Web Security](https://github.com/ahackit/LATT-WebSecurity)
+- [Web Security](https://github.com/ahackit/LATT-WebSecurity)
 
 ## Frontend Web
-[Web Components](https://github.com/ahackit/LATT-WebComponents)
-[Webpack](https://github.com/ahackit/LATT-Webpack)
-[TypeScript](https://github.com/ahackit/LATT-TypeScript)
-[Vue 3](https://github.com/ahackit/LATT-Vue3)
-[Nuxt](https://github.com/ahackit/LATT-Nuxt)
-[GraphQL](https://github.com/ahackit/LATT-GraphQL)
+- [Web Components](https://github.com/ahackit/LATT-WebComponents)
+- [Webpack](https://github.com/ahackit/LATT-Webpack)
+- [TypeScript](https://github.com/ahackit/LATT-TypeScript)
+- [Vue 3](https://github.com/ahackit/LATT-Vue3)
+- [Nuxt](https://github.com/ahackit/LATT-Nuxt)
+- [GraphQL](https://github.com/ahackit/LATT-GraphQL)
 
 
 ## Backend Web
 
 ## DevOps
-[Kubernetes](https://github.com/ahackit/LATT-K8)
-[Rancher](https://github.com/ahackit/LATT-Rancher)
+- [Kubernetes](https://github.com/ahackit/LATT-K8)
+- [Rancher](https://github.com/ahackit/LATT-Rancher)
