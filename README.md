@@ -9,15 +9,26 @@ I don't know. Just want to know how webpack works.
 
 It isn't a full body workout if your LATT's aren't getting action.
 
+See below for all my brain dumps
+
 ## General Philosophy
 
 ## General Programming
 
 ## General Web Knowledge
+[Web Security](https://github.com/ahackit/LATT-WebSecurity)
 
 ## Frontend Web
 [Web Components](https://github.com/ahackit/LATT-WebComponents)
+[Webpack](https://github.com/ahackit/LATT-Webpack)
+[TypeScript](https://github.com/ahackit/LATT-TypeScript)
+[Vue 3](https://github.com/ahackit/LATT-Vue3)
+[Nuxt](https://github.com/ahackit/LATT-Nuxt)
+[GraphQL](https://github.com/ahackit/LATT-GraphQL)
+
 
 ## Backend Web
 
 ## DevOps
+[Kubernetes](https://github.com/ahackit/LATT-K8)
+[Rancher](https://github.com/ahackit/LATT-Rancher)
