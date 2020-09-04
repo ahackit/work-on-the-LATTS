@@ -19,7 +19,7 @@ See below for all my brain dumps. Currently trying to update everything I be kno
 ## General Programming/Tech
 
 - [Fundamental Programming Concepts](https://github.com/ahackit/LATT-FundamentalProgramming)
-- [How does the internet work? TODO - TODO](https://github.com/ahackit/LATT-HowDoesInternetWork)
+- [How does the internet work?](https://github.com/ahackit/LATT-HowDoesInternetWork)
 - [Web Security](https://github.com/ahackit/LATT-WebSecurity)
 - [Development Principles - TODO](https://github.com/ahackit/LATT-DevelopmentPrinciples)
 - [Architectural Patterns - TODO](https://github.com/ahackit/LATT-ArchitecturalPatterns)
