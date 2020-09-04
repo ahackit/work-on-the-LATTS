@@ -24,7 +24,7 @@ See below for all my living brain dumps.
 
 ## Frontend Web
 
-- [Design Principles - TODO](https://github.com/ahackit/LATT-DesignPrinciples)
+- [Design Principles](https://github.com/ahackit/LATT-DesignPrinciples)
 - [HTML](https://github.com/ahackit/LATT-HTML)
 - [CSS - TODO](https://github.com/ahackit/LATT-CSS)
 - [Javascript - TODO](https://github.com/ahackit/LATT-Javascript)
