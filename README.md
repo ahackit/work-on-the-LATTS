@@ -6,11 +6,9 @@ What's a LATT workout? I find myself focusing in on the specific tech stack I'm 
 
 Something something something - t-shaped developer? or Pi-shaped developer?
 
-I don't know. Just want to know how webpack works.
+I don't know. Just want to know how webpack works. It isn't a full body workout if your LATT's aren't getting action.
 
-It isn't a full body workout if your LATT's aren't getting action.
-
-See below for all my brain dumps. Currently trying to update everything I be knowing.
+See below for all my living brain dumps.
 
 ## General Philosophy
 
@@ -19,7 +17,7 @@ See below for all my brain dumps. Currently trying to update everything I be kno
 ## General Programming/Tech
 
 - [Fundamental Programming Concepts](https://github.com/ahackit/LATT-FundamentalProgramming)
-- [How does the internet work? TODO - TODO](https://github.com/ahackit/LATT-HowDoesInternetWork)
+- [How does the internet work?](https://github.com/ahackit/LATT-HowDoesInternetWork)
 - [Web Security](https://github.com/ahackit/LATT-WebSecurity)
 - [Development Principles - TODO](https://github.com/ahackit/LATT-DevelopmentPrinciples)
 - [Architectural Patterns - TODO](https://github.com/ahackit/LATT-ArchitecturalPatterns)
@@ -27,7 +25,7 @@ See below for all my brain dumps. Currently trying to update everything I be kno
 ## Frontend Web
 
 - [Design Principles - TODO](https://github.com/ahackit/LATT-DesignPrinciples)
-- [HTML - TODO](https://github.com/ahackit/LATT-HTML)
+- [HTML](https://github.com/ahackit/LATT-HTML)
 - [CSS - TODO](https://github.com/ahackit/LATT-CSS)
 - [Javascript - TODO](https://github.com/ahackit/LATT-Javascript)
 - [Web Components](https://github.com/ahackit/LATT-WebComponents)
