@@ -1,0 +1,23 @@
+$ echo mysqlpassword | base64
+bXlzcWxwYXNzd29yZAo=
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-password
+type: Opaque
+data:
+  password: bXlzcWxwYXNzd29yZAo=
+
+  $ echo "bXlzcWxwYXNzd29yZAo=" | base64 --decode
+  mysqlpassword
+
+apiVersion: v1
+kind: Secret
+metadata:
+name: my-password
+type: Opaque
+stringData:
+password: mysqlpassword
+
+kubectl create -f mypass.yaml
