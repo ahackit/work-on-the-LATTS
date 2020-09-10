@@ -1,0 +1,10 @@
+{
+    "apiVersion": "abac.authorization.kubernetes.io/v1beta1",
+    "kind": "Policy",
+    "spec": {
+      "user": "student",
+      "namespace": "lfs158",
+      "resource": "pods",
+      "readonly": true
+    }
+  }

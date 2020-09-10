@@ -1,0 +1,38 @@
+...
+  containers:
+  - name: myapp-full-container
+    image: myapp
+    envFrom:
+    - configMapRef:
+      name: full-config-map
+...
+
+...
+  containers:
+  - name: myapp-specific-container
+    image: myapp
+    env:
+    - name: SPECIFIC_ENV_VAR1
+      valueFrom:
+        configMapKeyRef:
+          name: config-map-1
+          key: SPECIFIC_DATA
+    - name: SPECIFIC_ENV_VAR2
+      valueFrom:
+        configMapKeyRef:
+          name: config-map-2
+          key: SPECIFIC_INFO
+...
+
+...
+  containers:
+  - name: myapp-vol-container
+    image: myapp
+    volumeMounts:
+    - name: config-volume
+      mountPath: /etc/config
+  volumes:
+  - name: config-volume
+    configMap:
+      name: vol-config-map
+...
