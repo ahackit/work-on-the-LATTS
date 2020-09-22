@@ -26,7 +26,7 @@ See below for all my living brain dumps.
 
 - [Design Principles](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/DesignPrinciples)
 - [HTML](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/HTML)
-- [CSS - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/CSS)
+- [CSS](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/CSS)
 - [Javascript - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/Javascript)
 - [Web Components](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/WebComponents)
 - [Package Managers - NPM - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/NPM)
