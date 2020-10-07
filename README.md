@@ -29,7 +29,7 @@ See below for all my living brain dumps.
 - [CSS](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/CSS)
 - [Javascript](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/Javascript)
 - [Web Components](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/WebComponents)
-- [Package Managers](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/NPM)
+- [Package Managers - NPM](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/NPM)
 - [Webpack](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/Webpack)
 - [TailwindCSS - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/TailwindCSS)
 - [Vue 3 - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/Vue3)
