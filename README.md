@@ -2,7 +2,7 @@
 
 Address book to all LATT workouts.
 
-What's a LATT workout? I find myself focusing in on the specific problems I'm solving each day , which is fine and dandy, but it's important to understand some the fundamentals, tools used to solve those problems, and understand very closely-related tools that I could be or am utilizing.
+What's a LATT workout? I find myself focusing in on the specific problems I'm solving each day , which is fine and dandy, but it's important to understand some of the fundamentals, tools used to solve those problems, and understand very closely-related tools that I could be or already am utilizing.
 
 These LATTs are merely my attempt to learn all the things and create a working note sheet on all my discoveries. 
 
