@@ -26,18 +26,18 @@ See below for all my living brain dumps. Currently updating them.
 
 ## Frontend Web
 
-- [Design Principles](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/DesignPrinciples)
+- [UI/UX Design Principles](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/DesignPrinciples)
 - [HTML](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/HTML)
 - [CSS](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/CSS)
 - [Javascript](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/Javascript)
+- [TypeScript - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/TypeScript)
 - [Web Components](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/WebComponents)
 - [Package Managers - NPM](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/NPM)
-- [Webpack](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/Webpack)
-- [TailwindCSS](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/TailwindCSS)
-- [Vue 3](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/Vue3)
-- [TypeScript - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/TypeScript)
+- [Module Bundlers - Webpack](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/Webpack)
+- [CSS Framework - TailwindCSS](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/TailwindCSS)
+- [JS Framework - Vue 3](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/Vue3)
+- [SSR/SSG Framework - Nuxt](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/Nuxt)
 - [PWA - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/PWA)
-- [Nuxt](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/Nuxt)
 - [GraphQL - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/GraphQL)
 
 ## Backend Web
@@ -45,8 +45,7 @@ See below for all my living brain dumps. Currently updating them.
 - [General OS Knowledge - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/GeneralOSKnowledge)
 - [Python - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Python)
 - [Web Framework - Django - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Django)
-- [Database Fundamentals - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/DatabaseFundamentals)
-- [PostgreSQL - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/PostgreSQL)
+- [Databases - PostgreSQL - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/PostgreSQL)
 - [APIs - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/APIs)
 - [Caching - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Caching)
 - [Search Engines - Elasticsearch - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Elasticsearch)
