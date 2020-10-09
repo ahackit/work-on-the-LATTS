@@ -43,14 +43,14 @@ See below for all my living brain dumps. Currently updating them.
 ## Backend Web
 
 - [General OS Knowledge - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/GeneralOSKnowledge)
-- [Python - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Python)
+- [Python](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Python)
 - [Web Framework - Django - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Django)
 - [Databases - PostgreSQL - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/PostgreSQL)
 - [APIs - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/APIs)
 - [Caching - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Caching)
 - [Search Engines - Elasticsearch - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Elasticsearch)
 - [Message Brokers - RabbitMQ - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/RabbitMQ)
-- [Web Sockets - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/WebSockets)
+- [Web Sockets - Django Channels -  TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/WebSockets)
 - [Web Servers - Nginx - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Nginx)
 - [Building For Scale - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/BuildingForScale)
 
