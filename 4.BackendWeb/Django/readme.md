@@ -17,3 +17,4 @@ INSTALLED_APPS = [
     #...
 ]
 ```
+- Can then ```manage.py makemigrations``` and then ```manage.py migrate```
