@@ -50,7 +50,7 @@ See below for all my living brain dumps. Currently updating them.
 - [Caching - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Caching)
 - [Search Engines - Elasticsearch - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Elasticsearch)
 - [Message Brokers - RabbitMQ - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/RabbitMQ)
-- [Web Sockets - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/WebSockets)
+- [Web Sockets - Django Channels -  TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/WebSockets)
 - [Web Servers - Nginx - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Nginx)
 - [Building For Scale - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/BuildingForScale)
 
