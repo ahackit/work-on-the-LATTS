@@ -31,7 +31,7 @@ connection.close()
 - When consuming, yo should redeclare queues to make sure it exists
 ```
 channel.queue_declare(queue='hello')
-``
+```
 - When consuming, you must provide callbacks.
 ```
 def callback(ch, method, properties, body):
