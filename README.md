@@ -2,15 +2,13 @@
 
 Address book to all LATT workouts.
 
-What's a LATT workout? I find myself focusing in on the specific problems I'm solving each day , which is fine and dandy, but it's important to understand some of the fundamentals, tools used to solve those problems, and understand very closely-related tools that I could be or already am utilizing.
+What's a LATT workout? I find myself focusing in on the specific problems I'm solving each day, which is fine and dandy because things are getting solved, but it's important to understand some of the fundamentals, tools used to solve those problems, and understand very closely-related tools that I could be or already am utilizing.
 
-These LATTs are merely my attempt to learn all the things and create a working note sheet on all my discoveries. 
+These LATTs are merely my continued attempt to educate myself and "Learn All The Things" and create a living note repo from all my discoveries.
 
 Something something something - t-shaped developer? or Pi-shaped developer?
 
 I don't know. Just want to know how webpack works. It isn't a full body workout if your LATT's aren't getting action.
-
-See below for all my living brain dumps. Currently updating them.
 
 ## General Philosophy
 
@@ -27,6 +25,7 @@ See below for all my living brain dumps. Currently updating them.
 
 ### Technical
 Technical 
+- [General OS Knowledge - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.1.GeneralTech/GeneralOSKnowledge)
 - [How does the internet work?](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.1.GeneralTech/HowDoesInternetWork)
 - [Web Security](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.1.GeneralTech/LATT-WebSecurity)
 
@@ -48,8 +47,7 @@ Technical
 
 ## Backend Web Knowledge
 
-- [General OS Knowledge - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/GeneralOSKnowledge)
-- [Python](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Python)
+- [Python - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Python)
 - [Web Framework - Django - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Django)
 - [Databases - PostgreSQL - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/PostgreSQL)
 - [APIs](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/APIs)
