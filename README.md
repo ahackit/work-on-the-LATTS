@@ -56,7 +56,7 @@ Technical
 - [Message Brokers - RabbitMQ](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/RabbitMQ)
 - [Web Sockets - Django Channels -  TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/WebSockets)
 - [Web Servers - Nginx - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Nginx)
-- [Building For Scale - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/BuildingForScale)
+- [Building For Scale](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/BuildingForScale)
 
 ## DevOps Knowledge
 
