@@ -16,17 +16,21 @@ See below for all my living brain dumps. Currently updating them.
 
 - [Stoicism - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/1.GeneralPhilosophy/Stoicism)
 
-## General Programming/Tech
+## General Knowledge
+### Programming
 
-- [How does the internet work?](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming-Tech/HowDoesInternetWork)
-- [Web Security](https://github.com/ahackit/LATT-WebSecurity)
 - [Fundamental Programming Concepts](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming-Tech/FundamentalProgramming)
 - [Development Principles - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming-Tech/DevelopmentPrinciples)
 - [Data Structures and Algorithims Patterns - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming-Tech/DataStructuresAndAlgorithims)
 - [Design Patterns - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming-Tech/DesignPatterns)
 - [Architectural Patterns - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming-Tech/ArchitecturalPatterns)
 
-## Frontend Web
+### Technical
+Technical 
+- [How does the internet work?](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.1.GeneralTech/HowDoesInternetWork)
+- [Web Security](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.1.GeneralTech/LATT-WebSecurity)
+
+## Frontend Web Knowledge
 
 - [UI/UX Design Principles](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/DesignPrinciples)
 - [HTML](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/HTML)
@@ -42,7 +46,7 @@ See below for all my living brain dumps. Currently updating them.
 - [PWA - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/PWA)
 - [GraphQL - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/GraphQL)
 
-## Backend Web
+## Backend Web Knowledge
 
 - [General OS Knowledge - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/GeneralOSKnowledge)
 - [Python](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Python)
@@ -56,7 +60,7 @@ See below for all my living brain dumps. Currently updating them.
 - [Web Servers - Nginx - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Nginx)
 - [Building For Scale - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/BuildingForScale)
 
-## DevOps 
+## DevOps Knowledge
 
 - [CircleCI - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/CircleCI)
 - [Containers - Docker - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/Docker)
