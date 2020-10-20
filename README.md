@@ -18,10 +18,12 @@ See below for all my living brain dumps. Currently updating them.
 
 ## General Programming/Tech
 
-- [Fundamental Programming Concepts](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming-Tech/FundamentalProgramming)
 - [How does the internet work?](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming-Tech/HowDoesInternetWork)
 - [Web Security](https://github.com/ahackit/LATT-WebSecurity)
+- [Fundamental Programming Concepts](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming-Tech/FundamentalProgramming)
 - [Development Principles - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming-Tech/DevelopmentPrinciples)
+- [Data Structures and Algorithims Patterns - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming-Tech/DataStructuresAndAlgorithims)
+- [Design Patterns - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming-Tech/DesignPatterns)
 - [Architectural Patterns - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming-Tech/ArchitecturalPatterns)
 
 ## Frontend Web
