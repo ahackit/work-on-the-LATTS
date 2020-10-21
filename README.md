@@ -47,8 +47,8 @@ Technical
 
 ## Backend Web Knowledge
 
-- [Python - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Python)
-- [Web Framework - Django - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Django)
+- [Python](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Python)
+- [Web Framework - Django](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Django)
 - [Databases - PostgreSQL - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/PostgreSQL)
 - [APIs](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/APIs)
 - [Caching](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Caching)
