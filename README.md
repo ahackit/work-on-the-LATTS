@@ -24,7 +24,6 @@ I don't know. Just want to know how webpack works. It isn't a full body workout 
 - [Architectural Patterns](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/ArchitecturalPatterns)
 
 ### Technical
-Technical 
 - [General OS Knowledge - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.1.GeneralTech/GeneralOSKnowledge)
 - [How does the internet work?](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.1.GeneralTech/HowDoesInternetWork)
 - [Web Security](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.1.GeneralTech/LATT-WebSecurity)
