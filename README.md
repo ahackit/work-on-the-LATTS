@@ -17,14 +17,14 @@ I don't know. Just want to know how webpack works. It isn't a full body workout 
 
 - [Fundamental Programming Concepts](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/FundamentalProgramming)
 - [Development Principles](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/DevelopmentPrinciples)
-- [Data Structures and Algorithims Patterns - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming-Tech/DataStructuresAndAlgorithims)
+- [Data Structures and Algorithims Patterns - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/DataStructuresAndAlgorithims)
 - [Design Patterns - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/DesignPatterns)
 - [Architectural Patterns](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/ArchitecturalPatterns)
 
 ### Technical
 - [General OS Knowledge - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.1.GeneralTech/GeneralOSKnowledge)
 - [How does the internet work?](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.1.GeneralTech/HowDoesInternetWork)
-- [Web Security](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.1.GeneralTech/LATT-WebSecurity)
+- [Web Security](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.1.GeneralTech/WebSecurity)
 
 ## Frontend Web Knowledge
 
@@ -49,7 +49,7 @@ I don't know. Just want to know how webpack works. It isn't a full body workout 
 - [Databases - PostgreSQL](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/PostgreSQL)
 - [APIs](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/APIs)
 - [Caching](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Caching)
-- [Search Engines - Elasticsearch](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Elasticsearch)
+- [Search Engines - Elasticsearch](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/ElasticSearch)
 - [Message Brokers - RabbitMQ](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/RabbitMQ)
 - [Web Sockets - Django Channels -  TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/WebSockets)
 - [Web Servers - Nginx](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Nginx)
