@@ -1,7 +1,7 @@
 # LATT-K8
 Learn All The Things - Kubernetes
 
-## Chapter 2
+## Containers
 
 ### What are Containers?
 
@@ -48,7 +48,7 @@ Tools which group systems together to form clusters where containers' deployment
 
 Any infastructure of your choice.
 
-## Chapter 3
+## Kubernetes
 
 ### What is Kubernetes?
 Kubernetes comes from a Greek word, means helmsman or ship pilot. K8s is the pilot on a ship of containers.
@@ -68,7 +68,7 @@ Kubernetes comes from a Greek word, means helmsman or ship pilot. K8s is the pil
 
 Projects hosted by Linux foundation encompassing all sorts of software to managing cloud-native apps. 
 
-## Chapter Four
+## Kubernetes Components
 
 ### Kubernetes Architecture
 
@@ -180,7 +180,7 @@ Projects hosted by Linux foundation encompassing all sorts of software to managi
 - Accessibility from the outside world is done through services. Conplex constructs which encapsulate networking rules definitions on a cluster by nodes. 
 - Exposes services through kube-proxy.
 
-## Chapter Five 
+## Kubernetes Installation
 
 ### Kubernetes Installation Configuration
 
@@ -215,7 +215,7 @@ Projects hosted by Linux foundation encompassing all sorts of software to managi
 - kubeaws: create, upgrade, and destroy k8 clusters on AWS from the CLI
 - If you are mad, you can install K8 from scratch. Check out "Kubernetes The Hard Way"
 
-## Chapter Six - Minikube
+## Minikube Example
 
 ### Requirements for Minikube
 - Can run loca Linux, macOs, or Windows. 
