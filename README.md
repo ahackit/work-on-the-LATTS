@@ -18,7 +18,7 @@ I don't know. Just want to know how webpack works. It isn't a full body workout 
 - [Fundamental Programming Concepts](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/FundamentalProgramming)
 - [Development Principles](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/DevelopmentPrinciples)
 - [Data Structures and Algorithims Patterns](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/DataStructuresAndAlgorithims)
-- [Design Patterns - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/DesignPatterns)
+- [Design Patterns](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/DesignPatterns)
 - [Architectural Patterns](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/ArchitecturalPatterns)
 
 ### Technical
