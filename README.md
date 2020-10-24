@@ -10,7 +10,7 @@ I don't know. Just want to know how webpack works. It isn't a full body workout 
 
 ## General Philosophy
 
-- [Stoicism - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/1.GeneralPhilosophy/Stoicism)
+- [Stoicism](https://github.com/ahackit/work-on-the-LATTS/tree/master/1.GeneralPhilosophy/Stoicism)
 
 ## General Knowledge
 ### Programming
