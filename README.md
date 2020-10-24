@@ -1,10 +1,8 @@
-# work-on-the-latts
+# Work on the LATTs
 
-Address book to all LATT workouts.
+What's a LATT workout? I find myself focusing in on the specific problems I'm solving each day, which is fine and dandy because things are getting solved, but it's important to avoid the trap of just "solving the problem" and instead understand some of the fundamentals of the problem or the tools I am using/could be using. 
 
-What's a LATT workout? I find myself focusing in on the specific problems I'm solving each day, which is fine and dandy because things are getting solved, but it's important to understand some of the fundamentals, tools used to solve those problems, and understand very closely-related tools that I could be or already am utilizing.
-
-These LATTs are merely my continued attempt to educate myself and "Learn All The Things" and create a living note repo from all my discoveries.
+By adding to this living repo of notes that are comprised of my discoveries throughout the day, these LATTs are merely my continued attempt to educate myself and "Learn All The Things - LATTs" 
 
 Something something something - t-shaped developer? or Pi-shaped developer?
 
@@ -64,5 +62,5 @@ I don't know. Just want to know how webpack works. It isn't a full body workout 
 - [Configuration Management - Ansible](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/Ansible)
 - [Container Orchestration - Kubernetes](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/K8s)
 - [K8s Manager - Rancher](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/Rancher)
-- [Infrastructure Provisioning - Terraform - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/Terraform)
+- [Infrastructure Provisioning - Terraform](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/Terraform)
 - [AWS - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/AWS)
