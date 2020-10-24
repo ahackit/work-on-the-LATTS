@@ -59,7 +59,7 @@ I don't know. Just want to know how webpack works. It isn't a full body workout 
 
 ## DevOps Knowledge
 
-- [CircleCI - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/CircleCI)
+- [CircleCI](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/CircleCI)
 - [Containers - Docker - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/Docker)
 - [Configuration Management - Ansible - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/Ansible)
 - [Container Orchestration - Kubernetes](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/K8s)
