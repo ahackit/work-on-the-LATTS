@@ -278,3 +278,313 @@
 - even games without a story can have theme
 
 ## Elements of Combat
+
+- Be mindful of eSBR guidelines
+- Violence is all about context, a violent act is going to feel more violent if it is the player who does it
+- Give your character a signature attack or weapon
+- Create an attack matri to track your combat moves and reactions
+- People want to play games that make them interesting
+- Use a lock-on system to enable players during combat
+- Close batttles are more exciting
+- Use QTES to heighten crama, but dont overdo them
+- FIghting enemies is supposed to be fun
+- Be aware of the three As when designing projectile combat. Aiming/Action/Ammo
+- Use attacks to hamper and incapicate players rather than kill
+- Make it clear to players they have taken damage
+- Keep the players playing
+- You can add conflict witohut having combat
+
+### Attack Moves
+
+- Srong/WeakAttacks
+- Punch
+- Kick
+- Knockup
+- Stealth KIll
+- Grapple
+- Throw
+- Slap
+- Block
+- Parry
+- Focus
+- Taunt
+- Combat Chain
+- Super Move
+
+## Enemies
+
+- Form Follows Function
+  - Size
+  - Behavior
+  - Speed
+  - Movement
+  - Attacks
+  - Aggression
+  - Health
+- Design your enemies to compliment and contrast with each other
+- Balance strength, speed, size
+- Fighting enemies should be fun
+- Meant to be fought not avoided
+- Not all attacks need to do damage
+- Players should hate the enemey
+- Dynamic difficult helps players
+- Large-scale bosses are prone to camera issues
+- Where the boss fight takes place is sjust as important as who the player is fighting
+- Give the killing blow to player
+- Other tpyes of enemies beside big blokes
+- Drama over scale
+
+### Types of behavior
+
+- Patroller
+- Chaser
+- Shooter
+- Guard
+- Flyer
+- Bomber
+- Burrower
+- Teleporter
+- Blocker
+- DOppleganger
+- Mix and match!
+
+### Speed?
+
+- Slow, mix with lots of enemies
+- Medium, slightly under player values
+- Fast, erratic movement patterns, don't attack often
+- Quick, blindingly fast. Limit attacks and moves and warning animations
+
+### Introductions
+
+- Freeze camera or zoom in on creature.
+- Display the name of enemy on screen
+- Forewshadow what will happen
+- Introduce enemies in a very dramatic way, smash a window, break through a door.
+
+### Ways to keep mobs from being avoided
+
+- They have lloot
+- They block a path
+- They hae a key
+- Need to take their power
+- Making fun of you
+- Fun to fight
+
+## Mechanics
+
+- Design mechanics, hazards, and props that work with enemies and complement each other.
+- Good game design is like music, it has a rhythm that players can feel
+- Reuse mechanics to create new challenges
+- Games should be challening, not overly difficult
+- No rocks on the player charactesr head, be fair.
+- Be creative, dont resort to worm out cliches like crates
+- No cat mustaches, don't make puzzles so cryptica that players cant use logic, knoweldge or skill to solve them
+- A puzzle is a challenge tha has the right answer
+- Show them the door and then send them after the key
+- Give players opportunities to catch their breath with checkpoints
+- Keep puzzle games zimple and fair
+- Keep minigames and mcirogames simple and short.
+
+## Power
+
+- Create powerups that are compatible and complementary to the players actions and attacks
+- Love thy players! Give them the tools to succeed like DDB and rubber banding
+- If something is too difficult or boring. Get rid of it
+- Never underestimate the greed of the players, and use it to prompt interesting scenarios and challenges
+- Plan out your economy for the entire game. Price items according to when you want the players to earn them
+- Provide enouhg money for the players so they have choices when shopping
+- Have a variet of cool things to buy. Make the players have to choose between different things to come back for more
+- Determine whether scoring is right for your game then reward players when high scores or achievements are obtained
+- Include bonus materials and DLC
+- Some rewards can just be fun
+
+## moneiziation
+
+- Decide how dependent on your game will be on monetization
+- Design monetiziation systems into your game from the start
+- Dont ignore the power of coercive monetization
+- Design ethical monitization systems
+
+## Music
+
+- Determnie sounds needs early in production. Don't waint until last minute.
+- Learn how to speak musician to communicate desires to the composer
+- Communicate important game actions to players using sound efefcts and vocal cues
+- Dont use music and sound effects you don't have the right to use
+- Use music to move the games action
+- Use leitmotifs to help tell your story
+- Determine proxmitiy and timing of sound and music to make it more realistic
+- Silence can be as powerful as music
+- Use music and sound effects as gameplay
+
+## Resources
+
+### One-Sheep Sample
+
+- title
+- Game Summary
+- Game outline
+- Uniue selling points
+- Competitive products
+
+### 10 Page sample
+
+- Cover page
+- Story/Game summary
+- Characters/Controls
+- Gameplay overview
+- Gameplay experience
+- Mechanics and Modes
+- Enemies and Bosses
+- Bonus Material
+- Moneitization
+
+### GDD Template
+
+- Cover
+- Title
+- Outline
+- TOC
+  - Revision History
+  - Game Goals
+    - Game High Concept
+    - Who, What, How
+    - What platform
+    - Gameplay types
+  - Story overview
+  - Licensor points and concerns
+  - Game controls
+  - Tech requirements
+  - Front end of the game.
+  - Attract mode description
+  - Title/Start Screen
+  - Game flowhart
+  - Loading screen
+  - Game Camera
+  - HUD System
+  - Player Characters
+  - Player Matrics
+  - Player Skills
+  - Player Inentory tools
+  - Combat
+  - Powerups/sttate modifiers
+  - Health
+  - Scoring
+  - Rewards and economy
+  - Collectibles
+  - Vehicles
+  - Game progression outline
+  - World overview/level select/navigation screen
+  - Universal game emchanics
+  - Game levels
+  - General enenemy rules
+  - level-specific enemies
+  - bosses
+  - npcs
+  - minigames
+  - monezitations
+  - DLC
+  - Cutscens
+  - Music and SFX
+  - Other Screens
+
+### Bunch of Mechanics
+
+- Balance Beam
+- Blasting flame/wind/cannon timing puzzle
+- breakable object
+- Buildable Structures
+- Carryable object
+- Catapault
+- Cause and effect
+- Climbable wall surface
+- Collapsing floor
+- Collectable items
+- Convery belt
+- Crank
+- Impacted Surface
+- Elevator
+- Escort
+- Exploding object
+- Hazard smahes up or down
+- Health/Ammo dispenser
+- Hidden image
+- floor switch
+- forced scroll
+- ladder
+- lighting fixture
+- limited moves
+- locked door
+- lock picking
+- Money mechanics
+- Multiple choice
+- Multiple operations
+- Music repeat
+- Movement accellerator
+- Moving platforms
+- Grab players
+- Opening ways
+- Simon says
+- Pendulum
+- Positiong object in particuplar place
+- Pull level
+- Push/pull block
+- remote control
+- rotating platform
+- shooting object
+- shootable target
+- sinking
+- slippery ice
+- spring
+- spinning hazard
+- spotlight
+- swingable
+- teleporter
+- timing puzzle
+- time bomb
+- timer/race
+- two stage object
+- water
+- zip line
+
+### Enemy Template
+
+- Name
+- Image
+- Description
+- List of required animations
+- Movement Patterns
+- Attack
+- Enemy is defeated by
+- Damage description
+- Particle effects
+- Projectiles
+- HUD elements
+- Sound effects List
+- Voice effects List
+- Special Requirements for player
+- Player rewards
+
+### Boss Template
+
+- Name
+- Image
+- Description
+- List of required animations
+- Movement Patterns
+- Attack
+- Enemy is defeated by
+- Damage description
+- Particle effects
+- Projectiles
+- HUD elements
+- Sound effects List
+- Voice effects List
+- Special Requirements for player
+- Player rewards
+- Boss Fight Arena
+  - Arena Image
+  - Arena Description
+  - Level Elements
+  - Boss Fight music tracks
