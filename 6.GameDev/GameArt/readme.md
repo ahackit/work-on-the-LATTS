@@ -227,11 +227,109 @@
   - Othographic: Flat views with no perspective.
 - Othographic Projections:
   - Side Scroller: Just front
+    - Most common perspective. Often associated with Platformers.
   - Top-Down: Mostly front, some top.
+    - grid made up of square tiles which makes creating worlds and environments a breeze.
+    - Associated with free-roaming overworld and suitable for exploration.
   - Top: All top
+    - Exactly 90 degrees. Only works with particular set of game-play types.
   - Isometric: Top-side-side
+    - Means that all axes are equal.
+    - Often associated with diagonal movement.
+    - Can't have exact 30 degrees in pixel art, so stairs of 2 pixels is common.
+    - TO convert sprite to an isometric view, skew it by 30 degrees, adjust te sprite to add more depth, clean up and fill the gaps.
   - 45 dimetric: mostly top-little side- little side
+    - Only 2 axes are equal
+    - Very uncommon. Useful for high structures.
   - Oblique: large front, little size, big top
+    - Front is flat, rest is slanted.
+    - Side scrollers + 2 more planes
+- Use grid and lines to help with perspectives.
+
+## Clean Up
+
+- Describes all the finishing touches and possible improvements. Always more adjustments before calling it a day.
+- Shape - Refine - Finish
+- Things you can check
+  - silhouette
+  - design
+  - colours
+  - pixel shapes
+  - lighting
+  - readability
+- Cleaner shapes is pixels of the same colour clustered together.
+- Create multiple versions and vote on your favorite.
+- Use selection tool to move pixels about instead of redrawing.
+- To make things sharp, play with light and shadows, add more higlights, and add darker ines to make things pop
+- Other tweaks:
+  - Change contrast
+  - Clean up tangents
+  - Tought u plight and shadow
+  - Change proportions
+- Sketch - Flat Colours - Shading - Details
+
+## SubPixeling
+
+- Gives the illusion of something smaller than 1 pixel. Subpixel means under a pixel or smaller than a pixel.
+- Can be found in still-images and animation
+- AA is behind SubPixeling
+- Places we use Subpixeling
+  - Easing in and Out: Difficult to draw in-betweens tightly together without an unwanted wobble effect
+  - Idle Animations: You either create bouncy or subtle animations using subpixeling along with moving parts.
+  - Giving Life to Still Parts: Giving still parts subpixeling will help it stand out.
+  - Small Resolutins: Tought to move anything around in a small canvas
+  - Wind Effects, Laughing, Shaking, Shivering, Staggering: Movements where the characters or objects barely move can easily benefit from some subpixels
+- Shifting Pixels:
+  - Moving a pixel 1/2 px ahead turns the next pixel darker or lighting by changing brightness.
+  - Value and colour are carried over to next pixel in animation
+  - Don't need to move every pixel. Thats banding which is bad. Animation and readability matters more than overdoing subpixeling
+  - Re-use colours already found in your psirte for subpixeling
+- Line weight:
+  - Dark Backgrounds thin lines = dark
+  - Light backgrounds thin lines - light
+- Direction
+  - Subpixeling aniomation requires you to duiplicate frames and edit it slighty. Quickly switch back and forth
+  - Direction of subpixeling follows the angle of the shape.
+  - Angle horizontal = subpixeling horizontal
+  - Angle vertical = subpixeling vertial
+- Motion:
+  - AA follows every movement in your animation.
+  - Try to keep 1-2 shades for subpixeling motion AA
+
+## Animation
+
+- Animation is the study of motion
+- Good animation relies on readable key frames
+- Game Animation Timing Standards
+  - Ones: 60FPS Drawings Per Second: 30 FPS Drawings per second
+  - Twos: 30 Drawings Per Second: 15 Drawings per second
+  - Threes: 20 Drawings Per Second: 10 Drawings per second
+- Key Animation Techniques
+  - Squash and Stretch: Volume is conserve. If you squash something in height, you need to stretch it's width.
+  - Anticipation: SET part in ready...set...go... Moment you preare an action. No mater how subtle or how extreme. Movement most often goes in the opposite direction of where the main action is going.
+  - Breakdown: You don't need to go directly from A to B keyframes. Add something inbetween. Actor raising arm but gets there in a diagnaol.
+  - Ease in and out: Easining means that the inbetweens faour the key frame. Accelration and deceleration.
+  - Smears: In-betweens that mimic the effects of motion blur. Visual trick. don't stay long. Smears best animated on ones at 24FPS. Can also have smeared after image but hold with a looping effect.
+  - Overshoots: Frames where part your animating goes past its destination only bounce back to keyframe. GIves animations a nice snap or pop
+  - Overlap & follow through:
+    - Overlap: Some parts lead, others ffollow with a delay.
+    - FOllow Through: Adds extra movement to characters and objects. Make motions more realistic.
+    - Main Action - Overlap -Held Drawing Action has ended, follow thourgh
+- Animation working methods
+  - Silhoutte animation: useful for large moments
+  - Recycling Frames: Useful to keep a consistent style and for staying on a model. Uses selection stool. C
+    - Copy, Resize, sliding,rotating, cutting, skeweing
+    - Combine with Silhoutte!
+  - Simple lineart: line art, colours, shading, clean-up. Its the whole pixel art process with little reuse.
+  - Pose to Pose: plannign your work with key frames, adding inbetweens to connect them.
+  - Straight ahead: animating frames as you go, improvising your way through timeline.
+  - Pose to Pose + straight ahead: mix of both
+- Limited Frames
+  - Have strong keyframe techniques.
+  - Minimum amount of frames is 3.
+- Parallax Scroling:
+  - Add more depths ny dividing background into layers and moving at different speeds.
+  - Closer = faster, farther= slower
 
 ## AESprite Nice to knows
 
