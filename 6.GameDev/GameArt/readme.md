@@ -112,6 +112,127 @@
 - AA impacts line weight. Dark = thicker, Light = thinner
 - Banding is bad: two rows of pixels perfectly hugh each other. Makes curves look blocker. Lines appear thicker. Blurs your outline.
 
+## Colours
+
+- Most subjective part of sprites as they build the atmosphere of a game/picture
+- Colour Theory is universal.
+- Hue/Saturation/Value
+- Colour Palletes are good for
+  - Eye-drop to save time
+  - Keeps you organized
+  - Makes animation easier by reusing colours
+- Pixel hart and having a low amount of colours go hand in hand.
+- Reuse same colours across different shades (ramps).
+- Doesn't matter how you use your pallette as long as it makes sense to you.
+- Hue Shifting or coloured Shadows, to create an atmosphere or feeling
+  - Regular Hue Shift: When you shift hue, for a brown, the shadow becomes a warm red. Up to you how much to sift hues. Either left or right.
+    - Yellow is brighest clour of the rainbow. Purple is the darkest. Why generaly people often hue shift from yellow to purple
+    - You can see hue shifting in greyscale
+- Multiple Players - Can experiment with different colours by overlaying layers with opacity. Just eye drop after
+- Saturation shifting is important too, more for highlights a particular area of your shading.
+- Grey is great for canceling out colours and blending.
+- Choosing Colours
+  - Try to keep darker and lighter colours together on your ramps.
+  - Amount of colours depends on pixel art.
+  - Small sprites should be one ramp of 2-3 colours.
+  - Avoid pure black when possible.
+  - Give shadows a colour tint too. Compliment the shadow coulour.
+  - Using blue, pruple, teals can give impressin of cold/sadder emotion.
+  - reds, oranges, yellows can give a warmer/happier emotion
+- Contrast:
+  - Try choosing colours that add a lot of contrast to sprites.
+  - Can have 1 main colour for each character design. either makes up most of the character or highlights most important features.
+  - Then use sub colour to add extra features.
+
+## Readability
+
+- Means clarity, how well does the pixel art convey itself to the audience.
+- Size matters. Smaller sprites are naturally harder to convey things.
+- Big sprites need clean lines and solid drawings.
+- Small sprites need recognizable features for readability.
+- Even within the same canvas, your sprites can always be improved
+- For small sprites, simplicity usually works. Don't overdo details and stick to simple shapes.
+- In small sprites, one pixel can make te difference in how things are interpreted
+- When asking yourself how big your sprite needs to be ask these feature questions:
+  - Do I need to see their hands moving?
+  - Do their mouths need to be visible or animated
+  - Must facial expression be readable?
+  - Do they wear or hold an item?
+  - Do the sword have a megical gem in it?
+- Try to figure out the smallest part that needs to be visisble, then you can figure out the minimal sprite size.
+- Less is more, find what makes the character unique.
+- Try taking photo art and pairing down to the essetentials.
+- Hands:
+  - start hands by painting shapes. Tiny line art is too hard. Flat shapes then detail.
+  - Draw hands like mittens. Then add detail.
+  - No point in highlighting every single finger.
+  - Focus on index and the thumb. They define the hand.
+  - Draw only 3 fingers and a thumb if needed.
+  - Use different colours to separate each finger.
+- Eyes:
+  - eyes are main focus and highly important.
+  - If no space for eyes, work our the shadows cast on the face to create the eye area.
+  - Glasses: keep it simple
+  - A few pixels make a big different when zoomed out.
+- Head V Body Proportions.
+  - Big heads give room for emotions and expressions. Not suited for every situation.
+  - Heads ae the main reference for human proportin and they easily vary.
+  - Characters with realistic proportions, focus on body language.
+  - Give bodies personality by diversifying poses and body proportions.
+  - Dif proportions can serve different functions ( world sprite, battle sprite, icon sprite, dialogue sprite)
+- Sihoutees
+  - Shows imortant features.
+  - Highlights the character or objects action or function.
+  - Can draw rough siloutte base and fill up with details.
+  - Try not to overlay things, use colour contrast to tell features apart.
+- Light & Shadow
+  - Outlines take a lot of precious space.
+  - Player with dark and light tones instead.
+  - Light is used to show important details.
+  - Dark fills the silhouette or outlines different features.
+  - Use both to form shape, volume and depth depending on your light source.
+- Spacing and Tangents is used so two objects dont tough and get blurred. Give it more room to breath. Can do so by getting rid of lines or re-arrange pixels.
+- Sprites and Backgrounds
+  - Sprites should always stand out from backgrounds
+  - Add Outlines
+  - Correcting Colours
+  - Focus (foreground is sharp, background is blurrier)
+- Spot readability issues by:
+  - Using review thumbnails
+  - Try blurring the picture you should be able to tell what it is
+  - Waifu2x allows you to upscale any picture.
+
+## Dithering
+
+- technique to make gradients using limited colours.
+- You use patterns to mix colours, like checkers.
+- When to use dithering
+  - too much makes it look rough and grainy.
+  - large cel-shaded gradients without dithering result in flat and striped areas.
+  - use when gradients that would otherwise use too many colours to do manually.
+  - Things that don't animate
+  - Textures (stylized dithering)
+  - Heavy colour limitations
+  - Backgrounds (skies, space, vast areas)
+
+## Game Perspectives
+
+- Perspective is how the world is viewed by the human eye.
+- Further an object is, the smaller it looks. Closer it is the biger it looks.
+- Terminology:
+  - Plane: 2d flat surface that shows length and width.
+  - Axis: geometric line with a fixed direction. Y up and down. X left and right. Z back and forth.
+  - Vanishing point: two parallele lines mee at a single point. Like a road that extends toward the horizion and disappears into a single dot.
+  - Projection: the way a 3d view is drawn in 2d.
+  - Othographic: Flat views with no perspective.
+- Othographic Projections:
+  - Side Scroller: Just front
+  - Top-Down: Mostly front, some top.
+  - Top: All top
+  - Isometric: Top-side-side
+  - 45 dimetric: mostly top-little side- little side
+  - Oblique: large front, little size, big top
+
 ## AESprite Nice to knows
 
 - ctrl+0 fit to window +/- for zooming
