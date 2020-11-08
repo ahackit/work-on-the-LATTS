@@ -1,5 +1,34 @@
 # C#
 
+- [C](#c)
+  - [Strucutre](#strucutre)
+  - [Data Types](#data-types)
+  - [Type Conversion](#type-conversion)
+  - [Variables](#variables)
+  - [Conditionals](#conditionals)
+    - [Switch](#switch)
+    - [Ternary Operations](#ternary-operations)
+  - [Loops](#loops)
+  - [Encapsulation](#encapsulation)
+  - [Functions](#functions)
+  - [Arrays](#arrays)
+  - [Structs](#structs)
+  - [Enums](#enums)
+  - [Classes](#classes)
+    - [Inheritance](#inheritance)
+    - [Polymorphism/Abstract Classes](#polymorphismabstract-classes)
+  - [Interfaces](#interfaces)
+  - [Namespaces](#namespaces)
+  - [Preprocessor Directives](#preprocessor-directives)
+  - [Attributes](#attributes)
+  - [Reflections](#reflections)
+  - [Properties](#properties)
+  - [Delegates](#delegates)
+    - [Instantiating Delegate](#instantiating-delegate)
+    - [MultiCasting Delegate](#multicasting-delegate)
+  - [Events](#events)
+  - [Collections](#collections)
+
 ## Strucutre
 
 ```

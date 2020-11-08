@@ -1,70 +1,76 @@
 # Game Design Fundamentals
 
-## Genres
-
-- Action: Require Hand-Eye Coordination
-  - :adventure: combat, item collection and usage, puzzle solving, and long term story-related goals. Legend Of Zelda
-  - :arcade:Kaboom
-  - :hack 'n' slash/brawlers:Battle constant wavesCastle Crashers
-  - :Endless:Running: Consantly moves. Canabalt
-  - :fighting: two or more opponents battle in arena settings.
-  - :maze: navigate a maze environment
-  - :platforming: navigating set levels through an "obstalce course"
-  - :sandbox: non-linear gameplay.
-  - :stealth: put emaphasis on avoiding fighting
-- Adventure: Focus on puzzle solving, item collection and inventory management
-  - :graphical: Myst
-  - RPG: based on pen and paper Dungeon and Dragons
-  - JRPG: Manage team of characters. More emphais on relationships and story.
-  - MMORPG
-  - Survival/Horror: players attempt to survive a bad scenario
-- AR: Peripheral devices to blur real world with gameplay
-- Educational: educate players while entertaining
-  - :activity: primarily focus on non-game activitues.
-  - :brain training: help with memorization and reaction time
-- life simulation
-  - pet: simulate managing a pet
-- puzzle:
-  - hidden: object: find a list of objects among visual clutter.
-  - match three: match three icons to gain point.
-- Rhythm:
-  - music: playing a musical instrument to a rhythm
-  - dance: dnacing to a rhythm.
-  - singing: match the melody of a song
-- Shooter:
-  - FPS: - Seen from first players perspective
-  - Shmups - shoot up large quantities of enemies
-  - TPS - Seen from third person perspective
-- Simulation:
-  - Construction: building your own world
-  - management: manage something based on reality
-  - social: Build something that is meant to be shared with oher
-- Sports
-  - management: More focused on the managing side
-- Strategy:
-  - RTS: faster paced strategy based on expansion, exploration, exploitation, exterimation
-  - Turn-based: slower paced for more strategy
-  - tower defense: prepare your defenses for a wave
-  - MOBA: fast paced action strategy game
+- [Game Design Fundamentals](#game-design-fundamentals)
+  - [Characters](#characters)
+    - [Types of Characters](#types-of-characters)
+      - [Humerous Characters](#humerous-characters)
+      - [Heroic Character](#heroic-character)
+      - [Tough Guy](#tough-guy)
+    - [Use all the parts of your character](#use-all-the-parts-of-your-character)
+    - [NPCS](#npcs)
+    - [Movement](#movement)
+    - [Idling](#idling)
+  - [Camera](#camera)
+  - [Controls](#controls)
+  - [HUD and Icon Design](#hud-and-icon-design)
+    - [Health Bar](#health-bar)
+    - [Targeting Reticle](#targeting-reticle)
+    - [Ammo Gauge](#ammo-gauge)
+    - [Inventory](#inventory)
+    - [Score/Experience](#scoreexperience)
+    - [Radars/Maps](#radarsmaps)
+    - [Context-Sensitive Prompts](#context-sensitive-prompts)
+    - [Icons](#icons)
+    - [Title Screens](#title-screens)
+    - [Pause Screens](#pause-screens)
+    - [Loading Screens](#loading-screens)
+  - [Level Design](#level-design)
+  - [Elements of Combat](#elements-of-combat)
+    - [Attack Moves](#attack-moves)
+  - [Enemies](#enemies)
+    - [Types of behavior](#types-of-behavior)
+    - [Speed?](#speed)
+    - [Introductions](#introductions)
+    - [Ways to keep mobs from being avoided](#ways-to-keep-mobs-from-being-avoided)
+  - [Mechanics](#mechanics)
+  - [Power](#power)
+  - [moneiziation](#moneiziation)
+  - [Music](#music)
+  - [Resources](#resources)
+    - [One-Sheep Sample](#one-sheep-sample)
+    - [10 Page sample](#10-page-sample)
+    - [GDD Template](#gdd-template)
+    - [Bunch of Mechanics](#bunch-of-mechanics)
+    - [Enemy Template](#enemy-template)
+    - [Boss Template](#boss-template)
+    - [Genres](#genres)
 
 ## Characters
 
 - Form follows function
-- Humerous Characters
-  - say funny things
-  - does funny things
-  - looks funny
-  - doesn't always mean jokes
-- Heroic Character
-  - does heroic things
-  - is always good at something
-  - can come in all forms
-  - no one is perfect
-- Tough Guy
-  - does hardcore things
-  - isnt a nice person
-  - says cool things
-  - looks like a bad guy
+
+### Types of Characters
+
+#### Humerous Characters
+
+- say funny things
+- does funny things
+- looks funny
+- doesn't always mean jokes
+
+#### Heroic Character
+
+- does heroic things
+- is always good at something
+- can come in all forms
+- no one is perfect
+
+#### Tough Guy
+
+- does hardcore things
+- isnt a nice person
+- says cool things
+- looks like a bad guy
 
 ### Use all the parts of your character
 
@@ -588,3 +594,50 @@
   - Arena Description
   - Level Elements
   - Boss Fight music tracks
+
+### Genres
+
+- Action: Require Hand-Eye Coordination
+  - :adventure: combat, item collection and usage, puzzle solving, and long term story-related goals. Legend Of Zelda
+  - :arcade:Kaboom
+  - :hack 'n' slash/brawlers:Battle constant wavesCastle Crashers
+  - :Endless:Running: Consantly moves. Canabalt
+  - :fighting: two or more opponents battle in arena settings.
+  - :maze: navigate a maze environment
+  - :platforming: navigating set levels through an "obstalce course"
+  - :sandbox: non-linear gameplay.
+  - :stealth: put emaphasis on avoiding fighting
+- Adventure: Focus on puzzle solving, item collection and inventory management
+  - :graphical: Myst
+  - RPG: based on pen and paper Dungeon and Dragons
+  - JRPG: Manage team of characters. More emphais on relationships and story.
+  - MMORPG
+  - Survival/Horror: players attempt to survive a bad scenario
+- AR: Peripheral devices to blur real world with gameplay
+- Educational: educate players while entertaining
+  - :activity: primarily focus on non-game activitues.
+  - :brain training: help with memorization and reaction time
+- life simulation
+  - pet: simulate managing a pet
+- puzzle:
+  - hidden: object: find a list of objects among visual clutter.
+  - match three: match three icons to gain point.
+- Rhythm:
+  - music: playing a musical instrument to a rhythm
+  - dance: dnacing to a rhythm.
+  - singing: match the melody of a song
+- Shooter:
+  - FPS: - Seen from first players perspective
+  - Shmups - shoot up large quantities of enemies
+  - TPS - Seen from third person perspective
+- Simulation:
+  - Construction: building your own world
+  - management: manage something based on reality
+  - social: Build something that is meant to be shared with oher
+- Sports
+  - management: More focused on the managing side
+- Strategy:
+  - RTS: faster paced strategy based on expansion, exploration, exploitation, exterimation
+  - Turn-based: slower paced for more strategy
+  - tower defense: prepare your defenses for a wave
+  - MOBA: fast paced action strategy game
