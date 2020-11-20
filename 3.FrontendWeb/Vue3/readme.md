@@ -33,6 +33,10 @@ const vm = app.mount('#app')
   - unmounted
   - created
 
+### Life Cycle
+- A parent component creates -> then processes childrens create/mount lifecycles - then parent mounts
+  - This means you want to pass Props as early as created if your child HAS to have props for early initialization (like 3rd party API with DeckGL)
+
 ## Declarative Template Syntax
 - Vue uses templates to render 
   - HTML Text: ```<span> Message: {{ msg }}</span>```
