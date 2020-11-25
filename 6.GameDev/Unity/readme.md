@@ -1,6 +1,7 @@
 # Unity
 
 - [Unity](#unity)
+  - [Scenes](#scenes)
   - [Input](#input)
   - [2D](#2d)
     - [2D Sorting](#2d-sorting)
@@ -21,14 +22,33 @@
     - [Post-processing](#post-processing)
     - [Lighting](#lighting)
     - [Particle Systems](#particle-systems)
-  - [Scripting](#scripting)
-    - [Events](#events)
-    - [Coroutnes](#coroutnes)
-    - [Important Classes](#important-classes)
   - [Audio](#audio)
   - [Animation](#animation)
   - [UI](#ui)
+  - [Scripting](#scripting)
+    - [Important Classes](#important-classes)
+    - [ScriptableObjects](#scriptableobjects)
+    - [MonoBehaviour](#monobehaviour)
+      - [Finding GameObjects](#finding-gameobjects)
+    - [Prefabs](#prefabs)
+    - [SceneManagement](#scenemanagement)
+    - [Input](#input-1)
+      - [Mouse](#mouse)
+    - [Time](#time)
+    - [UI](#ui-1)
+    - [Audio](#audio-1)
+    - [Events](#events)
+    - [Coroutnes](#coroutnes)
+      - [Courutines Vs Async](#courutines-vs-async)
+    - [Open-Closed Principles](#open-closed-principles)
+    - [Dependency Injection](#dependency-injection)
+    - [Debugging](#debugging)
 
+## Scenes
+- Scenes are ways to reference many Gameobjects.
+- You can have multiple scenes
+- You can also have scenes separated for specific types of Objects
+  - This requires abstract ways of communicating since FindObject can't find objects not in the scene
 ## Input
 
 - The Input Manager window allows you to define input axes and their associated actions for your Project.
@@ -211,52 +231,15 @@ public class ExampleScript : MonoBehaviour {
 - The Built-in Particle System: A solution that gives you full read/write access to the system, and the particles it contains, from C# scripts. You can use the Particle System API to create custom behaviors for your particle system.
 - The Visual Effect Graph: A solution that can run on the GPU to simulate millions of particles and create large-scale visual effects. The Visual Effect Graph also includes a visual graph editor to help you author highly customizable visual effects.
 
+## Audio
+
+- Unity can import audio files in AIFF, WAV, MP3 and Ogg formats
+
+## Animation
+
+## UI
+
 ## Scripting
-
-- Create script and attach to GameObject
-- Update function is the place to put code that will handle the frame update for the GameObject.
-- Start function will be called by Unity before gameplay begins (ie, before the Update function is called for the first time) and is an ideal place to do any initialization.
-- `public string myName;` makes field editable in inspector
-- Prefabs come in very handy when you want to instantiate complicated GameObjects
-  or collections of GameObjects at run time
-
-```
- public GameObject myPrefab;
- Instantiate(myPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-```
-
-### Events
-
-### Coroutnes
-
-Coroutines
-Normal coroutine updates are run after the Update function returns. A coroutine is a function that can suspend its execution (yield) until the given YieldInstruction finishes. Different uses of Coroutines:
-
-yield The coroutine will continue after all Update functions have been called on the next frame.
-yield WaitForSeconds Continue after a specified time delay, after all Update functions have been called for the frame
-yield WaitForFixedUpdate Continue after all FixedUpdate has been called on all scripts
-yield WWW Continue after a WWW download has completed.
-yield StartCoroutine Chains the coroutine, and will wait for the MyFunc coroutine to complete first.
-
-```
-IEnumerator Fade()
-{
-    for (float ft = 1f; ft >= 0; ft -= 0.1f)
-    {
-        Color c = renderer.material.color;
-        c.a = ft;
-        renderer.material.color = c;
-        yield return new WaitForSeconds(.1f);
-    }
-}
-void Update()
-{
-    if (Input.GetKeyDown("f"))
-    {
-        StartCoroutine("Fade");
-    }
-}
-```
 
 ### Important Classes
 
@@ -274,10 +257,298 @@ void Update()
 - Debug: Allows you to visualise information in the Editor that may help you understand or investigate what is going on in your project while it is running.
 - Gizmos and Handles: allows you to draw lines and shapes in the Scene view and Game view, as well as interactive handles and controls.
 
-## Audio
 
-- Unity can import audio files in AIFF, WAV, MP3 and Ogg formats
 
-## Animation
+### ScriptableObjects
+- START HERE AND USE MONOBEHAVIOUR WHEN YOU NEED IT
+- Great way of sharing data, state.
+```
+public class PlayerData {
 
-## UI
+  [SerializeField]
+  private float maxHealth;
+
+  private float _currentHealth;
+
+  public float HealthPercentage => (_currentHealth * 100f) / maxHealth;
+}
+```
+- Great way of removing depedencies on monobehaviours and having to find them all over the place
+```
+public abstract class
+AAbility : ScriptableObject {
+  public abstract void CastAbility (Entity self, Entity target);
+}
+
+public class LifeStealAbility : AAbility {
+
+[SerializeField]
+float damage;
+
+public override void CastAbility (Entity self, Entity target) {
+    target.TakeDamage(damage);
+    self.Heal(damage/2f);
+  }
+}
+```
+- Most of your "systems" can just be ScriptableObjects, serve nearly the same purpose as Singletons.
+- Can use ScriptableObjects to act as Event Systems
+  
+### MonoBehaviour
+
+- Create script and attach to GameObject
+- Awake happens before Start
+- Start function will be called by Unity on First Frame and is an ideal place to do any initialization.
+- `public string myName;` makes field editable in inspector
+- Update runs every frame
+- Fixed update runs every physics tick (50 times per second, can be edited)
+  - Independent of frame rate, so is consistent for physics updates.
+- Try to Avoid things happening in update unless they need to like conditionals and checks
+- OnEnable/Disable - very handy for object pooling
+- Create references if you need to use a reflection method
+- Use LazyInitialization to avoid Script Execution Order
+```
+public class EnemyManager {
+  private List<IEnemy> _enemiesInCombat;
+  public static EnemyManager INSTANCE;
+
+
+  private bool _initialized = false;
+
+   //returns true if inited now
+  private bool Init() {
+    if(_initialized)
+      return false;
+    
+    INSTANCE = this;
+    _enemiesInCombat = new List<IEnemy>();
+    _initialized = true;
+    return true;
+  }
+
+  public void AddEnemyToCombatList (IEnemy enemy) { 
+    Init();
+    _enemiesInCombat.Add(enemy);
+  }
+
+  public IEnemy GetEnemyClosestToPoint(Vector3 point) {
+    if(Init()) { return null; }
+
+    //...finding enemy logic…
+
+    return closestEnemyToPoint;
+  }
+}
+```
+
+#### Finding GameObjects
+- FindObjectOfType is slowest, but most maintable.
+- Use caching to avoid performance hits
+
+
+### Prefabs
+- Prefabs come in very handy when you want to instantiate complicated GameObjects or collections of GameObjects at run time
+
+```
+ public GameObject myPrefab;
+ Instantiate(myPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+```
+- Prefab variants are copies of a prefab that we can then pass a ScriptableObject to modify it slightly.
+
+### SceneManagement
+- Need `using UnityEngine.SceneManagement;`
+- We can ` SceneManager.LoadScene`
+- Can also specify the mode in which a scene loads
+- Can hook into Scene Events and provided callbacks
+```
+SceneManager.sceneLoaded += CoreSceneLoaded;
+    void CoreSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            coreSceneLoaded.Invoke();
+        }
+
+    }
+```
+
+### Input
+
+#### Mouse
+- We can get mousePosition by `Input.mousePosition`
+- Can conver that to worldCoordinates with `Camera.main.ScreenToWorldPoint`
+- Can check input for mouseClicks with `Input.GetMouseButtonDown(0)`
+  
+
+### Time 
+- Time is a way to track the time taken regardless of frames executed
+```
+    // Update is called once per frame
+    void Update()
+    {
+        UpdateTime();
+
+        if (TimeToEnd())
+            FindObjectOfType<LevelManager>().LoadNextLevel();
+    }
+
+    void UpdateTime()
+    {
+        totalTimeElapsed += Time.deltaTime;
+        timerChanged.Invoke((int)(endGameTime - totalTimeElapsed));
+    }
+
+    bool TimeToEnd()
+    {
+        if (totalTimeElapsed >= endGameTime)
+            return true;
+
+        return false;
+    }
+```
+### UI 
+- Remember to use many Canvas to avoid unneccessary rerenders of UI elements. 
+- To interact with TMPro `using TMPro;`
+- Getting and setting text on TextMeshPro `).GetComponent<TextMeshProUGUI>().SetText();`
+
+### Audio 
+
+
+
+### Events
+- Great way to avoid depedencies.
+- When you can use a C# Event over UnityEvent, or just a ScriptableObject event wrapper
+```
+public class PlayerHealth : MonoBehaviour {
+
+public static event Action<int> OnHealthChanged = delegate {}; 
+
+
+  public static void ModHealth(int amount)
+  {
+    _health += amount;
+
+    OnHealthChanged(_health);
+  }
+}
+
+class Lifebar : MonoBehaviour {
+[SerializeField] Slider slider;
+
+void OnEnable() {
+  	PlayerHealth.OnHealthChanged += UpdateLifebar;
+	
+}
+
+void OnDisable() {
+
+	PlayerHealth.OnHealthChanged -= UpdateLifebar;
+}
+
+  void UpdateLifebar(int currentHealth) {
+    slider.value = currentHealth;
+  }
+}
+```
+- Pass abitrary amounts of data with `Event<Struct>`
+
+### Coroutnes
+
+Normal coroutine updates are run after the Update function returns. A coroutine is a function that can suspend its execution (yield) until the given YieldInstruction finishes. Different uses of Coroutines:
+
+- yield The coroutine will continue after all Update functions have been called on the next frame.
+- yield WaitForSeconds Continue after a specified time delay, after all Update functions have been called for the frame
+- yield WaitForFixedUpdate Continue after all FixedUpdate has been called on all scripts
+- yield WWW Continue after a WWW download has completed.
+- yield StartCoroutine Chains the coroutine, and will wait for the MyFunc coroutine to complete first.
+
+- Cache courotuines so you know when to stop them
+
+```
+
+IEnumerator _currentShootCoroutine;
+
+private void BurstFire() {
+
+  if(_currentShootCoroutine != null) {
+    StopCoroutine(_currentShootCoroutine);
+  }
+
+_currentShootCoroutine = BurstFireRoutine();
+
+StartCoroutine(_currentShootCoroutine);
+
+IEnumerator BurstFireRoutine() {
+
+  for(int i = 0; i < 3; i++) {
+    Shoot();
+    
+    yield return new WaitForSeconds(timeBetweenShots);
+    }
+  }
+}
+```
+#### Courutines Vs Async
+- Use Async for IO Bound Events (Input, Network calls)
+- Use courotines for routine-and-forget 
+- Don't intertwine
+  
+```
+public static class MethodDelayer
+{
+
+  public async static void DelayMethodByTimeAsync(Action action, float timeToDelay){
+  float t = 0f;
+
+      while (t < timeToDelay)
+      {
+          t += Time.unscaledDeltaTime;
+          await Task.Yield();
+      }
+    
+      action.Invoke();
+    }
+  }
+
+void KissSomeoneYouCareAbout() {
+  heart.Stop();
+  MethodDelayer.DelayMethodByTimeAsync(heart.Start, 1.0f);
+}
+
+//You can even shortcut single executory
+//lines into a callback with a weird-looking
+//syntax
+
+Time.deltaTime = .1f;
+
+MethodDelayer.DelayMethodByTimeAsync(()=>Time.deltaTime = 1.0f, 3.0f);
+```
+
+### Open-Closed Principles 
+- if you find one object doing the same operation a little bit differently on different types of objects and you have to implement that with conditionals, use interfaces instead
+```
+public interface IHittableByPlayer {
+  void OnHit();
+}
+
+if(playerHitSomething) {
+  Collider c = other.collider;
+
+
+ IHittableByPlayer hittableComponent = c.GetComponent<IHittableByPlayer>();
+	
+  if(hittableComponent != null) {
+    hittableComponent.OnHit();
+  }
+}
+```
+
+### Dependency Injection
+- Try to obey Single responsibility principle and use a "God" class/monobehaviour to handle the create of objects using constructors so they don't need to be monoaware. 
+- Use ScriptableObjects/Unity Editor as as Depedency Injection system
+
+### Debugging
+- Use `Debug.Log` to log general state
+- Use `Debug.LogError` to throw errors when you know something shouldn't happen
+- Use `DrawRay/Gismoz` to draw Scene level debugging.
