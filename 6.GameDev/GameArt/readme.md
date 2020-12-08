@@ -1,6 +1,13 @@
 # Game Art Basics
 
 - [Game Art Basics](#game-art-basics)
+  - [Art Fundamentals](#art-fundamentals)
+    - [Anatomy](#anatomy)
+      - [Gesture](#gesture)
+      - [Proportion](#proportion)
+      - [Construction](#construction)
+      - [Exaggeration](#exaggeration)
+      - [Perspective](#perspective)
   - [Pixel Art Basics](#pixel-art-basics)
     - [How to start](#how-to-start)
     - [Software](#software)
@@ -55,6 +62,95 @@
     - [Working methods for animation](#working-methods-for-animation)
     - [Parallax Scrolling](#parallax-scrolling)
   - [AESprite Nice to knows](#aesprite-nice-to-knows)
+
+## Art Fundamentals
+### Anatomy
+- Study and practice of understanding the muscular and skeletal structures of an animal or human
+- Know the rules of anatomy, then break them for stylized characters.
+- DOn't need to know all the muscles. Focus on the muscle group.
+  
+#### Gesture
+- Natural flow and curvature of the body
+- Less lines used to describe the gesture is generally better
+- Smooth and precise lines.
+- General flow of a body 
+  - From neck to back, back to chest, back to lumbar
+  - This applies to must other muscle groups as well
+- Use "CSI" 
+  - Flow generally can be broken down to the shape of a C/S/I
+  - Active shape is usually C
+- Look for contropastto
+  - Every force has equal force on other side
+  - Like a sideways V if you are reaching your side
+- To practice, do 30 second gestures every day for 5-10 minutes.
+- Reference sites
+  - posemaniacs.com
+  - quickposes.com
+  - senshistock on deviant
+- 30 min practice
+  - 10 min/30 second gestures
+  -  10 minute/60 second gestures
+  -  5 minute/ 1 slow gesture/figure
+  -  5 minute/ from imagination
+#### Proportion
+- Avg measurements of the human body
+  - Avg man/woman 7 1/2 heads tall
+  - LandMarks
+    - Head
+      - Hairline to browline = 1/3
+      - Browline to base of nose = 1/3
+        - Keystone = 1/4
+        - Base of Eye Socket = 1/4
+        - Nose = 1/2
+        - Ears can go here
+      - Nose to chin = 1/3
+        - Center mouth = 1/3
+        - Top of chin = 1/3
+      - Width = 4 Eyes across or width of the of the to half of face
+    - Full Body
+      - Head = 1 head
+      - Nipples = 2 head
+      - Navel = 3 head
+      - Crotch = 4 head
+      - Top of the knees = 5 head
+      - Halway of the shine = 6 head
+      - Ankle = 7 head
+      - Base of feet = .5 head
+      - Smaller head = more heroic figure = 8.5 head figue
+    - Arms
+      - Deltoid = 1/3rd head below chin, ends at nipples
+      - Bicep = begans at top of chest and ends bottom of rib cage
+      - Wrist starts at base of the crotch
+    - Widths
+      - Male 
+        - shoulders about 3 heads wide
+        - Pelvis/ribcage about 2 heads width
+      - Female 
+        - shoulders about 2.5 head width
+        - pelvis/ribcase about 1.75 heads width. Can have wider hips 
+- Animals have their own measurements
+- Foreshortening
+  - How we place objectss to give perspective
+  - To pratice, draw basic shapes rotating
+  - Rules
+    - Further something is from you, the smaller it will appear
+    - Planes morph when object is rotating. Squish the plane effectivelly.
+#### Construction
+- Simplification of anatomy
+- Everything can be simplified to shapes
+- - 7 Major Forms of the body
+  - Head
+    - Simple sphere with box for chin
+  - Toros
+    - Egg shape with scoop taken out of bottom and top part shaved off
+  - Arms (2)
+  - Pelvis
+    - Short wide cylinder
+  - Legs (2)
+#### Exaggeration
+- Stylizaion of something in order to better express a mood or characteristic
+#### Perspective
+- Create a sense of 3-dimensional form on 2-dimensions 
 
 ## Pixel Art Basics
 
