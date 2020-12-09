@@ -8,6 +8,20 @@
       - [Construction](#construction)
       - [Exaggeration](#exaggeration)
       - [Perspective](#perspective)
+      - [Study](#study)
+    - [Value/Lighting/Form](#valuelightingform)
+    - [Color](#color)
+      - [Color Theory](#color-theory)
+        - [Color Wheel](#color-wheel)
+        - [Hue](#hue)
+        - [Saturation](#saturation)
+        - [Color Temperature](#color-temperature)
+        - [Color Relativity](#color-relativity)
+        - [Color Physcology](#color-physcology)
+        - [Color Schemes](#color-schemes)
+    - [Perspective](#perspective-1)
+      - [Terminology](#terminology)
+      - [Perspective](#perspective-2)
   - [Pixel Art Basics](#pixel-art-basics)
     - [How to start](#how-to-start)
     - [Software](#software)
@@ -21,7 +35,7 @@
     - [How to apply:](#how-to-apply)
   - [Colours](#colours)
     - [Temperature](#temperature)
-    - [Color Schemes](#color-schemes)
+    - [Color Schemes](#color-schemes-1)
     - [Colour Palletes are good for](#colour-palletes-are-good-for)
     - [Hue Shifting](#hue-shifting)
     - [Choosing Colours](#choosing-colours)
@@ -149,8 +163,114 @@
   - Legs (2)
 #### Exaggeration
 - Stylizaion of something in order to better express a mood or characteristic
+- Active Vs Passive Forces
+  - When one muscle is being activated, the opposite is general passive
+- Use silhouettes to see exaggerations
 #### Perspective
 - Create a sense of 3-dimensional form on 2-dimensions 
+#### Study
+- Books, Copy everything, but try to work in imagination
+
+
+### Value/Lighting/Form
+- Value = Light and darkness of something
+  - Value is what draws the eyes attention to an image
+  - Value Scale
+    - Scale from pure white to pure black, broken down into segments.
+- Lighting = How a scene is lit
+- Form = Feeling 3 dimensional but being on 2-dimensional surface
+  - Form Principle
+    - You have Light Side
+      - Highlight
+        - Reflect of the source of light being emitted on to the object
+        - Changes with position of the viewer
+        - Value Scale: 3
+      - Center Light
+        - Central area of the object being lit.
+        - Value Scale: 4
+      - HalfTone
+        - Last portion of the light before the object then makes the leap into shadow. Transitions in value by a little.
+        - Usually about a mid way point
+        - Value Scale: 6
+      - Terimnator
+        - Cut off point between light and shadow
+        - Soft light might not exist
+    - You have Shadow
+      - Core Shadow
+        - Darkest portion of the object
+        - Value Scale: 8
+      - Reflected Light
+        - Portion of light that is hitting another surface, and by lighting it so strongly it turns itno an additional light source
+        - Value Scale 7 or whatever number is left from the ground and cast shadow
+      - Occulsion Shadow
+        - Portion of an object that is somewhat or completely hidden from any light sources whether it be ambient, direct, or reflected
+      - Cast Shadow
+        - Follow the same angle as the terminator
+        - Softer the further away from the object it gets
+- Look up Asaro Heads to give a feel for Planes
+- Take a random blob, and try making it look 3 dimensional
+- Shapewelding: removing the unnecessary detail and clutter of an unimportant section of the image to help ease the eyes in the real ofcal oint
+
+### Color
+- Color can be ambigous and theoretical.
+- Value is form, Color is flavor
+
+#### Color Theory
+##### Color Wheel
+- Perfectly balanced reprenseation of the major colors in the spectrom
+  - RGB, RYB, CMYK
+##### Hue
+- What color something is
+
+##### Saturation
+- The purity of a color
+- Not all colors can have the same saturation
+  
+##### Color Temperature
+- Split color wheel in half
+- One side is dedicated to the cool colors
+- The other side is dedicated to the warm colors
+- Warm light Source = Cool shadows
+- Cool Light = Warm shadows
+
+##### Color Relativity
+- Thoery in that if one color is used in a particular area, it will appear to be a diff color that when it is alone
+
+##### Color Physcology
+- Warm Colors: 
+  - Excitment/Anger/Fire/Heat/Energy
+- Cool Colors:
+  - Calm/Soothing/Water/Flow/Mysterious
+
+##### Color Schemes
+- Monochromatic
+  - Only One Color
+- Analogous
+  - Consist of only a small group of colors in one portion of the wheel
+- Complementary
+  - Two colors directly opposite of the color wheel
+  - Split Complmentary. Not directly opposite but two other right on the side
+- Triadic
+  - Three colors perfectly spread out between each other
+- Tetradic
+  - Two complimentary schemes put together
+
+
+### Perspective
+
+#### Terminology
+- Horizon Line: Horizontal line that represents where the eye cant see past
+- Line Of Sight: Angle and height that the viewer is observing the camera
+- Station Point: Point at which the viewer is positioned when viewing the scene or object
+- Vanishing Point: Whenenver parallel lines converge in perspective
+- Cone Of Vision: Area that our eyes can see when we remove our peripheral vision
+
+#### Perspective
+- Establish Horizon Line
+- Create Vanishing Point (Number of points per perspective)
+- Create square, then lines to the Vanishing point
+- Connect the lines
+
 
 ## Pixel Art Basics
 
