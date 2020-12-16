@@ -1,0 +1,18 @@
+chalice package --merge-template resources.json out
+aws cloudformation package  --template-file out/sam.json \
+    --s3-bucket testmysocket --output-template-file out/template.yml
+
+aws cloudformation deploy --template-file out/template.yml \
+    --stack-name ChaliceChat --capabilities CAPABILITY_IAM
+
+aws cloudformation describe-stacks --stack-name ChaliceChat \
+    --query "Stacks[0].Outputs[?OutputKey=='WebsocketConnectEndpointURL'].OutputValue" \
+    --output text
+
+wss://{id}.execute-api.{region}.amazonaws.com/api/
+
+aws cloudformation delete-stack --stack-name ChaliceChat
+
+wss://amazonaws.com/api/
+
+wsdump.py wss://amazonaws.com/api/

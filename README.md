@@ -46,7 +46,7 @@ I don't know. Just want to know how webpack works. It isn't a full body workout 
 
 - [Python](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Python)
 - [Web Framework - Django](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Django)
-- [Serverless - Chalice - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Chalice)
+- [Serverless - Chalice](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Chalice)
 - [Databases - PostgreSQL](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/PostgreSQL)
 - [APIs](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/APIs)
 - [Caching](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Caching)

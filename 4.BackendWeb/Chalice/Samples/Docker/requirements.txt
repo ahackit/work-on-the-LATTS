@@ -1,0 +1,7 @@
+chalice
+marshmallow
+peewee
+marshmallow_peewee
+boto3>=1.9.91
+websocket-client
+awscli
