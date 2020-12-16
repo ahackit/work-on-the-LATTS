@@ -28,6 +28,7 @@
       - [Guiding The Eye](#guiding-the-eye)
       - [Mood Through Shapes](#mood-through-shapes)
       - [Golden Ratio](#golden-ratio)
+    - [Books to read for further detail](#books-to-read-for-further-detail)
   - [Pixel Art Basics](#pixel-art-basics)
     - [How to start](#how-to-start)
       - [Software](#software)
@@ -308,6 +309,27 @@
 #### Golden Ratio
 - Using dat Spiral with rule of 1/3rds
 
+### Books to read for further detail 
+- Anatomy
+  - Figure drawing for all it's worth by Andrew Loomis
+  -  Drawing the head & hands by Andrew Loomis;
+  - Constructive Anatomy by George Bridgman;
+  - Force Dynamic life drawing for animators by Michael Mattesi
+  - Figure Drawign: Design and Invention by Michael Hampton
+  - The art of animal drawing by Ken Hultgren
+  - Animal Anatomy for artists:
+- Form 
+  - The elements of Form by Eliot Goldfinger
+- Color
+  - Color and Light: A guide for the realist painter by James Gurney
+  - Creative Illustration by Andrew Loomis;
+- Composition
+  - Imaginative Realism: How to paint what doesn't exist by James Gurney
+  - Creative Illustration by Andrew Loomis; 
+- Perspective
+  - How to draw: Drawing and sketching objects and environments from yourimagination by Scott Robertson;
+- Values
+  - Color and Light: A guide for the realist painter by James Gurney;
 
 ## Pixel Art Basics
 
@@ -471,6 +493,7 @@
 - Multiple layers - Can experiment with different Colors by overlaying layers with opacity. Just eye drop after
 - Saturation shifting is important too, more for highlights a particular area of your shading.
 - Grey is great for canceling out Colors and blending.
+- Hue Shifting Guide. Try increments of about 15-20 each time in Hue. Saturation and go up and down by increments of 5-10 or so. Brightness can change or so by 10-15 as well. Play around with it!
 
 #### Choosing Colors
 
