@@ -32,6 +32,7 @@
       - [Finding GameObjects](#finding-gameobjects)
     - [Prefabs](#prefabs)
     - [SceneManagement](#scenemanagement)
+    - [Sprites/Textures](#spritestextures)
     - [Input](#input-1)
       - [Mouse](#mouse)
     - [Time](#time)
@@ -133,6 +134,7 @@ camera.transparencySortAxis = new Vector3(0.0f, 1.0f, 0.0f);
   - Order in Layer: Set the render priority of the Sprite within its Sorting Layer.
   - Mask Interaction - Set how the Sprite Renderer behaves when interacting with a Sprite Mask
 
+
 #### Sprite Editor
 
 - Sprite Mode to Multiple in the Texture Import Inspector if Sprite Sheet
@@ -197,6 +199,7 @@ camera.transparencySortAxis = new Vector3(0.0f, 1.0f, 0.0f);
 ### Cameras
 
 - Can have many cameras and can switch them
+- Should try to Prefab your camera as early as possible to avoid making changes and not having it reflect to to other places.
 
 ```
 public class ExampleScript : MonoBehaviour {
@@ -256,7 +259,6 @@ public class ExampleScript : MonoBehaviour {
 - Random: Provides you with easy ways of generating various commonly required types of random values.
 - Debug: Allows you to visualise information in the Editor that may help you understand or investigate what is going on in your project while it is running.
 - Gizmos and Handles: allows you to draw lines and shapes in the Scene view and Game view, as well as interactive handles and controls.
-
 
 
 ### ScriptableObjects
@@ -372,6 +374,8 @@ SceneManager.sceneLoaded += CoreSceneLoaded;
 
     }
 ```
+### Sprites/Textures
+- Becareful when scaling images as the width of your image will not be the same as the texture size imported
 
 ### Input
 
