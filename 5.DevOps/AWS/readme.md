@@ -9,6 +9,18 @@ Default region name [None]: us-west-2
 Default output format [None]: json
 ```
 
+## IAM 
+- AWS Identity Managemnt
+- Manage resources through use of IAM Policys. Can have users, roles, groups, etc.
+- Most IAM roles can be configured with JSON or the policy manager.
+- Certain resources need IAM Access
+
+## VPC
+
+### Security Groups
+- Groups within a VPC that define inbound/outbound traffic
+
+
 ## Amazon Simple Storage Service - S3
 - You can use Amazon S3 to store and retrieve any amount of data at any time, from anywhere on the web.
 - Amazon S3 stores data as objects within buckets. An object is a file and any optional metadata that describes the file. To store a file in Amazon S3, you upload it to a bucket. When you upload a file as an object, you can set permissions on the object and any metadata.
@@ -81,5 +93,28 @@ Default output format [None]: json
 - To have a custom domain on top of this, you will need a ELB to resolve the load balancing requirements for containers
 
 ##  Elastic Compute Cloud - EC2
+- Provides bare metal instances to deploy and do whatever with.
 - The instance will be charged per hour with different rates based on the type of the instance chosen. AWS provides multiple instance types for the respective business needs of the user.
+
+## API Gateway
+- Build RESTful or Websocket API services. Endpoints can correspond to AWS Lamda Functions. 
+  
+##  AWS Lambda 
+- Serverless Functions  - lets you run code without provisioning or managing servers, creating workload-aware cluster scaling logic, maintaining event integrations, or managing runtimes.
+
+### Layers
+- Use Layers to reduce bundle per lambda sizing
+
+## Cognito
+- Managed Auth and OAuth through AWS. Allowing you to make pools of users with Authnetication workflows for accessing resoures without managing IAM accounts per user
+
+## SNS Events
+- A pub/sub topic notification system that can send out events to all subscribers and trigger various AWS functions
+
+## SQS 
+- A messaging Queue to store messages to be processed in a queue. 
+
+## CloudWatch
+- Can be used to manage, monitor and trigger infastructure
+
 
