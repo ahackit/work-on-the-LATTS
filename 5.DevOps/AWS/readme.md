@@ -1,5 +1,42 @@
 # AWS - Amazon Web Services
 
+## Cloud Computing 
+### Key Terms
+- Cloud Computing: On-demand delivery of IT services from a third-party provider
+- Cloud Service: IT Capabaility that is being provided
+- Cloud Provider: Company that provides the service
+- Consumer: Organization or individual who uses the cloud service
+- "Pay as you go" or "pay per use": charged only for what you use
+- Multi-tenant: Multiple consumer consume services delivered using shared infastructure
+- "x" as a service: Some cloud capability is delivered to consumers as service
+  
+### Key Characteristics
+- On-demand, self service: user can consume cloud resources, as needed, autoamtically, and without human interaction
+- Broad network access: capabilities are available over the netwrok using standard mechanisms. Can be the internet or WAN.
+- resource Pooling: resources pooled and serve multiple consumers using a multi-tenant model
+- rapid elasticity: capabilites can scale "elastically" based on demand
+- Measured service: Resource Usage is monitored and metered
+
+### Service Models
+- On-Prem:  Gotta manage it all
+- IaaS: Gotta manage the VMs
+- PaaS: Gotta Manage the App/Data
+- SaaS: Don't gotta manage much
+
+### Deployment Models:
+- Private Cloud: Enterprise deploys their own infrastructure and applications into their own datacenter
+- Public Cloud: IT services that you consume are hosted and delivered from a third-paty and accessed over the internet
+- Hybrid Cloud: Combination of on-premises, private cloud, and public cloud services are consumed
+- Multicloud: Usage of two or more public clouds at a time and possibly multiple private clouds
+
+### Advantages of Cloud
+- Trade capital expense for variable expense: Instead of investing in data centers before you know how you're going to use them, pay only when, and for how much, you consume
+- Benefit from massive economies of scale: Achieve a lower variable cost due to AWS Scale
+- Stop guessing about capacity: Elimate guessing, scale as demand dictates
+- Increase speed and agility: Easily and quickyl scale your usage
+- Stop spending money running and maintaing data centers: focus on business growth and innovation instead
+- Go global in minutes: Easily dploy applications in multiple regoins around the world
+
 ## AWS CLI
 ```
 $ aws configure
