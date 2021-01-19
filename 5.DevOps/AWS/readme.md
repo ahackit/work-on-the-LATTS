@@ -37,6 +37,35 @@
 - Stop spending money running and maintaing data centers: focus on business growth and innovation instead
 - Go global in minutes: Easily dploy applications in multiple regoins around the world
 
+## Global Infrastructure
+- Region: geographical area with 2 or more AZs, isolated from other AWS regions
+- Availability Zone(AZ): One or more data centers that are physically separate and isolated from other AZs
+- Edge Location: Location with a cache of content that can be delivered at low latency to users - used by CloudFron
+- Regional Edge Cache: Part of the CF network, larger caches that sit between AWS services and Edge Locations
+- Global Network: Highly available, low-latency private global network interconnectiong every data center, AZ, and AWS Region
+
+### Global Vs Regional Services
+- Global:
+  - IAM
+  - S3
+    - Is Global, but data is hosted in specific regions
+  - Direct Connect
+  - Route 53
+  - CloudFront
+  - WAF & Shield, Artifact, Trusted Advisor, Personal Health Dashboard
+
+## Billing and Pricing
+- Compute: Paying for the amount of time you spend processing (EC2, RDS, ECS, etc)
+- Storage: Paying for amount of data you have stored in Amazon (S3, EBS, EFS, etc)
+- Outbound Data: Transfers are aggregated accross services and then charged at the outbound data transfer rate
+
+### Pricing Models
+- On-Demand: Used for compute and database capacity. No long-term commitments or upfront payments
+- Dedicated Instances: Available for EC2 - Hardware is dedicated to a single customer
+- Spot Instances: Purchase spare capacity with no commitments. Great discounts from hourly rates
+- Reservations: Up to 75% discount in exchange a term commitment. Options for 1 to 3 year terms. No Upfront/Partial Upfront/All upfront
+  - EC2, DynamoDB, ElastiCache, RDS, RedShift
+
 ## AWS CLI
 ```
 $ aws configure
