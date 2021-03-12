@@ -8,64 +8,42 @@ Something something something - t-shaped developer? or Pi-shaped developer?
 
 I don't know. Just want to know how webpack works. It isn't a full body workout if your LATT's aren't getting action.
 
-## General Philosophy
+## Foundational Knowledge
+- [General OS Knowledge - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/1.Foundational/GeneralOSKnowledge)
+- [How does the internet work?](https://github.com/ahackit/work-on-the-LATTS/tree/master/1.Foundational/HowDoesInternetWork)
+- [Web Security](https://github.com/ahackit/work-on-the-LATTS/tree/master/1.Foundational/WebSecurity)
+- [Fundamental Programming Concepts](https://github.com/ahackit/work-on-the-LATTS/tree/master/1.Foundational/FundamentalProgramming)
+- [Development Principles](https://github.com/ahackit/work-on-the-LATTS/tree/master/1.Foundational/DevelopmentPrinciples)
+- [Data Structures and Algorithims](https://github.com/ahackit/work-on-the-LATTS/tree/master/1.Foundational/DataStructuresAndAlgorithims)
+- [Design Patterns](https://github.com/ahackit/work-on-the-LATTS/tree/master/1.Foundational/DesignPatterns)
+- [Architectural Patterns](https://github.com/ahackit/work-on-the-LATTS/tree/master/1.Foundational/ArchitecturalPatterns)
+- [UI/UX Design Principles](https://github.com/ahackit/work-on-the-LATTS/tree/master/1.Foundational/DesignPrinciples)
+- [APIs](https://github.com/ahackit/work-on-the-LATTS/tree/master/1.Foundational/APIs)
+- [Caching](https://github.com/ahackit/work-on-the-LATTS/tree/master/1.Foundational/Caching)
+- [Building For Scale](https://github.com/ahackit/work-on-the-LATTS/tree/master/1.Foundational/BuildingForScale)
 
-- [Stoicism](https://github.com/ahackit/work-on-the-LATTS/tree/master/1.GeneralPhilosophy/Stoicism)
+## Current Stack
+### Frontend Web Knowledge
 
-## General Knowledge
-### Programming
+- [HTML](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/HTML)
+- [CSS](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/CSS)
+- [Javascript](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/Javascript)
+- [Package Managers - NPM](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/NPM)
+- [Module Bundlers - Webpack](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/Webpack)
+- [React - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/GraphQL)
+- [GraphQL - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/GraphQL)
+- [TypeScript - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/TypeScript)
 
-- [Fundamental Programming Concepts](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/FundamentalProgramming)
-- [Development Principles](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/DevelopmentPrinciples)
-- [Data Structures and Algorithims](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/DataStructuresAndAlgorithims)
-- [Design Patterns](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/DesignPatterns)
-- [Architectural Patterns](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.GeneralProgramming/ArchitecturalPatterns)
+### Backend Web Knowledge
 
-### Technical
-- [How does the internet work?](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.1.GeneralTech/HowDoesInternetWork)
-- [Web Security](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.1.GeneralTech/WebSecurity)
+- [Python](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/Python)
+- [Databases - PostgreSQL](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/PostgreSQL)
+- [Search Engines - Elasticsearch](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/ElasticSearch)
 
-## Frontend Web Knowledge
+### DevOps Knowledge
 
-- [UI/UX Design Principles](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/DesignPrinciples)
-- [HTML](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/HTML)
-- [CSS](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/CSS)
-- [Javascript](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/Javascript)
-- [Package Managers - NPM](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/NPM)
-- [Module Bundlers - Webpack](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/Webpack)
-- [CSS Framework - TailwindCSS](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/TailwindCSS)
-- [JS Framework - Vue 3](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/Vue3)
-- [SSR/SSG Framework - Nuxt](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/Nuxt)
-
-
-## Backend Web Knowledge
-
-- [Python](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Python)
-- [Web Framework - Django](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Django)
-- [Databases - PostgreSQL](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/PostgreSQL)
-- [APIs](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/APIs)
-- [Caching](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Caching)
-- [Building For Scale](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/BuildingForScale)
-
-## DevOps Knowledge
-
-- [CircleCI](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/CircleCI)
-- [Containers - Docker](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/Docker)
-- [Container Orchestration - Kubernetes](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/K8s)
-- [K8s Manager - Rancher](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/Rancher)
-- [AWS](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/AWS)
-
-
-## Things I've used very rarely to keep notes on for revisting/or TODOs
-- [General OS Knowledge - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.1.GeneralTech/GeneralOSKnowledge)
-- [Configuration Management - Ansible](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/Ansible)
-- [Infrastructure Provisioning - Terraform](https://github.com/ahackit/work-on-the-LATTS/tree/master/5.DevOps/Terraform)
-- [Web Servers - Nginx](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Nginx)
-- [Web Sockets - Django Channels -  TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/WebSockets)
-- [Message Brokers - RabbitMQ](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/RabbitMQ)
-- [Search Engines - Elasticsearch](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/ElasticSearch)
-- [Serverless - Chalice](https://github.com/ahackit/work-on-the-LATTS/tree/master/4.BackendWeb/Chalice)
-- [TypeScript - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/TypeScript)
-- [Web Components](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/WebComponents)
-- [PWA - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/PWA)
-- [GraphQL - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/3.FrontendWeb/GraphQL)
+- [CircleCI](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/CircleCI)
+- [Containers - Docker](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/Docker)
+- [AWS](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/AWS)
+- [Terraform](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/Terraform)
+- [Serverless](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/Serverless) 
