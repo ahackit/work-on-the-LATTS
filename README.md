@@ -30,7 +30,7 @@ I don't know. Just want to know how webpack works. It isn't a full body workout 
 - [Javascript](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/Javascript)
 - [Package Managers - NPM](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/NPM)
 - [Module Bundlers - Webpack](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/Webpack)
-- [TypeScript - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/TypeScript)
+- [TypeScript](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/TypeScript)
 - [React](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/React)
 - [GraphQL - TODO](https://github.com/ahackit/work-on-the-LATTS/tree/master/2.CurrentStack/GraphQL)
 
