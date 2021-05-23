@@ -30,8 +30,17 @@
   - [Storage](#storage)
     - [Amazon Simple Storage Service - S3](#amazon-simple-storage-service---s3)
       - [Storage Classes/ Tiers](#storage-classes-tiers)
-      - [IAM Policy Barebones public](#iam-policy-barebones-public)
-      - [IAM Policy with CloudFront](#iam-policy-with-cloudfront)
+      - [S3 Select](#s3-select)
+      - [S3 Permissions](#s3-permissions)
+        - [ACLS](#acls)
+          - [ACL Permissions](#acl-permissions)
+          - [ACL Predefined Groups](#acl-predefined-groups)
+        - [Bucket and User Policies](#bucket-and-user-policies)
+          - [BUcket Policy Barebones public](#bucket-policy-barebones-public)
+          - [Bucket Policy with CloudFront](#bucket-policy-with-cloudfront)
+      - [S3 Security](#s3-security)
+      - [S3 Monitoring/Logging](#s3-monitoringlogging)
+      - [S3 Data Protection](#s3-data-protection)
   - [Certicate Manager](#certicate-manager)
   - [CloudFront](#cloudfront)
   - [Elastic Container Service - ECS](#elastic-container-service---ecs)
@@ -289,8 +298,149 @@ Default output format [None]: json
     - Expiration Rules: Define when objects expire
     - Good when you have defined lifecycles
 
+#### S3 Select
+- Allows you to query files from data files instead of Get and then query
+- Uses "Query in place"
+- Uses subset of SQL
+- Supports multiple file formats
+  - compressed/non-compressed CSV and JSON.
+- Supports encryption
+- Supports selective scanning (scan only 100 MB of data)
+- Charged on amount of data scanned/retrieved
 
-#### IAM Policy Barebones public
+```
+import boto3
+
+s3 = boto3.client('s3')
+
+resp = s3.select_object_content(
+    Bucket='s3select-demo',
+    Key='sample_data.csv',
+    ExpressionType='SQL',
+    Expression="SELECT * FROM s3object s where s.\"Name\" = 'Jane'",
+    InputSerialization = {'CSV': {"FileHeaderInfo": "Use"}, 'CompressionType': 'NONE'},
+    OutputSerialization = {'CSV': {}},
+)
+
+for event in resp['Payload']:
+    if 'Records' in event:
+        records = event['Records']['Payload'].decode('utf-8')
+        print(records)
+    elif 'Stats' in event:
+        statsDetails = event['Stats']['Details']
+        print("Stats details bytesScanned: ")
+        print(statsDetails['BytesScanned'])
+        print("Stats details bytesProcessed: ")
+        print(statsDetails['BytesProcessed'])
+        print("Stats details bytesReturned: ")
+        print(statsDetails['BytesReturned'])
+```
+
+#### S3 Permissions
+- By default all s3 resources are private.
+- Can grant access by writing a policy.
+- Policies can be Resource or User based
+  - Resources Policies
+      - Acess control lists
+        - Grant basic read/write permissions to Accounts and Groups
+        - Use an XML Schema
+        - Const list of grants identify the grantee and permisionns
+      - Bucket Policies
+        - Can grant permissions to Accounts and IAM Users
+        - Expressed using JSON
+        - Can be used to grant fine-grained permissions
+        - Most cases replace legacy ACLS
+    - User Policies
+      - Applied directly to users, groups, or roles using IAM
+      - Grant fine-grained permissions
+      - Expressed in JSON
+      - Cant be used to grant anonymous access
+      - Cant be applied to top level user
+      - Cross Account Access
+        - Grant permission from one account to another account
+  - Evaluation of policies
+    - If user and bucket all belong to the same AWS account. All policies get evaluated
+    - Denys always win
+    - In cross-account, user account must first grant access. Then bucket owner must gran them access
+
+##### ACLS
+- ACLS assigned to bucket and objects
+- Each bucket and object has an ACL attached it it as a sub-resources
+- Default ACL grants the resource owner full control over the object
+- Can be used to grant permissions to AWS accounts and pre-defined grop
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<AccessControlPolicy xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+  <Owner>
+    <ID>*** Owner-Canonical-User-ID ***</ID>
+    <DisplayName>owner-display-name</DisplayName>
+  </Owner>
+  <AccessControlList>
+    <Grant>
+      <Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+               xsi:type="Canonical User">
+        <ID>*** Owner-Canonical-User-ID ***</ID>
+        <DisplayName>display-name</DisplayName>
+      </Grantee>
+      <Permission>FULL_CONTROL</Permission>
+    </Grant>
+  </AccessControlList>
+</AccessControlPolicy> 
+```
+- Can have up to 100 grants
+
+###### ACL Permissions
+- Bucket
+  - Read: ALlows grantee to list objects in bucket
+  - WRITE: Allows grantee to create, overwrite and delete any objects in the bucket
+  - READ_ACP: Allows the grantee to read the bucket ACL
+  - WRITE_ACP: Allows the grantee to write the ACL for the bucket
+  - FULL_CONTROL
+- Object
+  - Allows grantee to read the objec and its metadata
+  - Not applicable
+  - Allows the grantee to read the object ACL
+  - Allows the grantee to write the ACL for the object
+  - Allows the grantee READ, READ_ACP, WRITE_ACP permissions on the object
+
+###### ACL Predefined Groups
+- Replace canonical ID with group URI
+- Global AuthenticatedUsers URI
+- AllUsers URI
+- Log Delivery URI
+
+##### Bucket and User Policies
+- Made up of policy elements
+  - Principal: Account or user that is allowed to the actions and resources
+    - Format:
+      - "AWS":"account-ARN"
+        - "arn:partition:service:Region:namespace:relative-id"
+      - "CanonicalUser:"65-digit-numberical-value"
+  - Effect: effect taken when the user requests the action. Either allow or deny
+  - Action: The list of permissions
+  - Resources: Bucket or object for which the access applies to. Specified as ARNs
+    - Format: specified in ARN format
+      - "arn:aws:s3:::bucket_name/key_name"
+      -  "arn:aws:s3:::bucket_name/*"
+      -  "arn:aws:s3:::*"
+  - SID: Not required for S3. Generally used as description of the policy statement.
+  - User policies don't hae principal (cuz the user is the principal)
+  - Buckets " C PEARS, users I " C EARS"
+  - Conditions:
+    - a condition
+    - key/value pair
+```
+  "Condition": {
+    "StringEquals": {
+      "s3:x-amz-acl": {
+        "public-read"
+      }
+    }
+  }
+```
+
+###### BUcket Policy Barebones public
 ```
 {
     "Version": "2012-10-17",
@@ -305,7 +455,7 @@ Default output format [None]: json
     ]
 }
 ```
-#### IAM Policy with CloudFront
+###### Bucket Policy with CloudFront
 ```
 {
     "Version": "2012-10-17",
@@ -333,9 +483,130 @@ Default output format [None]: json
 }
 ```
 
+#### S3 Security
+- Block Public Access
+  - Overrides ACLs and Policies
+  - Can be bucket or account level or access point level
+  - Allows centralised administration of public access
+- Options
+  - Block public ACLs -- block PUT ACLs
+  - Ignore Public ACLs -- Allows puts, but ignore its
+  - BlockPublicPolicy -- Blocks any public policies from being PUT
+  - RestrictPublicBuckets -- Ignores any public policies
+- Pre-Signed URLS
+  - Way to give a user temporary access to an object using a signed url. 
+  - Usually timed
+  - Must be generated by bucket owner
+  - Anyone who recieves the pre-signed url can access it.
+  - Must be generated programatically.
+```
+import boto3
+s3 = boto3.client("s3")
+url = s3.generate_presigned_url(
+  "get_object",
+  Params={
+    "Bucket": bucket_name,
+    "Key": key_name
+  }
+  ExpiresIn=3600,
+  HttpMethod="Get"
+)
+print(url)
+```
 
+#### S3 Monitoring/Logging 
+- Monitor with CloudWatch
+- S3 Metrics
+  - Daily Storage Metrics
+    - On by Default
+    - One reported provided each day
+    - No cost
+    - Reponrts
+      - number of objects
+      - size of bucket
+    - Retained for 15 months
+  - Request/Data Transfer Metrics
+    - Optional
+    - Available at 1 minute intervals
+    - Come at cost (standard cloudwatch billing rates)
+    - Reports on all HTTP requests, 
+    - 4xx/5xx errors
+    - Bytes downloaded/uploaded
+    - Latency
+    - Enabled at bucket level or all objects
+    - Retained for 15 months
+- Filtering
+  - Bu bucket
+  - By storage type
+  - By filter ID
+    - Prefix
+    - Object
+    - Tagic
+- Metric Delivery
+  - Delivered on best effort basis
+    - Completelyness and timeliness is not garaunteed
+- Access Logging
+  - Tracks requests for access to a bucket
+    - Records information that is useful for tracking
+  - Disabled by default
+  - No charge to enable for charged for log ttorage
+  - Logs delivered on a best effort basisc
+  - Logs are periodically delivered
+  - Disabled by default
+    - Add logging configuration to the source bucket
+    - Specify target bucket where logs should be saved
+    - Optionally specify a log prefix
+    - Optionally specify additional permissions
+      - By default only bucket owner has full permissions
+    - Grant write permissions to the S3 Log delivery group on the target bucket 
+  - For security audit reasons/ understand AWS bill/ understand nature of your requests
+  - Use lifecycle rules to manage old logs
+  - Access Logging works at just bucket level
+- CloudTrail Logging
+  - Providides visibility by tracking the API calls made on your account
+  - Enabled when you swtich on CloudTrail
+  - Captures Specific API calls made to s3 from your AWS account
+    - By default only supported buckete level actions are captured
+    - Object level actions can be added by configuring an event slector
+    - Ideal for compliance and auditing
+    - Does not capture everything, but list is always growing
+  - CloudTrail can be integrated with CloudWatch logs
+    - Monitor and alert on specific metrics as hhey occur
+    - Events: Take a specific acction as events occur
 
-
+#### S3 Data Protection
+- S3 Encryption
+  - Refers to proection of data either in ransfer for at rest
+- Server Side Encryption
+  - S3 encrypts data before writing it to disk and decrypts when data is read from disk
+  - SSE-S3 - Server Sidde Encryption S3 Managed Keys
+    - Keys managed by s3. No management by uou
+    - Each object is encrypted with a unique data key
+    - Data key is encrypted by a master key. Rotated automatically/periodacally
+    - Encryption is strong (AES-256)
+    - Free to Use
+  - SSE-KMS - Server-Side Encryption with KMS managed keys
+    - Keys managed by KMS
+    - You control the keys
+      - Creation and use of master keys
+      - Creation of data keys
+      - Disable & rotate master keys
+    - You choose which key the object is encrypted by
+    - Data key is encrypted by master key
+    - AES-256
+    - AWS operators do not have acess to all key
+    - KMS is audited by CloudTrail
+    - Keys can be reused across other services
+    - Charges
+  - SSE-C - Server-Side Encryption with CUstomer-Provided Keys
+    - Keys are managed by you
+    - Symmetric key is uploading along with the data
+    - S3 Encrypts the data with the key and then deletes it
+    - Too decrypt the data, you must supply the key
+    - AES-256
+    - If you lose the key, you lose he object
+    - Must use HTTPS to upload objects
+    - Free to Use
 
 ## Certicate Manager
 - Way to provision certificates
