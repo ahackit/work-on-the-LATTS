@@ -19,6 +19,10 @@
       - [Pillar Three: Reliability](#pillar-three-reliability)
       - [Pillar Four:  Performance Efficiency](#pillar-four--performance-efficiency)
       - [Pillar Five: Cost Optimization](#pillar-five-cost-optimization)
+      - [Applying the Framework](#applying-the-framework)
+      - [Moden Application Development Tool Kit](#moden-application-development-tool-kit)
+      - [Operations, Gamedays, and Incident REsponse](#operations-gamedays-and-incident-response)
+      - [Security - Identity](#security---identity)
     - [Reporting and Cost Optimization Tools](#reporting-and-cost-optimization-tools)
   - [AWS CLI](#aws-cli)
   - [Management And Governance](#management-and-governance)
@@ -41,6 +45,15 @@
       - [S3 Security](#s3-security)
       - [S3 Monitoring/Logging](#s3-monitoringlogging)
       - [S3 Data Protection](#s3-data-protection)
+      - [S3 Life Cycle Management](#s3-life-cycle-management)
+      - [S3 Storage Class Analsis](#s3-storage-class-analsis)
+      - [S3 Event Notifications](#s3-event-notifications)
+      - [S3 Performance Optimization](#s3-performance-optimization)
+        - [S3 Performance - CloudFront](#s3-performance---cloudfront)
+        - [Optmizing Puts](#optmizing-puts)
+        - [Optmizing GETS](#optmizing-gets)
+        - [S3 Transfer Acceleration](#s3-transfer-acceleration)
+      - [S3 Static Website hosting](#s3-static-website-hosting)
   - [Certicate Manager](#certicate-manager)
   - [CloudFront](#cloudfront)
   - [Elastic Container Service - ECS](#elastic-container-service---ecs)
@@ -158,45 +171,211 @@
 - Automate to make architectural experimatentation easier
 - Allow for evolutionary architectures
 - Drive architectures using data
-- Improve through game days
+- Improve through game days. Practice
 
 #### Pillar One: Operational Excellence
-- Perform operation as code
-- Annotate Documentation
-- Make frequent, small, reversible changes
-- Refine operation prodecures frequently
-- Anticipate Failure
-- Learn from operational failure
+- Principes
+  - All operations as code
+  - Documentation should always be up to date
+    - Annotate documentation
+  -  Make frequent, small, reversible changes
+  - Refine operation prodecures frequently
+  -  Anticipate Failure
+  -  Learn from operational failure
+-  Prepare 
+   -  Prioritze to align with business priorities
+   -  What is the business goal
+   -  What are the c
+-  Operate 
+-  Evolve  
   
 #### Pillar Two: Security
-- Implement a strong identity foundation
-- Enable traceability
-- Apply security at all levels
-- Automate security and best practices
-- Protect data in transit and at rest
-- Keep people away from data
-- Prepare for security events
+- Principles
+  - Implement a strong identity foundation. Least privelege
+  - Enable traceability
+  - Apply security at all levels
+  - Automate security and best practices
+  - Protect data in transit and at rest
+  - Keep people away from data
+  - Prepare for security events
+- Identity & Access
+  - Who is allowed to do what? When?
+  - Are you apply least privelege
+  - Deny root access
+  - Reguarly reviewing access
+- Detective Controlls
+  - Capture and analyze logs
+  - Regualarly audit logs
+  - Look for unauthorized changes
+  - Monitor workload for abnormalities
+- Infastrcture Protection
+  - Establish trust boundaries
+  - Protect network in/out
+  - Protect all hosts
+  - Configure services to meet security needs
+  - Enforece service level protection
+- Data Protection
+  - How sensitive is the data?
+  - Who should have access? When?
+  - Encrypt in transit/rest
+  - Backup and test backups of the data
+- Incident Response
+  - Do you hae a plan to tag affected resources
+  - Can you adjust permissions to allow for containment
+  - Can you redeploy to recover quickly
+  - Did you learn from the incident and adjust
 
 #### Pillar Three: Reliability
-- Test recovery procedures
-- Automatically recover from failure
-- Scale horizontally to increase availability
-- Stop guessing capacity
-- Manage changes in automation
+- Principles
+  - Test recovery procedures
+  - Automatically recover from failure
+  - Scale horizontally to increase availability
+  - Stop guessing capacity - reduce idle resources
+  - Manage changes in automation
+- Understand Default and rquested limits
+  - are you planning beyond current limits for a resource?
+  - Will you scale past specific resource limits?
+  - Can those limits be lifted?
+  - Can you plan around those limits?
+- Networking
+  - IP address space management
+  - Subnet structures
+  - Resilient toplogies
+  - Aility to handle increased traffic
+  - Provide consistent performance regardles
+- Availability
+  - Can users access your application?
+  - Deploy without issue
+  - Can your pplication withstand partial outages
   
 #### Pillar Four:  Performance Efficiency
-- Democratize advanced Technologies
-- go global in minutes
-- Use serverless architectures
-- Experiment more
-- Mechnical sympathy
+- Principles
+  - let aws do the work whenever possible
+  - reduce latency through regions & the aws edge
+  - Democratize advanced Technologies
+  - go global in minutes
+  - Use serverless architectures
+  - Experiment more
+  - Mechnical sympathy
+- Selection
+  - What type of compute best suits
+  - Which data store is ideal for this workload
+  - Does your network design complement compute and data store choices
+- Review
+  - Is infastrucuted stored as code?
+  - Are deployments simple & automated?
+  - Can benchmarks be taken automatically?
+  - Does load testing interfere with production?
+- Monitoring
+  - Use active and passive monitoring
+  - Understand 5 phases of monitoring
+    - Generation
+    - Aggregation
+    - Real time processing
+    - Storage
+    - Analytics
+  - Create actionable metrics
+- Trade-Off
+  - Will caching help?
+  - Should you partition or shard this workload?
+  - Can compression improve performance?
+  - Is buffering an option?
 
 #### Pillar Five: Cost Optimization
-- Adopt a consumption model
-- Measure overall efficiency
-- Stop spending money on data center operations
-- Analyze and attribute expenditure
-- Use managed and application-level services to reduce the cost of ownership
+- Principles
+  - Adopt a consumption model
+  - Measure overall efficiency
+  - Stop spending money on data center operations
+  - Analyze and attribute expenditure
+  - Use managed and application-level services to reduce the cost of ownership
+- Cost Effective REsources
+  - Provision to current needs with an eye oo the future
+  - Right size to lowest resouce that meta needs
+  - Use data to choose your instance
+  - Optimize by geography
+  - Default to managed service
+  - Optimize Data Transfer
+- Match Supply & Demand
+  - Pay only for what you need
+    - Demand Based
+    - Buffer-based
+    - Time-based
+- Awareness of spend
+  - Understand yuor stakeholders
+  - Implement a governance model
+  - Attribute costs to teams/projects
+  - Tag AWS resources
+  - Track the lifecycle of resources
+- Optimize
+  - Align utilization with requirements
+  - Report and validate findings
+  - Elvaute new services for values
+  - Continue push to managed services
+
+#### Applying the Framework
+- Use resources on demand & reduce idle
+- Automate systems enable flexibility
+- Test at scale for accuracy
+- Remember that architectures must evolve to meet demand
+- Gather data to drive data driven decisions
+- Use "Game Days" to practice operations and valid architectures
+- Questions
+  - What are your business priorties?
+  - Whats the worst possible scenario?
+  - What are your immovable constraints?
+  - What data is your solution storing/processing
+  - What skills does your team have?
+  - What is the timeline of your project?
+
+#### Moden Application Development Tool Kit
+- All about tatics
+  - Secure
+  - Resilient
+  - Elastic
+  - Modular
+  - Automated
+  - Interoperable
+- Paths to modernization
+  - Re-host -- take current from data center to AWS
+  - Re-platform -- Take current, but make small modifications
+  - Re-factor -- Break up the monolith
+  - Re-invent 
+- Checklist
+  - Build secuirty and compliance into the fabric of your application
+  - Microserves by default
+  - Serverless is the starting point
+  - Everyting is code
+  - CI/CD runs application from day one
+  - Monitoring, traceability, and observability from day one
+- Experiment
+- Ideas
+- Feedback
+
+#### Operations, Gamedays, and Incident REsponse
+- Does the design translate to reality
+- Do you know if X is broken
+- If x Abreaks, will Y Work?
+- A runbook is versioned, tested and the single source of operations
+  - Makes operations replicable
+  - Reduces errors
+  - Cuts down on work
+  - Is versioned in Git
+  - Starts with a CloudFormation Script
+  - Automates everything
+- Gamedays
+  - Create duplicate environemnts with sumilation data
+  - Give teams a chance to react
+  - Expect the unexpected
+- Incident Response
+  - Prepare
+  - Identify
+  - Contain
+  - Eradicate
+  - Recover
+  - Learn
+
+#### Security - Identity
+- 
 
 ### Reporting and Cost Optimization Tools
 - Right Sizing: Matching instance types and sizes to your demand and workloads, and making sure you have the correct performance and capacity requirements
@@ -607,6 +786,223 @@ print(url)
     - If you lose the key, you lose he object
     - Must use HTTPS to upload objects
     - Free to Use
+- Client Side Encryption
+  - You manage encryption locally, using your own managed keys
+  - You manage encryption locally, bu utilise AWS to manage your keys. 
+  - Data is encrytped before uploading
+- S3 Default Encryption
+  - S3 sees un-enrypted file and automatically encrypts it using SSE-S3
+  - If it sees encrypted objects, with KMS, it will ignore encryption and send as is.
+  - Can be done using SSE-S3 or SSE-KMS
+  - You don't have to have encryption bucket policy (in fact you should remove it)
+  - Comes at no additional costs
+  - Can be monitor using CLoudTrail
+    - Monitor bucket level encryption changes
+  - Existing objects will remain unencrypted
+- S3 Versioning
+  - Keep multiple versions of your object in S3.
+  - Bucket level operation. 
+  - Disabled by default. One enabled, cannot be disabled, only suspended
+  - When versioning is enable, each object is given a unique version ID
+    - The latest version of the object is current object
+  - Raises storages costs
+  - Use Versioning with Lifecycle management
+  - Wont entirely protect you from switching off versioning or deletes
+    - Can use MFA Delete
+- S3 Replication
+  - Async copy from one bucket to another bucket
+    - Good for log aggregation
+    - Data sovereignty
+    - REplication between AWS accounts
+  - Cross- Region Replication (CRR)
+    - Compliance
+    - Latency
+    - Disaster Recovery
+  - Enabled by adding replication configuration to a bucket
+  - Replicated Objects are exact copies of the original
+    - Can change storage class or ownership
+  - Objects are replicated over SSL
+  - Objects can be replicated to another account
+  - Sources must be version enabled
+  - S3 must have the permissions, and AWS account must have.
+  - Objects that don't get replciated
+    - Pre-existing objects
+    - Objects that the bucket owner does not have permissions
+    - Updates to bucket-level sub-resources
+    - Objects encrytped with customer provided Keys
+    - Objects encrypted with KMS, unless specified
+    - Automatic LIfe Cycle actions
+    - Objects that are replicates, created by another replication rules
+    - Objects stored in GLACIER or DEEP-ARCHIVE
+  - S3 RTC
+    - Without RTC, replication is asynchronous
+    - Can be enabled to replicate objects within seconds
+    - Be monitor RTC metrics
+  - Owner Override
+    - A replica ACL is a copy of the original
+    - Allows you to replace the ACL in transit
+    - Grants full access to the desination the bucket owner
+    - Set within the replication config
+    - Must update permissions to allow
+  - Useful when replicating objects toa  bucket in a different account
+    - Provides distinct ownership between the original object and the replica
+
+#### S3 Life Cycle Management
+- Allows you to automaticaly manage object lifecycle.
+- Ideal for objects with a defined lifecycle
+- Ability to switch obhects between different storage calsses in order to reduce cost
+- Can expire objects automatically after a defined time period
+- ENable up to 1000 rules per bucket
+- RUles can be applied to the whole bucket of a subset of objects
+- Create additional rules on version-enabledbuckets
+- Lifecycle rune is defined in XML and stored as a bucket sub-resource
+  - JSON in SDKs or UI through Console
+- Lifecycle RUles
+  - Objects must e stored in standard at least 30 days before transitioning to Standard_IA or ONEZONE_IA
+  - Objects must be stored in STANDARD_IA ONEZONE_IA or Intelligent_tiering at least 30 bays before transitioning to Glacier
+  - Objects smaller than 128K cannot be transitioned to Standard_IA, Onezone_IA or Intelligent_Tiering
+  - Cannot create lifecycle rules on MFA-Enabled BUckets
+  - Glacir/DeepArchive
+    - Transitioned objects remain in S3 and are NOT accessible via the S3 Glacier SErvice
+    - Objects are not available in real time and must be reostred
+    - Restored objects are copies of the originaly and are only available for a limited period
+    - FOr each stored object, 4kb of extra storage is added in order to hold the object name, index detail and metadata
+    -  This increases the storage charge, so bear this in mind when arching large numbers of small files
+   -  Rembmer minimum storage charges and the retrieval fee (minimum 90 or 180 days)
+-  Version-Enabled Buckets
+   -  NonCurrentVersionTransition - transitions the non-current version
+   -  NonCUrrentVersionExpieration - expires the non current version
+   -  Can specify actions to take on current version or non current
+   -  For previous version rules, the action only cccurs after the object becomes non-current and time only starts then as well
+
+#### S3 Storage Class Analsis
+- Automatic analysis of your storage classes with recommendations
+- Can configure up to 1000 storage class filters
+- Can filter by
+  - Entire BUcket
+  - Prefx
+  - Tag
+  - Tag & Prefix
+- Data is updated daily and visualations are avialable in the S3 COnsole
+- Chargeable feature (.10 per million objects analysed)
+
+#### S3 Event Notifications
+- Provide the ability to trigger notifications when certain events happen within s3
+- enabled by adding a notification configuration to the bucket identify the events to be published and the destionation where the notifications should be sent
+- Can send events to
+  - SNS
+  - SQS
+  - Lambdas
+- Event Types
+  - Object creation
+  - Object restoration
+  - Object removal
+  - Redudeced redundancy storage lost event
+- Configure through AWS Console, CLIS, or SDKS
+  - By default notifications are off
+  - Choose event type you want to notify on
+  - Choose the destination for the notification
+  - Grant S3 permissions to the use the destination service
+  - Create any filter rules
+
+#### S3 Performance Optimization
+- Requests per second are by prefix, scale horizontally by using prefixes
+- Minimize Latency
+  - Place S3 near AWS services or end users
+  - Transfer Acceleration
+  - Cache Frequenty access Content
+    - Use CDN such as CloudFront
+    - Use an in-memory cache such as elasticecache
+    - Use AWS elemental mediastore to cache video content
+  - Implement Retries
+    - Exponential backoffs for HTTP 503 errors
+- Scale Horizontally
+  - Prefixes
+  - Parallelise to maximise throughput
+    - For Puts: Multi-part upload
+    - For GEts: Ranged-based Gets
+    - For Lists: Parallelise 
+      - Avoid directly querying S3
+        - Secondary Indexses
+        - S3 Inventory
+  
+##### S3 Performance - CloudFront
+- Global CDN.
+- Fetch data from edge location? Data not cached? Go to origin to get it.
+- Expires after certain amount of time (24 hours)
+- Origin - Location of the origina data is stored. S3 bucket, EC2 Instance, ELB, Route53 endpoint or external system
+- Edge Location: Locati:on where content will be cached
+- Distribution: Name given to CDN whicch consists of edge locations
+- Objects are cached accroding to the TTL
+- Objects can be removed from the cache beffore the TTL, but you will be charged
+- CloudFront supports both static and dynamic content
+- Have web distros (for websites)
+- Have RMTP used for media streaming
+
+##### Optmizing Puts
+- Parallelize using multi-part upload
+  - Breaks files down in many parts and sends it
+  - Optimizes network bandwith
+- Increases resiliency to network errors
+- Provide faster, flexible uploads
+- You can pause and resumse your upload
+- Choose the right part size
+  - 25-50mb on high bandwith, 10mb on mobile
+- Too many small parts can increase the connection overhead and overload the network
+- Too few parts doesn't ive you the benefits of increase speed or resiliency
+- SSL on many parts can leave you CPU bound
+
+##### Optmizing GETS
+- Use Cloudfront
+- Use Range-based Gets
+  - Getting multiple small parts
+  - Range HTTP Header, specific range of bytes
+  - Maximise network bandwith and improves network performance
+- Lists
+  - Parallelise lists when you need a sequential list of keys
+  - Run multiple list commands each with different search parameters
+  - Secondary Indexes
+    - When you need to sort by metadata
+    - Or timestamp
+  - S3 Storage Inventory
+    - Provides scheduled inventory of s3 objects and their metadata
+    - Runs either daily or weekly
+    - Outputs data in CSV format
+    - Can decide which metadata
+
+
+##### S3 Transfer Acceleration
+  - Leverages CloudFront globally distrubuted edge locations. Data is routed to your S3 bucket over an optimized network path
+  - This is using CloudFront network, not using CloudFront (caching).
+  - Larger the file size, the more noticeable imporvement 
+  - Additional Charges
+  - HAve to use specific s3-accelerate endpoint url. 
+  - The endpoint can be used for PUT and GET requests
+  - Can still use standard endpoint
+
+#### S3 Static Website hosting
+- Can contain static content
+- Extremely los cost
+- HA
+- No need to worry about automatic scaling
+- Unlimited Storage
+- Configure
+  - Enable website hosting
+  - Upload content
+  - make it publicly accessible
+- Changes S3 Website endpoints
+- Can use Route53 for custom domains
+  - Point the domain root to the s3 bucket
+- Can use Bucket and Object redirects
+  - Can point a www. bucket to point to non-www bucket
+- Returns the index document by default
+  - Must have a default one.
+  - Can optionally specify error document.
+    - You probably want to do this
+- Only have GET and HEAD
+- CORS
+  - Create a CORS configuration on bucket
+  - Can have 100 rules on bucket
 
 ## Certicate Manager
 - Way to provision certificates
