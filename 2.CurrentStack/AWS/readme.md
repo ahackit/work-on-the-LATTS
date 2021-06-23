@@ -158,13 +158,7 @@
 - Match storage to usage
 - Measure and Monitor
 
-### Well-Architected Framework Best Practices for Five Pillars
-- Expenditure Awareness
-- Cost-effective resources
-- Matcing Supply and Demand
-- Optimizing over time
-
-### AWS Well-Architected Framework
+## AWS Well-Architected Framework
 - Constists of best practices and ore strategies for architecting systems in the cloud. Helps you design and operate reliable, secure, efficient, and cost-effective systems that will greatly increase your likelihood of success
 - Stop guessing capacity needs
 - Test systems at production scale
@@ -172,6 +166,12 @@
 - Allow for evolutionary architectures
 - Drive architectures using data
 - Improve through game days. Practice
+
+### Well-Architected Framework Best Practices for Five Pillars
+- Expenditure Awareness
+- Cost-effective resources
+- Matcing Supply and Demand
+- Optimizing over time
 
 #### Pillar One: Operational Excellence
 - Principes
@@ -312,7 +312,8 @@
   - Elvaute new services for values
   - Continue push to managed services
 
-#### Applying the Framework
+#### Putting the framework to work
+##### Applying the Framework
 - Use resources on demand & reduce idle
 - Automate systems enable flexibility
 - Test at scale for accuracy
@@ -327,7 +328,7 @@
   - What skills does your team have?
   - What is the timeline of your project?
 
-#### Moden Application Development Tool Kit
+##### Moden Application Development Tool Kit
 - All about tatics
   - Secure
   - Resilient
@@ -347,11 +348,12 @@
   - Everyting is code
   - CI/CD runs application from day one
   - Monitoring, traceability, and observability from day one
-- Experiment
-- Ideas
-- Feedback
+- Innovation Flywheel
+  - Experiment
+  - Ideas
+  - Feedback
 
-#### Operations, Gamedays, and Incident REsponse
+##### Operations, Gamedays, and Incident REsponse
 - Does the design translate to reality
 - Do you know if X is broken
 - If x Abreaks, will Y Work?
@@ -374,8 +376,139 @@
   - Recover
   - Learn
 
-#### Security - Identity
+##### Security - Identity
+- Only allow who should be allowed.
+- Assume roles when needed
+
+##### Security - Encryption
+- Don't roll your own encryption
+- Defend against network attacks
+  - Use SSL/TLS
+  - Aim for end-to-end encryption
+  - Use a VPN to connect to on-prem resources
+
+#### Change is constant
+- There is no perfect fit. Always trade-offs. 
+- Reduce risk by making smaller choices more often. Experiment often.
+
+##### Evaluating New Services
+- Always something new
+- Resist the tempation to ALWAYS use the latest and greatest
+- "Is this a managed service of something already in your techstack?"
+- "Does the current state of service fit your need?"
+- "What is the level of effort required to refactor to support this new service?" 
+
+##### High Performance Computing Lens
+- Dynamic architecture and procurement
+- Automate everything
+- Enable collaboration via data sharing and architectural choices
+- HTC: High Throughput Computing
+  - Loosely coupled
+  - Highly iterative
+  - Many instances all attempting to solve the same problem the most efficiently
+  - Designs:
+    - Batch
+    - Queue
+    - Traditional
+    - Serverless
+- HPC: High Performance Computing
+  - Tightly Coupled
+  - More sequential
+  - One big problem that requires a lot of processing
+  - System is reliant on node stability & use regular checkpoints
+  - High performance, shared storage is often a requirement
+  - Deisgns:
+    - Persistent cluster
+    - Ephemeral Cluster
+    - Microservices Cluster
+
+##### Serverless Application Lens
+- Freedom to focus on business value
+- Applications built using a collection of abstracted or managed services
+- Design
+  - Event Driven
+  - Speedy, simple, singular
+  - Concurrency
+  - Share nothing
+  - Use state machines to organize work
+  - Design for failures/duplicates
+- Services
+  - Compute:
+    - Lambda, Gateway, Step Functions
+  - Data Layer
+    - S3, Dynamo, ElasticSearch Service, AppSync
+  - Message/Streaming
+    - SNS, Kinesis, Kinesis Data Firehose
+  - Identity/user management 
+    - Cognito
+  - Edge
+    - CloudFront, Lambda@Edge
+  - Monitoring/Deployment
+    - CloudWatch, XRay, SAM
+- Deployment Principles
+  - All at once
+  - Blue/green
+  - Canary
+- Distributed services complicate monitoring
+- Measuring performance against business KPIs is key
+- Simplkified service design eases monitoring efforts and is worth the trade off
+
+##### IOT Application Lens
 - 
+- Design Workflow
+  - Decouple from the real world
+  - Offline happens, plan for it
+  - Learn data at the edge, enrich at the world
+  - Devices need to heartbeat
+- Edge Services
+  - FreeRTOS, GreenGrass
+- Provisioning Services
+  - Cert Manager, JIT registration
+- Communication Services
+  - IoT Core, IoT Device registry, IoT Device Shadow, API Gateway
+- Ingestion Services
+  - IoT Rules Engine, Kinesis, SQS
+- Analytics Services
+  - S3, IoT Analytics, Athena, SageMaker
+- App Services
+  - IoT Device Defender, IoT Device Management, DynamoDB, Aurora, Lambda
+- Over the air-updates are practical
+- Test on physical devices as well as virtual
+- Offline and reducecommunications will happen, plan for it
+- Provision is a hard problem
+- Physical security of devices is a constant risk & challenge
+- Simulate behavoir at scale
+- Buffer message delivery
+- Design for failure
+- Managed services for focus
+- Event Driven Designs
+
+#### Well-Architected Reviews
+- Lower or mitigate risks by understanding risks as you build or optimize your current architectures
+- Scale up and down as required
+- Automated Systems to ensure consistency and reliability
+- Test using an acurrate replica of production on-demand
+- Adapt as needed to meet new challenges
+- Drive decisions through data
+- Practice, practice, practice
+- Does your current design adhere to these principles?
+- Are your pillars appropriately balanced?
+- Which areas can be imrpvoed without upsetting the balanced
+- Experienced professionals can perform 3rd party reviews
+- Fast, self-service review and report
+- Always check your work
+- Each best practice is always changing
+
+
+#### Well Architected Tool
+- Generates fast, self service reviews
+- Question and answer format
+- Video explanations for each best practice
+- Milestones to mark progress and development
+- Medium and high risk issues identified
+- PDF report is the end deliverable
+- Imrpovement plans provide a roadmap for teams
+
 
 ### Reporting and Cost Optimization Tools
 - Right Sizing: Matching instance types and sizes to your demand and workloads, and making sure you have the correct performance and capacity requirements
@@ -390,17 +523,499 @@ Default output format [None]: json
 ```
 
 ## Management And Governance
+## Networking 
+
+### Route53
+- DNS: Converts human friendly name to public ip address
+- TopLevel Domain: .com/.edu/etc
+  - Second level Domain .co.uk == .co
+- A Record: Address. Translate domain name to IP
+- TTL: Time to Live. Lower time, faster change to DNS
+- CName: Canonical Name - can be used to resolve one domain name to another
+- Alias Records: map resource record sets in your host zone to ELBs, CF Distros, or S3 Buckets
+  - basically like a CNAME, but CNAME cant be used for naked domain name
+- MX Recoerds for mail
+- PTR reverse A record
+- Can buy domain names from AWS
+  - Can take 3 days to register
+
+#### Routing Policy
+- Simple
+  - Only have one record with multiple ip addresses. Route 53 returns random to user
+- Weighted
+  - Split traffic by weighted %s
+- Latency
+  - Route traffic based lowest network latency
+- Failover
+  - using health check, will route to DR resources
+- GeoLocation
+  - Route based on users location.
+- GeoProxmity 
+  - Use Traffic Policies to handle user location and resource location
+- MultiValue
+  - Basically Simple, but only returns healthy resources
+
+### CloudFront
+- A CDN
+- Has many edge locations where content will be cached
+- The Origin is of all the files that the CDN willl distribute. 
+  - Can be S3 Bucket, EC2 Instance, ELB, or Route53
+- Distirubtion - name given to group of edge locations
+- Can have Web or RTMP CDN
+- Cached for the TTL, can invalidate it, but will be charged
+- Make sure to specify all the CNAMES of your domain.
+- Provide custom SSL Cert (us-east-1)
+- Also make sure you set your default root object (typically index.html)
+- Use signed URLs/cookies when you want to securet content
+  - Signed url is for individual files
+  - Signed cookie is for multiple files
+  - If origin is EC2, use cloudfront
+
+### VPC
+- A virtual isolated network for you to control all things
+- Can create hardware VPN into your VPC to leverage dual envrionment
+- All exists in a region
+  - Connect to Internet Gateway or Virtual Private Gateway
+  - Go to Route Table
+  - Go through Network ACL
+  - Go through Security Group
+  - Go to Public Subnet
+  - Use as jumphost or bastion to Private Subnet
+- All come with default vpc
+  - Subnets in default have a route out to internet
+  - Each EC2 instance has both public and private address
+- Create custom starts with
+  - Default route table
+  - Network ACL
+  - Default Security group
+
+#### Costs
+- Free traffic in through internet is free
+- Connection from AZ 1 to 2 private costs
+- Connection from AZ 1 to 2 through public costs double
+
+#### Flowlogs
+- Feature that enables you capture info about the IP traffic. 
+- Stored in CloudWatch Logs
+- 3 Levels
+  - VPC
+  - Subnet
+  - Network Interface level
+- Can be tagged
+- Only VPCs in your account, not peered
+- Cannot change Flow LOgs after creation
+
+#### Subnets
+- Subnets = 1 AZ not multiple AZs
+- Amazon reserves 5 Ips
+- Private
+  - 10.0.0.0 - 10.255.255.255 (10/8 prefix)
+  - 17.16.0.0 - 172.31.255.255 (172.16/12)
+  - 192.168.0.0 - 192.168.255.255 (192.168/16 prefix)
+- Largest subnet you can have is /16 smallest is /28
+
+#### Network ACLs
+- Comes with default on VPC
+- Custom ones deny all by default
+- Every subnet must be associated with a NACL
+- Can block IP addresses using NACL, not SG
+- One NACL to many Subnets
+
+#### Security Groups
+- Groups within a VPC that define inbound/outbound traffic
+
+#### NAT Instances + Gateway
+- Instance = Single EC2 Instance
+  - Choose community NAT AMI
+  - If private wants to go out to network, must go through NAT through Route 
+  - Must be in public Instance
+- Gateway = HA Network Gateway
+  - Create NAT Gateway with new Elastic IP
+  - Change Route to point to NAT Gateway
+
+#### Bastion Host
+- Used to securily  administer EC2 Instances in private subnets
+- Cannot use NAT Gateway as Bastion Host
+- HA
+  - Two hosts in separate AZ. Use a network LB with static ip and health checks to fail over
+  - One host in one AZ behind and auto scaling group with health checks and a EIP.
+  - Must be layer 4
+
+#### Direct Connect
+- Creates direct link from On-prem networks to AWS networks
+- Useful for high throoughput workloads
+- Need stable + reliable connection
+- Steps:
+  - Create virtual interface  in Direct Connect Console. This is public
+  - Go to VPC Console->VPN Connections. Create custmer gateway
+  - Create Virtual Private Gateway
+  - Attach virtual private gateway to desired vpc
+  - Select VPN Connection and create new VPN connection
+  - Slect virtual private  and customer gateway
+  - Once VPN is available  - set up vpn on the customer gateway or firewall
+
+#### VPC Endpoint
+- VPC to VPC interconnection.
+- Stays in AWS
+- Attach ENI to EC2 instance and it can traverse AWS
+- Interface/Gateway
+- Gateway only supports S3/Dynamo
+
+#### PrivateLink
+- Requires network load balancer on service VPC an ENI on customer VPC
+- Avoid peering to 10000 vpcs or exposing yourself to public
+
+#### Transit Gateway
+- Simplifies Network Topology
+- Allows transitive peering
+- Works on hub-and-spoke model
+- Works on regional basis, but can be across multiple regions
+- Can be used across multiple AWS accounts
+- Limit communication through Route Tables
+
+#### VPN CloudHub
+- Connect multiple VPN sites together
+- Hub-and-Spoke Model
+- Public, but encrypted
+
+### AWS Global Accelerator
+- Avoid ISP Jumping and use Edge locations to go over Amazon backbone directly to service
+- Provides two static IP or you can bring your own
+
+### API Gateway
+- Build RESTful or Websocket API services. 
+- Endpoints can correspond to AWS Lamda Functions. 
+- Scale effortlessly
+- Low cost
+- Track an dcontorl usage by api key
+- Throttle requests
+- Connect to CloudWatch for Logs
+- Supports multiple stages
+- Setup
+  - Define API
+  - Define resoures/nested resources (url paths)
+    - Select HTTP Method
+    - Set security  
+    - Choose Targets
+- Support SSL with Cert Manager
+- Supports Caching, caches by TTL
+- Can turn on CORS 
+## Security
 ### IAM 
 - AWS Identity Managemnt
+- IAM is universal
 - Manage resources through use of IAM Policys. Can have users, roles, groups, etc.
 - Most IAM roles can be configured with JSON or the policy manager.
 - Certain resources need IAM Access
-## Networking
-### VPC
-### Security Groups
-- Groups within a VPC that define inbound/outbound traffic
+- Users start with NO permissions
+- Users are assigned Access Key ID & Secret Access Keys
+- Always set up MFA
+#### ARNS
+- ARNS always arn:partition:service:region:account_id:
+  - partition: aws-awscn
+  - service:s3|ec2
+  - region: us-east-1
+  - account_id: 12312412
+  - End with
+    - resource
+    - resource_type/resource
+  - Double :: = omitted values
+    - iam example: arn:aws:iam::12312:user/mark
+#### Policies
+- Explicity deny > everything else
+- JSON document that defines permissions
+- identity policy
+-  Resource Policy
+- No effect until patched
+- List of statements
+```
+{
+  "version":"2012-10-17",
+  "Statement": [
+    {...}
+  ]
+}
+```
+- Statement example
+```
+{
+  "Sid": "SpecificTable",
+  "Effect": "Allow|Deny",
+  Action": [
+  "service:Action"
+  ...],
+  "Resource": "arn"
+}
+```
+
+#### Roles
+- Assign permissions to roles and assign them to resources to avoid adding user credentials to resources
+
+### RAM
+- Resource Access Manager  allows resource sharing between accounts
+- Cant share all resources
+
+### AWS SSO
+- Can connect to  Business applications or anyone that supports SAML 2 like AD
+- Can grant access to Organizations
+
+## Management and Governance
+### CloudWatch
+- Can be used to manage, monitor and trigger infastructure
+- Can monitor Host level metrics
+  - DIsk
+  - CPU
+  - Network
+  - Status Check
+- 5 minute logs by default, but can go to 1 minute for EC2
+- Can create alarms with CloudWatch trigger notifications
+
+### CloudTrail
+- Records all AWS API calls 
+- Tracks user activity in your AWS platform
+### Organizations
+- Allow you to create organizations to consolidate billing across many accounts
+- Paying account should be used for billing purposes only
+- Use Service Control Policies either on Organization or on individual acccounts
+
 ## Compute
+
+###  Elastic Compute Cloud - EC2
+- Provides bare metal instances to deploy and do whatever with.
+
+#### Pricing Models
+  - All variable based on instance type
+  - On Demand: Pay a fixed rate by the hour with no commitment
+  - Reserved:  Proivdes with ccapacity resveration and offer a significant discount on the hourtly charge for instance. 1-3 year terms
+  - Spot: Enables you to bid wahtever price you want for instance capacity, provider for even greater savings if you have applications have flexible start and end times
+  - Dedicated Hosts: Phyiscal Ec2 server dedicated for your use
+
+#### Instance Types
+- F1: Field Programmable Gate Array -- Genomics research, financial analytics, real time video processing, big data, etc
+- I3: High Speed Storage: NoSQL, DBs, Datwarehousing
+- G3: Graphics Intensive: Video Encoding/3D App Streaming
+- H1: High Disk Throughput: MapReduced-based workloads, distrubuted file systems such as HDFS and MapR-FS,
+- T3: Lowest Cost, General Purpose: Web Servers/Small DBS
+- D2: Dense Storage: FileServers, Datawarehousing, Hadoop
+- R5: Memory Optimized: Memory intensive Apps/DBs
+- M5: General Purpose: Application Servers
+- C5: Compute Optomized: CPU Intensive Apps/DBs
+- P3: Graphics/ General Purpose GPU: Machine Learning, Bit Coin Mining, etc
+- X1: Memory optimized: SAP Hana/ApacheSpark
+- Z1D: High compute capacity and a high memory footprint: Ideal for eletronic design automation and certain RDB workloads with high-per core licensing
+- A1: Arm-Based workloads: Scale-out workloads such as web servers
+- U6tb1: Bare Metal - Eliminate virtualization overhead
+- FIGHTDRMCPXZAU
+
+#### Nice to Knows
+- AMI:The type of OS you want on the EC2 Instance
+  - Can pick AMI based on EBS Volume or Instance Store
+    - Instance store is created from a template store in S3
+      - Cant add more after creation. Ephemeral storage as well
+    - EBS Volume: Created from EBS Snapshot
+- Termination Protection is turned off by default, you must turn it on
+- On EBS-baked instance, default action is for the root EBS volume to be deleted - but rest of EBS volumes wont delete
+- EBS Root volumes of your default AMI CAN be encrypted
+
+#### Seucirty Groups
+- All Inbound traffic is blocked by default
+- all outbound traffic is allowed
+- Changes to security Groups take effect immediately
+- Any number of ec2 instances within security group
+- Can have multiple security groups attached to ec2 instance
+- Security groups can be stateful
+- Inbound traffic is allowed out
+- Cannot block specific network IP, need to use Network ACLss
+
+#### ENI vs ENA vs EFA
+- ENI: Elastic network interface: essentially a virtual network card
+  - Good for managemnet network
+  - use network and security appliances in your vpc
+  - creates dual-homed instances with workload/roles on subnets
+  - create a low-budget, HA solution
+  - Allows primary IPv4
+  - Allows one or more second IPv4
+- EN: Enhanced networking: Uses single root i/o virtualization  (SR-IOV) to provide high performance  networking capabilities on supported instance types
+  - No additonal charge, use where you want good performance. EC2 must support it
+  - Enable using ENA
+- EFA: Elastic Fabric Adapter: Network device that you can attach to your Amazon EC2 instance to accelerate high performance computing and ML apps
+
+#### Ways to achieve HPC
+- Data Transfer
+  - Snowball
+  - DataSync
+  - Direct Connect
+- Compute/Networking
+  - EC2 Instances that are GPU or CPU Optimized
+  - EC2 Fleets
+  - Placement Groups (cluster)
+  - Enhanced Networking
+  - ELastic Network Adapters or Intel VFß
+  - Elastic Fabric Adapters
+- Storage
+  - EBS
+  - Instance Store
+  - Network
+    - Amason S3
+    - EFS
+    - Luxre
+- Orchestration
+  - AWS Batch
+  - AWS ParalleleClusterß
+    - Simple text file to model and provision all the resources needed
+
+#### Spot Instances
+- Can save up to 90%
+- Useful when you dont need persistent storage
+- Spot block to stop instances from terminating
+- Spot fleet is a collection of spot instances
+- Used Flexible Applications
+- Choose Spot Price, if spot price goes above your maximum you can terminate your instance
+- Used for
+  - Big data + analytics
+  - Containerized workloads
+  - CI/CD + testing
+  - Web Services
+  - Image + media rendering
+  - HPC
+
+#### Hibernate
+- Saves content from RAM to EBS and persists
+- Makes faster to reboot. No need to run bootstrap scripts or OS install
+- Retains Instance ID
+- Ram must be less than 150GB
+- Instance families include CMR3-5
+- Windows, Amazon Linux AMI, Ubunut
+- Can hibernate for more than 60 days
+
+#### Placement Groups
+- Cluster
+  - grouping of instances within a single AZ
+  - Recommended for apps that need low network latency, high network throughput, or both.
+  - Only supports certain instances
+- Spread 
+  - each instance is placed on distinct underlying hardware
+  - recommended for applications that have a small number of cirtifical instances they should be kept separate from eachother
+
+#### WAF
+- Configure conditions such as what IP addresses are allowed to make this request
+- Configure what query string parameters need to be passed
+- Passes to ALB ClourFront or API Gateway.
+- Gives 403 if not recieved
+- Can also provide extra protections like
+  - IP Addresses filtering
+  - Country origin filtering
+  - Value in request headers
+  - Strings that appear in requests
+  - Length of requests
+  - Presense of SQL code sql injection
+  - Presence of a script in XSS
+
+#### Load Balancers
+- ALB
+  - Best used for HTTP/S. 
+  - Operate at Layer 7. 
+  - Application Aware
+- NLB
+  - Balancing TCP
+  - Used for extreme performance
+  - Operates at Layer 4
+- Classic LB
+  - Levle 7
+  - HTTP/S
+  - Not App Aware
+- 504 error means gatewaey timed out
+- X-Forwarded-For Header is the original IP address
+- Configure Health Checks
+- Load Balancers have only domain
+- Sticky Sessions
+   - Binds specific user session to an instance of LB
+   - Disable sticky sessions if you arent seeing traffic to another instance
+- Cross Zone LB
+  - Allow equal weight across many zones
+- Path Routing
+  - Create listeners to route based on URL
+
+#### Auto Scaling
+- Groups
+  - Logical Component (Web Server, etc)
+- Configuration Templates
+  - Specify information such as AMi, instance tpye, key pair
+- Scaling Options
+  - Can scale based on dynamic conditions or schedule
+  - Options
+    - Maintain current instance levels at all times
+    - Scale manually
+    - Scale based on a schedule
+    - scale based on demand
+    - use predictive scaling
+
+
+### Elastic BeanStalk
+- Quick way to scaffold entire applications based on templates of popular application infrastructures
+- Can auto scale
+
 ## Storage
+
+### AWS DataSync
+- Used to move large amounts of data from on-prem to AWS
+- Used with NFS- and SMB-compat file systems
+- Replication can be done hourly, daily, or weekly
+- Install the DataSync agent on server
+- Can be used to replicate EFS to EFS as well
+
+### Storage Gateway
+- Connects on prem appliciance with cloud based storage to provide seamless and secure integration between an orgs on prem It environment and AWS storage infra.
+- Has Software appliance with a VM image that you install on host in data center.
+  - File Gateway (NFS & SMB)
+  - Volume Gateway (iSCI)
+    - Stored Volumes
+    - Cached Volumes
+  - Tape Gateway (VTL)ss
+
+### EBS
+- Provides persistent block storage volumes. 
+- Automatically replicated in AZ
+- To Migrate EBS
+  - Create EBS Snapshot of Root OS EBS
+  - Create AMI based on Snapshot
+  - Launch new instance in region
+- Only the root EBS gets deleted
+- Snapshots exist on S3 and are incremental
+- Can Encrypt by taking Snapshot and copy to Encrypted than create AMI and launch EC2
+
+#### Types
+- General Purpose SSD: Most Load works
+- Provisioned IOPs: Databses
+- Throoughput Optimised Hard Disk Drive: Big Data & Data Warehouses
+- Cold Hard Disk Drive: File Servers
+- Magnetic: Workloads where data is infrequently accessed
+
+### Athena/Macie
+- Athena
+  - Interactive query service which enables you to run querues against s3 using SQL
+    - Serverless
+    - No need to set up complex ETL processes
+    - Works directly with data stored in s3
+- Macie
+  - Security service which uses ML and MLP to disocver, classify, and protect sensitive data stored in s3
+  
+### EFS
+- Elastic File System
+- Easy to use file system that attaches to EC2.
+- Storage grows and expands based on how you uses it
+- Great for fileservers
+- Supports NFSv4
+- Only pay for what you use
+- Data is stored across many AZs
+- Read After Write consistency
+- Expands up to petabytes
+
+### Amazon FSx
+- Managed window server that runs window server message block based file services
+- Designed for Windows and windows applications
+- Supports AD users, Access control lists, groups and security polices
+- FSx For Lustre is fully managed FS that is otpimized for HPC
 
 ### Amazon Simple Storage Service - S3
 - You can use Amazon S3 to store and retrieve any amount of data at any time, from anywhere on the web.
@@ -907,6 +1522,7 @@ print(url)
 
 #### S3 Performance Optimization
 - Requests per second are by prefix, scale horizontally by using prefixes
+- Remember KMS Request limits
 - Minimize Latency
   - Place S3 near AWS services or end users
   - Transfer Acceleration
@@ -1004,30 +1620,379 @@ print(url)
   - Create a CORS configuration on bucket
   - Can have 100 rules on bucket
 
+## Database
+
+
+### RDS
+- Relatonal Database Service manged by AWS
+  
+#### Terminology
+- Database Instance: An isolated DB environment, can have many user created databases within it
+- Database Engine: Type of DB to run
+- Database Instance Type: Determines type of hardware
+- Mutli AZ - Stands for multiple availality zones
+- Read Replicas: Separate node to handle only read queries.
+- Primary Host - handles all read/writes
+- Secondary Host: Doesn't handle writes, acts as failover
+- Aurora: MySQL and PostgreSQL compatible Relational DB
+
+#### Provisioning a Database
+- Database Engine Options
+  - Oracle: Enterprise, Standard, Standard Edition One, Standard Edition 2
+  - SQL Server: Express, Web, Standard and Enterprise
+  - Aurora: MySQL 5.6, MySQL 5.7, PostgreSQL
+  - PostgreSQL
+  - MySQL
+  - MariaDB
+- Use Cases:
+  - Production
+    - Multi-AZ
+  - Dev/Test
+    - Single AZ
+    - 20GB allocated storage
+- License Model: BYO License (Only or Oracle)
+- Instance Class: Type of hardware
+  - t2/t3 family: Burstable instances, 1-8 vCPU, 1-32gb ram, moderate networking performance
+  - m3/m4 family: General purpose instances, 2-64 vCPU, 8-256g RAM, High performance networking
+  - r3/r4 family: Memory optomized instances, 2-64 vCPU, 16-488GB RAM, High perf. networking
+- Multi-AZ:
+  - Achieve HA in the case of failure
+  - Two database nodes running with replication
+  - Primary and stanby in different AZs
+- Storage Types/Allocation:
+  - General Purpose/GP2: SSD storage, max 16tb, 3IOPS per GB, bursts to 3000IOPS
+  - Provisioned IOPS: SSD, 16TB, Max 40k IOPS (20k for sql), I/o intensive workloads
+  - Magnetic Storage: 16tb, supported for legacy dbs
+- DB Identifier: Identifies DB Instanc,e unique across the region
+- Credntials: master user account
+- Networking Configuration:
+  - VPC - Define virtual networking
+  - Subnet Group: Define which subnets and IP ranges the db instance can use in your VPC
+  - Public Accessibility: Allocates public IP (seucirty groups must allow inbound traffic)
+  - Availability Zone: Any pref for availability zone
+  - VPC Security groups: Any pref for availbility zone
+- Database Name: name of default DB
+- Database port: Port to communicate on 
+- Parameter Group: Group of parameters to define config of db
+- DB Option Group: Optional functionality on db instance
+- Encrypion: Encryption at rest for your DB Instance
+- Enhanced Monitoring: Show how different processes or threads use the CPU
+- Backups:
+  - Retention period: how long to keep abackup
+  - Backup window: when the backup occurs
+  - Copy tags to snapshots
+- Maintenance: 
+  - Automatic Minor Version Upgrade
+  - Maintenance window: Once a week time range
+  - DB Engine Upgrades: REquire downtime
+    - Minor Version upgrades: automatic or manually applied
+    - Major version upgrades: manually applied
+    - Version deprecation - three to six month notification before scheduled upgrades
+
+#### RDS Pricing
+- Instance Hours
+- Database Storage
+- Backup Storage: No charge for backup storage up to 100% of total database storage
+- Database Transfer: Outgoing traffic only. Regional Data Transfer pricing
+
+#### Scaling RDS
+- Scale Computer or memory vertically
+  - New host is attached to existing volumes
+  - In Multi-AZ, Secondary resizes first
+- Scale amazon EBS Storage
+  - No downtime
+- Scale with Read Replicas (horizontal scaling)
+  - Only some db engines
+  - Helps scale read traffic only
+  - No Downtime
+- Vertically Scaling
+  - Modify RDS Instance
+  - Change DB Instance CLass
+  - Immediately/During Maintenance Windows
+  - Storage and CPU are decoupled
+  - Minimal downtime when Mutli-AZ environment
+  - Single AZ == Downtime
+
+#### Multi-AZ
+- Available for all DBS but Aurora, cuz Aurora is already fault tolerant
+- Twice the cost of single AZ Config.
+- Used for fail-overs. 
+- Improves backups cuz using secondary host
+- Writes tad slower due to duplicte writes
+- Failovers:
+  - Application is hosted across two AZs using synchronous data replication
+  - If the primary host instance has probs, AWS updates the DNS record to point to the secondary host in AZ2
+  - Occurences:
+    - When AZ outage occurs
+    - When DB Instance fails
+    - When DB Instance class changed
+    - Software patching
+    - Manual Failover (reboots)
+    - Not good just for failovers, but planned downtime as well
+
+#### Read Replicas
+- Read only DB
+- Async replication to Read Replica
+  - Eventually consistent
+  - Querys do not garauntee latest data
+  - Replication Lag metric indicates how stale the data could be
+- When to use Read Replica:
+  - Scaling
+  - Source DB Unavailble
+  - Reporting or Data Warehouse
+  - Disaster Recovery - can promote read recovery
+  - Lower Latency:
+
+#### Backups
+- Automated backups:
+  - Stored in hidden S3 buckets of secondary ost.
+  - Transaction Logs are stored every 5 minutes
+  - Cany copy transaction logs to another region
+  - Backup window: when to be taken
+  - Retention period: How long backups should be kept
+  - Support point in time restore
+- Manual Snapshots:
+  - kept until you delete them
+  - Restore to a saved snapshot
+  - Used for checkpoints
+- Only store the difference
+- Snapshots are incrementals
+- Single AZ performance impact: Brief IO Suspension
+- Multi-AZ performance impact: taken from the secondary host, should be no impact
+- Restoring Backups:
+
+#### Security
+- Layers of Security: Network Isolation, IAM, Encryption at rest, SSL
+  - Network Isolation: Use VPC to place rds instance into private subnet, use security groups for specific traffic, turn off public accessibility, use ClassicLink for non-vpc resources, use direct dconnect to replicate on-prem DBs, and VPC peering to share between VPCs 
+  - Access Control: Use IAM to perforamn actions on RDS resources. Use MFA to provide extra level of protection. Dont use master credentials on DB Instance. Use integrated security with AD or IAM Auth
+  - Encryption at rest: It's free. AES-256. All nodes are replicated. Encryption performed at volume level. Access to keys are logged. Can encrypt only once. Have two tier encryption
+  - SSL Connectivity: SSL is turned on, but must be enforced through Parameter groups
+
+#### Monitoring RDS
+- Metrics to Watch
+  - CPU 
+  - Storage Space
+  - Network Traffic
+  - DB Connections
+  - IOPS
+
+#### Amazon Aurora
+- Cloud-first built RDS instance that abstracts the storage and logging layers away using SOA architecture so they can be indepdently scaled
+- 10GB to 64TB storage
+- Compute resources can scale  up to 32vCPUS to 244 GB of Memory
+- 2 Copies of your data i scontained in each availability zone. Minimum of 3 AZ
+- Key Concepts
+  - Auroa DB CLuster:
+    - One or more DB Instances and a cluster volume
+    - Primary DB Instance read/write
+    - Aurora Replica: Only read replica
+  - Auroa DB Connections:
+    - Cluster endpoint: only place writes can happen
+    - Reader endpoint: read-only connections 
+    - Custom endpoint: set of db instances you specify to handle these type of connections
+    - instance endpoint: endpoint to a specifc instance
+  - Aurora Global DBs:
+    - Primary Region -- Read & Write
+    - Secondary Region -- Read-Only. Can be promoted
+- Aurora Serverless
+  - Must connect through VPC endpoints through the Network LOad Balancer. 
+  - Allows the managing of connections so they can scale using warm pool of instances
+  - No DB Instances. Use ACU, specify min and man, and aurora will scale as needed
+  - Automatically scales and only is charged for use
+- Backups
+  - Backups are always enabled.
+  - Do not impact performance
+  - Can take Snapshots
+- Migrate from MySQL
+  - Create Snapshot then restore Aurora from snapshot
+  - Create read replica aurora then promote
+
+
+### DynamoDB
+- Support document and key-value stores
+- Stored on SSD Storage
+- Spread across 3 geographically distinct data centres
+
+#### Eventual vs Consistent Reads
+- Eventual reads Consistency across all copies of data is usually reached within a second
+- Strong consistent reads - Always most up to date data
+
+#### DynamoDB Accelerator
+- Fully managed, highly available, in-memory cache
+- 10x performance improvement
+- Reduces request time from milliseconds to microseconds 
+- No need for devs to manage caching logic
+- Compatible with DynamoDB API calls
+
+#### Transactions
+- Multiple all-or-nothing conditions
+- Two underlying reads or writes - prepare commit
+- Up to 25 items or 4mb of data
+
+#### On-Demand Capacity
+- Pay-per-request pricing
+- Balance cost and performance
+- No minimum capacity
+- Pay more for requests
+- Use for new products and maybe switch once you recognize workload
+
+#### Backup + Restore
+- On-Demand
+  - Full backjups at any time
+  - Zero Impat on table performance or availability
+  - Consistent within seconds and retained until deleted
+  - Operates within same region as source table
+- PTTR
+  - Protects against accidental writes or deletes
+  - Restores to any point in the last 35 days
+  - Incremental backups
+  - Not enbabled by default
+  - Latest restorable: five minutes in the past
+
+#### Streams
+- Time-ordered sequence of item-level changes in a table
+- Stored for 24 hours
+- Inserts, updates, and deletes are published
+- Combine with Lambda functions for functionality like stored procedures
+
+#### Global Tables
+- Globablly Distrubted applications
+- Based on DynamoDB Stream
+- Multio-region redundancy for DR or HA
+- No application rewrites
+- Replicaiton latency under one sefcond
+
+#### Security
+- Encreyption at rest using KMS
+- site-to-site VPN
+- Direct Connect
+- IAM Policies and Roles
+- Fine-grained access
+- CloudWatch and CloudTrail
+- VPC Endpoints
+
+### RedShift
+- fast powerfuly, fully managed, petabyte scale data warehouse
+
+### ElasticCache
+- Managed in-memory cache server
+- MemCache or Redis
+- Use MemCache if you want horitonztable scalings
+- Redis has lot more options for more specific caching needs
+  - Like Multi-AZ
+  - Backup + Restores
+  - Persistence
+
+### Database Migration Service
+- Migrate from On-Prem or cloud DBs to the Cloud
+- Server that creates replicas
+- You create source and tell where from and to to etract/load data
+- DMS creates tables and keys on destination if they dont exist
+- Can also precreate using AWS Schema Conversion Tool
+- Supports different database migration to different database migration
+
+### EMR
+- Elastic Map Reduce
+- Run petabyte scale analysis on less than half the cost of tradtional on-prem solutions and over 3 times faster than Spark
+- EMR is cluster of EC2 instances (nodes). Each node has a role referred as node type
+- Master node
+  - Node manageres the cluster.
+  - Tracks status of tasks
+  - Log data stored here
+  - Log data can be configured to write every 5 minutes. 
+    - Can only configure first
+- Core Node
+  - runs tasks and stores data in a HDFS
+  - Always one Core Node
+- Task Node
+  - Only runs tasks, does not store data in HDFS. 
+  - Optional
+
+
+## Application Integration
+
+### SQS
+- Way to store messages on a queue
+- Allows decoupled services by allow communication to happen on the queue
+- Messages can be up to 256 KB of TXT. 
+  - Can go up to 2gb but extra is stored in S3
+- Access messages from SQS API
+- Standard Queues
+  - Default  Queue Type
+  - nearly unlimited number of transactions per seconds
+  - Garauntees messages delivered once
+  - Standard queue may send things out of order, but attempts to send things in order
+- FIFO Queues
+  - First In and First Out Queue
+  - Exactly-One processing event
+  - Remains until consumer deltes it
+  - Support message groups that allow multiple ordered message groups
+  - Limited to 300 transactions per second, have all capabilites on standard queues
+- Visibility Timeout
+  - Amount of time a message is invisible in the SQS queue after a reader picks up that message
+  - If job is processed before visibility timeout expires, message will be deleted from the queu
+  - If not processed in time, job will be sent back and processed again
+-  Polling
+  - Long
+    - Way to retrieve messages from queue. Sits and polls until message arrives or times out
+  - Short
+    - Returns immediately
+- Rention period of 14 days
+
+### Simple Workflow Service
+- Web service makes it easy to coordinate work across distrbuted services using tasks/workflows
+- Tasks can last up to a year
+- Task oriented-API
+- Task is assigned only once and never duplicated
+- Keep tracks of all tasks or events
+- Actors
+  - Workflow Starters: application can initiate a workflow
+  - Deciders: Controls the flow of activity in a tasks
+  - Activity Workers:  Carry out the activity tasks
+
+### Simple Notification Service
+- Setup and send notifications from the cloud.
+- Publishes (push notifications) to other services
+- Cam deliver messages  by SMS or email
+- Can send to SQS or HTTP Endpoint
+- One topic can support many deliveries to multiple endpoint types
+- Messages store redunantly across many AZs
+- Pay as you go model
+
+## Media Services
+### Elastic Transcoder
+- Media transcoder in the cloud
+- Convert media  files from original source format into different formats
+- provides popular output formats
+- Pay based on minutes and resolution you transcode
+
+## Analytics
+
+### Kinesis
+- Streaming Data is data that is generated continously by thousands of data sources
+- Data is sent in small sizes incrementally
+- Kinesis loads and anaalyze streaming data
+- Types
+  - Streams 
+    - Stores data from multiple sources in shards
+    - Consumers can pull that data
+    - Shards
+      - 5 transactions per second for reads, up to max of 2mb per second.
+      - Up to 1000 seconds per write
+  - Firehose
+    - No persistent storage
+    - Must analyze and output 
+  - Analytics
+
 ## Certicate Manager
 - Way to provision certificates
 - When creating the cert, make sure you creat in US-East-1 and apply to all your required domains (www and not)
-
-
-
-## CloudFront
-- A CDN
-- Make sure to specify all the CNAMES of your domain.
-- Provide custom SSL Cert (us-east-1)
-- Also make sure you set your default root object (typically index.html)
 
 ## Elastic Container Service - ECS
 - Amazons built in way of deploying and scaling containers outside of the context of K8s.
 - You deploy Clusters, which have Services, which have Familys or Tasks that are responsible for deploying your containers.
 - Try to reuse names where possible to make your life easier. 
 - To have a custom domain on top of this, you will need a ELB to resolve the load balancing requirements for containers
-
-##  Elastic Compute Cloud - EC2
-- Provides bare metal instances to deploy and do whatever with.
-- The instance will be charged per hour with different rates based on the type of the instance chosen. AWS provides multiple instance types for the respective business needs of the user.
-
-## API Gateway
-- Build RESTful or Websocket API services. Endpoints can correspond to AWS Lamda Functions. 
   
 ##  AWS Lambda 
 - Serverless Functions  - lets you run code without provisioning or managing servers, creating workload-aware cluster scaling logic, maintaining event integrations, or managing runtimes.
@@ -1037,15 +2002,13 @@ print(url)
 
 ## Cognito
 - Managed Auth and OAuth through AWS. Allowing you to make pools of users with Authnetication workflows for accessing resoures without managing IAM accounts per user
-
-## SNS Events
-- A pub/sub topic notification system that can send out events to all subscribers and trigger various AWS functions
-
-## SQS 
-- A messaging Queue to store messages to be processed in a queue. 
-
-## CloudWatch
-- Can be used to manage, monitor and trigger infastructure
+- Acts as identity broker between your aplpication and Web ID providers
+- Synchronizes user data for multiple devices  
+#### Pools
+- User Pools: user directories used to manage sign-up and sign-in functionality for mobile and web applications
+- Identity pools: provide temp access to aws credentials for service access 
+#### Web Identity Federation
+- Give access to resources after authneticating through web-based identity provider like Facebook/Google/etc. Trade ID for temporary AWS credentials
 
 
 ## CloudFormation
@@ -1181,174 +2144,3 @@ Resources:
         commands:
         services:
 ```
-
-## RDS
-- Relatonal Database Service manged by AWS
-  
-### Terminology
-- Database Instance: An isolated DB environment, can have many user created databases within it
-- Database Engine: Type of DB to run
-- Database Instance Type: Determines type of hardware
-- Mutli AZ - Stands for multiple availality zones
-- Read Replicas: Separate node to handle only read queries.
-- Primary Host - handles all read/writes
-- Secondary Host: Doesn't handle writes, acts as failover
-- Aurora: MySQL and PostgreSQL compatible Relational DB
-
-### Provisioning a Database
-- Database Engine Options
-  - Oracle: Enterprise, Standard, Standard Edition One, Standard Edition 2
-  - SQL Server: Express, Web, Standard and Enterprise
-  - Aurora: MySQL 5.6, MySQL 5.7, PostgreSQL
-  - PostgreSQL
-  - MySQL
-  - MariaDB
-- Use Cases:
-  - Production
-    - Multi-AZ
-  - Dev/Test
-    - Single AZ
-    - 20GB allocated storage
-- License Model: BYO License (Only or Oracle)
-- Instance Class: Type of hardware
-  - t2/t3 family: Burstable instances, 1-8 vCPU, 1-32gb ram, moderate networking performance
-  - m3/m4 family: General purpose instances, 2-64 vCPU, 8-256g RAM, High performance networking
-  - r3/r4 family: Memory optomized instances, 2-64 vCPU, 16-488GB RAM, High perf. networking
-- Multi-AZ:
-  - Achieve HA in the case of failure
-  - Two database nodes running with replication
-  - Primary and stanby in different AZs
-- Storage Types/Allocation:
-  - General Purpose/GP2: SSD storage, max 16tb, 3IOPS per GB, bursts to 3000IOPS
-  - Provisioned IOPS: SSD, 16TB, Max 40k IOPS (20k for sql), I/o intensive workloads
-  - Magnetic Storage: 16tb, supported for legacy dbs
-- DB Identifier: Identifies DB Instanc,e unique across the region
-- Credntials: master user account
-- Networking Configuration:
-  - VPC - Define virtual networking
-  - Subnet Group: Define which subnets and IP ranges the db instance can use in your VPC
-  - Public Accessibility: Allocates public IP (seucirty groups must allow inbound traffic)
-  - Availability Zone: Any pref for availability zone
-  - VPC Security groups: Any pref for availbility zone
-- Database Name: name of default DB
-- Database port: Port to communicate on 
-- Parameter Group: Group of parameters to define config of db
-- DB Option Group: Optional functionality on db instance
-- Encrypion: Encryption at rest for your DB Instance
-- Enhanced Monitoring: Show how different processes or threads use the CPU
-- Backups:
-  - Retention period: how long to keep abackup
-  - Backup window: when the backup occurs
-  - Copy tags to snapshots
-- Maintenance: 
-  - Automatic Minor Version Upgrade
-  - Maintenance window: Once a week time range
-  - DB Engine Upgrades: REquire downtime
-    - Minor Version upgrades: automatic or manually applied
-    - Major version upgrades: manually applied
-    - Version deprecation - three to six month notification before scheduled upgrades
-
-### RDS Pricing
-- Instance Hours
-- Database Storage
-- Backup Storage: No charge for backup storage up to 100% of total database storage
-- Database Transfer: Outgoing traffic only. Regional Data Transfer pricing
-
-### Scaling RDS
-- Scale Computer or memory vertically
-  - New host is attached to existing volumes
-  - In Multi-AZ, Secondary resizes first
-- Scale amazon EBS Storage
-  - No downtime
-- Scale with Read Replicas (horizontal scaling)
-  - Only some db engines
-  - Helps scale read traffic only
-  - No Downtime
-- Vertically Scaling
-  - Modify RDS Instance
-  - Change DB Instance CLass
-  - Immediately/During Maintenance Windows
-  - Storage and CPU are decoupled
-  - Minimal downtime when Mutli-AZ environment
-  - Single AZ == Downtime
-
-### Multi-AZ
-- Twice the cost of single AZ Config.
-- Used for fail-overs. 
-- Improves backups cuz using secondary host
-- Writes tad slower due to duplicte writes
-- Failovers:
-  - Application is hosted across two AZs using synchronous data replication
-  - If the primary host instance has probs, AWS updates the DNS record to point to the secondary host in AZ2
-  - Occurences:
-    - When AZ outage occurs
-    - When DB Instance fails
-    - When DB Instance class changed
-    - Software patching
-    - Manual Failover (reboots)
-    - Not good just for failovers, but planned downtime as well
-### Read Replicas
-- Read only DB
-- Async replication to Read Replica
-  - Eventually consistent
-  - Querys do not garauntee latest data
-  - Replication Lag metric indicates how stale the data could be
-- When to use Read Replica:
-  - Scaling
-  - Source DB Unavailble
-  - Reporting or Data Warehouse
-  - Disaster Recovery - can promote read recovery
-  - Lower Latency:
-
-### Backups
-- Automated backups:
-  - Stored in hidden S3 buckets of secondary ost.
-  - Transaction Logs are stored every 5 minutes
-  - Cany copy transaction logs to another region
-  - Backup window: when to be taken
-  - Retention period: How long backups should be kept
-  - Support point in time restore
-- Manual Snapshots:
-  - kept until you delete them
-  - Restore to a saved snapshot
-  - Used for checkpoints
-- Only store the difference
-- Snapshots are incrementals
-- Single AZ performance impact: Brief IO Suspension
-- Multi-AZ performance impact: taken from the secondary host, should be no impact
-- Restoring Backups:
-
-### Security
-- Layers of Security: Network Isolation, IAM, Encryption at rest, SSL
-  - Network Isolation: Use VPC to place rds instance into private subnet, use security groups for specific traffic, turn off public accessibility, use ClassicLink for non-vpc resources, use direct dconnect to replicate on-prem DBs, and VPC peering to share between VPCs 
-  - Access Control: Use IAM to perforamn actions on RDS resources. Use MFA to provide extra level of protection. Dont use master credentials on DB Instance. Use integrated security with AD or IAM Auth
-  - Encryption at rest: It's free. AES-256. All nodes are replicated. Encryption performed at volume level. Access to keys are logged. Can encrypt only once. Have two tier encryption
-  - SSL Connectivity: SSL is turned on, but must be enforced through Parameter groups
-
-### Monitoring RDS
-- Metrics to Watch
-  - CPU 
-  - Storage Space
-  - Network Traffic
-  - DB Connections
-  - IOPS
-
-### Amazon Aurora
-- Cloud-first built RDS instance that abstracts the storage and logging layers away using SOA architecture so they can be indepdently scaled
-- Key Concepts
-  - Auroa DB CLuster:
-    - One or more DB Instances and a cluster volume
-    - Primary DB Instance read/write
-    - Aurora Replica: Only read replica
-  - Auroa DB Connections:
-    - Cluster endpoint: only place writes can happen
-    - Reader endpoint: read-only connections 
-    - Custom endpoint: set of db instances you specify to handle these type of connections
-    - instance endpoint: endpoint to a specifc instance
-  - Aurora Global DBs:
-    - Primary Region -- Read & Write
-    - Secondary Region -- Read-Only. Can be promoted
-- Aurora Serverless
-  - Must connect through VPC endpoints through the Network LOad Balancer. 
-  - Allows the managing of connections so they can scale using warm pool of instances
-  - No DB Instances. Use ACU, specify min and man, and aurora will scale as needed
