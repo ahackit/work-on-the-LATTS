@@ -759,6 +759,109 @@ Default output format [None]: json
 - Can connect to  Business applications or anyone that supports SAML 2 like AD
 - Can grant access to Organizations
 
+### Key Managmenet Service
+- Regiona Secure Key management System
+- Manage customer master keys
+- Inegrated with most services
+- 4kb in size
+- Pay per API call
+- Audit capability using KMS
+- FIPS 140-2 Level 2
+- Level 3 is CloudHSM
+
+### CloudHSM
+- Dedicated hardware security model
+- FIPS 140-2 Level 3
+- Manage your own keys
+- No access to aws-managed component
+- Runs within a VPC in your account
+- Single tenant, dedicated hardware, multi-az cluster
+- Only industry-standard APIS, no AWS APIs 
+- Supports
+  - PKCS#11
+  - Java Cryptography Extensions
+  - Microsoft CryptoNG
+- Keep your keys save, irretrievable if lost
+
+### Systems Manager 
+#### Parameter Store
+- Serverless storage for config and secrets
+  - Password
+  - DB Connection Strings
+  - License Codes
+  - API Keys
+- Values can be encrypted or plain text
+- Separate data from source control
+- Store parameters in heirarchies
+  - Can provide access by path security
+- Track versions
+- Set TTL to expire certain passwords
+
+### Secrets Manager
+- Basically Parameter Store but costs
+- Nice feature is be able to rotate secrets and applay the new secrets
+- Can generate random secrets
+
+### AWS Shield
+- Protects against DDoS attacks
+- Standard
+  - Enabled for all customers at no cost
+  - Protects against common Layer 3 and 4 attacks
+    - SYN/UDP floods
+    - Reflection Attacks
+- Advanced
+  - 3000 per month, per org
+  - Ehanced protection for EC2, ELB, CloudFront, Global Accelerator, Route 53
+  - Get 24/7 access to DDoS support team
+  - DDoS Cost Protection
+
+### WAF
+- Lets you monitor HTTP(S) requests to 
+  - CloudFront
+  - ALB
+  - API Gateway
+- Control access to content
+- Control via Filtering Rules
+  - IP Addresses
+  - Query Parameters
+  - SQL Query Injection Attacks
+- Blocked traffic returns 403
+- Behaviros
+  - Allow all requests
+  - Block all requests
+  - Count the requests you specify
+- Reuqesting properties
+  - Orgiinating IP Address
+  - Orgiinatin Country
+  - Request Size
+  - Values in Request Headers
+  - Strings in request based on RegEx
+  - SQL Code Injection
+  - XSS
+#### Firewall Manager
+- Manager WAF rules for an AWS organization
+
+
+#### CMKs
+- AWS managed CMK: Free, used by default if you pick encryption in most services
+- AWS Owned CMK: Used by AWS on a shared basis across many accounts. Typically wont see these
+- Customer Manage CMK: Allows key rotation. controlled via key policies and can be enabled/disabled
+- Symmetric
+  - Same key used for encryption and decyption
+  - AES-256
+  - Never leaves WAS Unencrypted
+  - AWS services integrated with KMS use symettric KMS
+  - Encryp, decrypt, and re-encrypt data
+  - Generate date keys, data key pairs, and random byte strings
+- Aysmeetric
+  - Math related public/private key pair
+  - RSA and elliptic-curve cryptography
+  - Private key never leaves AWS unencrypted
+  - Must call KMS API to use private key
+  - download public key and use outside of AWS
+  - Used by outside users of AWS who cant access KMS
+  - AWS services dont use asymettric
+
 ## Management and Governance
 ### CloudWatch
 - Can be used to manage, monitor and trigger infastructure
@@ -777,6 +880,14 @@ Default output format [None]: json
 - Allow you to create organizations to consolidate billing across many accounts
 - Paying account should be used for billing purposes only
 - Use Service Control Policies either on Organization or on individual acccounts
+
+### SAM
+- Open Source CloudFormation Extension optimized for serverless apps
+- New Types: Functions, APIs, Tables
+- Supports anything CloudFormation supports
+- Run serverless app localy
+- Package and Deploy using CodeDeploy
+
 
 ## Compute
 
@@ -954,6 +1065,30 @@ Default output format [None]: json
 ### Elastic BeanStalk
 - Quick way to scaffold entire applications based on templates of popular application infrastructures
 - Can auto scale
+
+###  AWS Lambda 
+- Serverless Functions  - lets you run code without provisioning or managing servers, creating workload-aware cluster scaling logic, maintaining event integrations, or managing runtimes.
+- Use as event system
+- Use as compute service  based on HTTP requests or using AWS SDKs
+- Pricing
+  - Number of requests
+    - First 1 million requests are free
+    - .20 per 1 million thereafter
+  - Duration
+    - from the time your code begins executing until it returns or otherwise terminates
+    - This pricing depends on how much memory is adjusted
+- Scales out atuomatically
+- 1 event = 1 function
+- Use X-Ray to Debug 
+
+#### Layers
+- Use Layers to reduce bundle per lambda sizing
+
+### Elastic Container Service - ECS
+- Amazons built in way of deploying and scaling containers outside of the context of K8s.
+- You deploy Clusters, which have Services, which have Familys or Tasks that are responsible for deploying your containers.
+- Try to reuse names where possible to make your life easier. 
+- To have a custom domain on top of this, you will need a ELB to resolve the load balancing requirements for containers
 
 ## Storage
 
@@ -1987,18 +2122,6 @@ print(url)
 ## Certicate Manager
 - Way to provision certificates
 - When creating the cert, make sure you creat in US-East-1 and apply to all your required domains (www and not)
-
-## Elastic Container Service - ECS
-- Amazons built in way of deploying and scaling containers outside of the context of K8s.
-- You deploy Clusters, which have Services, which have Familys or Tasks that are responsible for deploying your containers.
-- Try to reuse names where possible to make your life easier. 
-- To have a custom domain on top of this, you will need a ELB to resolve the load balancing requirements for containers
-  
-##  AWS Lambda 
-- Serverless Functions  - lets you run code without provisioning or managing servers, creating workload-aware cluster scaling logic, maintaining event integrations, or managing runtimes.
-
-### Layers
-- Use Layers to reduce bundle per lambda sizing
 
 ## Cognito
 - Managed Auth and OAuth through AWS. Allowing you to make pools of users with Authnetication workflows for accessing resoures without managing IAM accounts per user
