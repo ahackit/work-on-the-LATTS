@@ -1,92 +1,160 @@
-# AWS - Amazon Web Services
+<!-- vscode-markdown-toc -->
+* 1. [Cloud Computing](#CloudComputing)
+	* 1.1. [Key Terms](#KeyTerms)
+	* 1.2. [Key Characteristics](#KeyCharacteristics)
+	* 1.3. [Service Models](#ServiceModels)
+	* 1.4. [Deployment Models:](#DeploymentModels:)
+	* 1.5. [Advantages of Cloud](#AdvantagesofCloud)
+* 2. [Global Infrastructure](#GlobalInfrastructure)
+	* 2.1. [Global Vs Regional Services](#GlobalVsRegionalServices)
+* 3. [Billing and Pricing](#BillingandPricing)
+	* 3.1. [Pricing Models](#PricingModels)
+	* 3.2. [Five Pillars of Cost Optimatization](#FivePillarsofCostOptimatization)
+* 4. [AWS Well-Architected Framework](#AWSWell-ArchitectedFramework)
+	* 4.1. [Well-Architected Framework Best Practices for Five Pillars](#Well-ArchitectedFrameworkBestPracticesforFivePillars)
+		* 4.1.1. [Pillar One: Operational Excellence](#PillarOne:OperationalExcellence)
+		* 4.1.2. [Pillar Two: Security](#PillarTwo:Security)
+		* 4.1.3. [Pillar Three: Reliability](#PillarThree:Reliability)
+		* 4.1.4. [Pillar Four:  Performance Efficiency](#PillarFour:PerformanceEfficiency)
+		* 4.1.5. [Pillar Five: Cost Optimization](#PillarFive:CostOptimization)
+		* 4.1.6. [Putting the framework to work](#Puttingtheframeworktowork)
+		* 4.1.7. [Change is constant](#Changeisconstant)
+		* 4.1.8. [Well-Architected Reviews](#Well-ArchitectedReviews)
+		* 4.1.9. [Well Architected Tool](#WellArchitectedTool)
+	* 4.2. [Reporting and Cost Optimization Tools](#ReportingandCostOptimizationTools)
+* 5. [AWS CLI](#AWSCLI)
+* 6. [Networking](#Networking)
+	* 6.1. [Route53](#Route53)
+		* 6.1.1. [Routing Policy](#RoutingPolicy)
+	* 6.2. [CloudFront](#CloudFront)
+	* 6.3. [VPC](#VPC)
+		* 6.3.1. [Costs](#Costs)
+		* 6.3.2. [Flowlogs](#Flowlogs)
+		* 6.3.3. [Subnets](#Subnets)
+		* 6.3.4. [Network ACLs](#NetworkACLs)
+		* 6.3.5. [Security Groups](#SecurityGroups)
+		* 6.3.6. [NAT Instances + Gateway](#NATInstancesGateway)
+		* 6.3.7. [Bastion Host](#BastionHost)
+		* 6.3.8. [Direct Connect](#DirectConnect)
+		* 6.3.9. [VPC Endpoint](#VPCEndpoint)
+		* 6.3.10. [PrivateLink](#PrivateLink)
+		* 6.3.11. [Transit Gateway](#TransitGateway)
+		* 6.3.12. [VPN CloudHub](#VPNCloudHub)
+	* 6.4. [AWS Global Accelerator](#AWSGlobalAccelerator)
+	* 6.5. [API Gateway](#APIGateway)
+* 7. [Security](#Security)
+	* 7.1. [IAM](#IAM)
+		* 7.1.1. [ARNS](#ARNS)
+		* 7.1.2. [Policies](#Policies)
+		* 7.1.3. [Roles](#Roles)
+	* 7.2. [RAM](#RAM)
+	* 7.3. [AWS SSO](#AWSSSO)
+	* 7.4. [Key Managmenet Service](#KeyManagmenetService)
+	* 7.5. [CloudHSM](#CloudHSM)
+	* 7.6. [Systems Manager](#SystemsManager)
+		* 7.6.1. [Parameter Store](#ParameterStore)
+	* 7.7. [Secrets Manager](#SecretsManager)
+	* 7.8. [AWS Shield](#AWSShield)
+	* 7.9. [WAF](#WAF)
+		* 7.9.1. [Firewall Manager](#FirewallManager)
+		* 7.9.2. [CMKs](#CMKs)
+	* 7.10. [Certicate Manager](#CerticateManager)
+	* 7.11. [Cognito](#Cognito)
+		* 7.11.1. [Pools](#Pools)
+		* 7.11.2. [Web Identity Federation](#WebIdentityFederation)
+* 8. [Management and Governance](#ManagementandGovernance)
+	* 8.1. [CloudWatch](#CloudWatch)
+	* 8.2. [CloudTrail](#CloudTrail)
+	* 8.3. [Organizations](#Organizations)
+	* 8.4. [SAM](#SAM)
+	* 8.5. [CloudFormation](#CloudFormation)
+	* 8.6. [Terminology](#Terminology)
+	* 8.7. [Template Anatomy](#TemplateAnatomy)
+	* 8.8. [Intrinisic Functions Example](#IntrinisicFunctionsExample)
+	* 8.9. [Psuedo Parameters](#PsuedoParameters)
+	* 8.10. [Input Parameters](#InputParameters)
+	* 8.11. [Outputs](#Outputs)
+	* 8.12. [Cloudformation Helper Scripts](#CloudformationHelperScripts)
+* 9. [Compute](#Compute)
+	* 9.1. [ Elastic Compute Cloud - EC2](#ElasticComputeCloud-EC2)
+		* 9.1.1. [Pricing Models](#PricingModels-1)
+		* 9.1.2. [Instance Types](#InstanceTypes)
+		* 9.1.3. [Nice to Knows](#NicetoKnows)
+		* 9.1.4. [Seucirty Groups](#SeucirtyGroups)
+		* 9.1.5. [ENI vs ENA vs EFA](#ENIvsENAvsEFA)
+		* 9.1.6. [Ways to achieve HPC](#WaystoachieveHPC)
+		* 9.1.7. [Spot Instances](#SpotInstances)
+		* 9.1.8. [Hibernate](#Hibernate)
+		* 9.1.9. [Placement Groups](#PlacementGroups)
+		* 9.1.10. [WAF](#WAF-1)
+		* 9.1.11. [Load Balancers](#LoadBalancers)
+		* 9.1.12. [Auto Scaling](#AutoScaling)
+	* 9.2. [Elastic BeanStalk](#ElasticBeanStalk)
+	* 9.3. [ AWS Lambda](#AWSLambda)
+		* 9.3.1. [Layers](#Layers)
+	* 9.4. [Elastic Container Service - ECS](#ElasticContainerService-ECS)
+* 10. [Storage](#Storage)
+	* 10.1. [AWS DataSync](#AWSDataSync)
+	* 10.2. [Storage Gateway](#StorageGateway)
+	* 10.3. [EBS](#EBS)
+		* 10.3.1. [Types](#Types)
+	* 10.4. [Athena/Macie](#AthenaMacie)
+	* 10.5. [EFS](#EFS)
+	* 10.6. [Amazon FSx](#AmazonFSx)
+	* 10.7. [Amazon Simple Storage Service - S3](#AmazonSimpleStorageService-S3)
+		* 10.7.1. [Storage Classes/ Tiers](#StorageClassesTiers)
+		* 10.7.2. [S3 Select](#S3Select)
+		* 10.7.3. [S3 Permissions](#S3Permissions)
+		* 10.7.4. [S3 Security](#S3Security)
+		* 10.7.5. [S3 Monitoring/Logging](#S3MonitoringLogging)
+		* 10.7.6. [S3 Data Protection](#S3DataProtection)
+		* 10.7.7. [S3 Life Cycle Management](#S3LifeCycleManagement)
+		* 10.7.8. [S3 Storage Class Analsis](#S3StorageClassAnalsis)
+		* 10.7.9. [S3 Event Notifications](#S3EventNotifications)
+		* 10.7.10. [S3 Performance Optimization](#S3PerformanceOptimization)
+		* 10.7.11. [S3 Static Website hosting](#S3StaticWebsitehosting)
+* 11. [Database](#Database)
+	* 11.1. [RDS](#RDS)
+		* 11.1.1. [Terminology](#Terminology-1)
+		* 11.1.2. [Provisioning a Database](#ProvisioningaDatabase)
+		* 11.1.3. [RDS Pricing](#RDSPricing)
+		* 11.1.4. [Scaling RDS](#ScalingRDS)
+		* 11.1.5. [Multi-AZ](#Multi-AZ)
+		* 11.1.6. [Read Replicas](#ReadReplicas)
+		* 11.1.7. [Backups](#Backups)
+		* 11.1.8. [Security](#Security-1)
+		* 11.1.9. [Monitoring RDS](#MonitoringRDS)
+		* 11.1.10. [Amazon Aurora](#AmazonAurora)
+	* 11.2. [DynamoDB](#DynamoDB)
+		* 11.2.1. [Eventual vs Consistent Reads](#EventualvsConsistentReads)
+		* 11.2.2. [DynamoDB Accelerator](#DynamoDBAccelerator)
+		* 11.2.3. [Transactions](#Transactions)
+		* 11.2.4. [On-Demand Capacity](#On-DemandCapacity)
+		* 11.2.5. [Backup + Restore](#BackupRestore)
+		* 11.2.6. [Streams](#Streams)
+		* 11.2.7. [Global Tables](#GlobalTables)
+		* 11.2.8. [Security](#Security-1)
+	* 11.3. [RedShift](#RedShift)
+	* 11.4. [ElasticCache](#ElasticCache)
+	* 11.5. [Database Migration Service](#DatabaseMigrationService)
+	* 11.6. [EMR](#EMR)
+* 12. [Application Integration](#ApplicationIntegration)
+	* 12.1. [SQS](#SQS)
+	* 12.2. [Simple Workflow Service](#SimpleWorkflowService)
+	* 12.3. [Simple Notification Service](#SimpleNotificationService)
+* 13. [Media Services](#MediaServices)
+	* 13.1. [Elastic Transcoder](#ElasticTranscoder)
+* 14. [Analytics](#Analytics)
+	* 14.1. [Kinesis](#Kinesis)
 
-- [AWS - Amazon Web Services](#aws---amazon-web-services)
-  - [Cloud Computing](#cloud-computing)
-    - [Key Terms](#key-terms)
-    - [Key Characteristics](#key-characteristics)
-    - [Service Models](#service-models)
-    - [Deployment Models:](#deployment-models)
-    - [Advantages of Cloud](#advantages-of-cloud)
-  - [Global Infrastructure](#global-infrastructure)
-    - [Global Vs Regional Services](#global-vs-regional-services)
-  - [Billing and Pricing](#billing-and-pricing)
-    - [Pricing Models](#pricing-models)
-    - [Five Pillars of Cost Optimatization](#five-pillars-of-cost-optimatization)
-    - [Well-Architected Framework Best Practices for Five Pillars](#well-architected-framework-best-practices-for-five-pillars)
-    - [AWS Well-Architected Framework](#aws-well-architected-framework)
-      - [Pillar One: Operational Excellence](#pillar-one-operational-excellence)
-      - [Pillar Two: Security](#pillar-two-security)
-      - [Pillar Three: Reliability](#pillar-three-reliability)
-      - [Pillar Four:  Performance Efficiency](#pillar-four--performance-efficiency)
-      - [Pillar Five: Cost Optimization](#pillar-five-cost-optimization)
-      - [Applying the Framework](#applying-the-framework)
-      - [Moden Application Development Tool Kit](#moden-application-development-tool-kit)
-      - [Operations, Gamedays, and Incident REsponse](#operations-gamedays-and-incident-response)
-      - [Security - Identity](#security---identity)
-    - [Reporting and Cost Optimization Tools](#reporting-and-cost-optimization-tools)
-  - [AWS CLI](#aws-cli)
-  - [Management And Governance](#management-and-governance)
-    - [IAM](#iam)
-  - [Networking](#networking)
-    - [VPC](#vpc)
-    - [Security Groups](#security-groups)
-  - [Compute](#compute)
-  - [Storage](#storage)
-    - [Amazon Simple Storage Service - S3](#amazon-simple-storage-service---s3)
-      - [Storage Classes/ Tiers](#storage-classes-tiers)
-      - [S3 Select](#s3-select)
-      - [S3 Permissions](#s3-permissions)
-        - [ACLS](#acls)
-          - [ACL Permissions](#acl-permissions)
-          - [ACL Predefined Groups](#acl-predefined-groups)
-        - [Bucket and User Policies](#bucket-and-user-policies)
-          - [BUcket Policy Barebones public](#bucket-policy-barebones-public)
-          - [Bucket Policy with CloudFront](#bucket-policy-with-cloudfront)
-      - [S3 Security](#s3-security)
-      - [S3 Monitoring/Logging](#s3-monitoringlogging)
-      - [S3 Data Protection](#s3-data-protection)
-      - [S3 Life Cycle Management](#s3-life-cycle-management)
-      - [S3 Storage Class Analsis](#s3-storage-class-analsis)
-      - [S3 Event Notifications](#s3-event-notifications)
-      - [S3 Performance Optimization](#s3-performance-optimization)
-        - [S3 Performance - CloudFront](#s3-performance---cloudfront)
-        - [Optmizing Puts](#optmizing-puts)
-        - [Optmizing GETS](#optmizing-gets)
-        - [S3 Transfer Acceleration](#s3-transfer-acceleration)
-      - [S3 Static Website hosting](#s3-static-website-hosting)
-  - [Certicate Manager](#certicate-manager)
-  - [CloudFront](#cloudfront)
-  - [Elastic Container Service - ECS](#elastic-container-service---ecs)
-  - [Elastic Compute Cloud - EC2](#elastic-compute-cloud---ec2)
-  - [API Gateway](#api-gateway)
-  - [AWS Lambda](#aws-lambda)
-    - [Layers](#layers)
-  - [Cognito](#cognito)
-  - [SNS Events](#sns-events)
-  - [SQS](#sqs)
-  - [CloudWatch](#cloudwatch)
-  - [CloudFormation](#cloudformation)
-    - [Terminology](#terminology)
-    - [Template Anatomy](#template-anatomy)
-    - [Intrinisic Functions Example](#intrinisic-functions-example)
-    - [Psuedo Parameters](#psuedo-parameters)
-    - [Input Parameters](#input-parameters)
-    - [Outputs](#outputs)
-    - [Cloudformation Helper Scripts](#cloudformation-helper-scripts)
-  - [RDS](#rds)
-    - [Terminology](#terminology-1)
-    - [Provisioning a Database](#provisioning-a-database)
-    - [RDS Pricing](#rds-pricing)
-    - [Scaling RDS](#scaling-rds)
-    - [Multi-AZ](#multi-az)
-    - [Read Replicas](#read-replicas)
-    - [Backups](#backups)
-    - [Security](#security)
-    - [Monitoring RDS](#monitoring-rds)
-    - [Amazon Aurora](#amazon-aurora)
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc --># AWS - Amazon Web Services
 
-## Cloud Computing 
-### Key Terms
+##  1. <a name='CloudComputing'></a>Cloud Computing 
+###  1.1. <a name='KeyTerms'></a>Key Terms
 - Cloud Computing: On-demand delivery of IT services from a third-party provider
 - Cloud Service: IT Capabaility that is being provided
 - Cloud Provider: Company that provides the service
@@ -95,26 +163,26 @@
 - Multi-tenant: Multiple consumer consume services delivered using shared infastructure
 - "x" as a service: Some cloud capability is delivered to consumers as service
   
-### Key Characteristics
+###  1.2. <a name='KeyCharacteristics'></a>Key Characteristics
 - On-demand, self service: user can consume cloud resources, as needed, autoamtically, and without human interaction
 - Broad network access: capabilities are available over the netwrok using standard mechanisms. Can be the internet or WAN.
 - resource Pooling: resources pooled and serve multiple consumers using a multi-tenant model
 - rapid elasticity: capabilites can scale "elastically" based on demand
 - Measured service: Resource Usage is monitored and metered
 
-### Service Models
+###  1.3. <a name='ServiceModels'></a>Service Models
 - On-Prem:  Gotta manage it all
 - IaaS: Gotta manage the VMs
 - PaaS: Gotta Manage the App/Data
 - SaaS: Don't gotta manage much
 
-### Deployment Models:
+###  1.4. <a name='DeploymentModels:'></a>Deployment Models:
 - Private Cloud: Enterprise deploys their own infrastructure and applications into their own datacenter
 - Public Cloud: IT services that you consume are hosted and delivered from a third-paty and accessed over the internet
 - Hybrid Cloud: Combination of on-premises, private cloud, and public cloud services are consumed
 - Multicloud: Usage of two or more public clouds at a time and possibly multiple private clouds
 
-### Advantages of Cloud
+###  1.5. <a name='AdvantagesofCloud'></a>Advantages of Cloud
 - Trade capital expense for variable expense: Instead of investing in data centers before you know how you're going to use them, pay only when, and for how much, you consume
 - Benefit from massive economies of scale: Achieve a lower variable cost due to AWS Scale
 - Stop guessing about capacity: Elimate guessing, scale as demand dictates
@@ -122,14 +190,14 @@
 - Stop spending money running and maintaing data centers: focus on business growth and innovation instead
 - Go global in minutes: Easily dploy applications in multiple regoins around the world
 
-## Global Infrastructure
+##  2. <a name='GlobalInfrastructure'></a>Global Infrastructure
 - Region: geographical area with 2 or more AZs, isolated from other AWS regions
 - Availability Zone(AZ): One or more data centers that are physically separate and isolated from other AZs
-- Edge Location: Location with a cache of content that can be delivered at low latency to users - used by CloudFron
+- Edge Location: Location with a cache of content that can be delivered at low latency to users - used by CloudFront
 - Regional Edge Cache: Part of the CF network, larger caches that sit between AWS services and Edge Locations
 - Global Network: Highly available, low-latency private global network interconnectiong every data center, AZ, and AWS Region
 
-### Global Vs Regional Services
+###  2.1. <a name='GlobalVsRegionalServices'></a>Global Vs Regional Services
 - Global:
   - IAM
   - S3
@@ -139,26 +207,26 @@
   - CloudFront
   - WAF & Shield, Artifact, Trusted Advisor, Personal Health Dashboard
 
-## Billing and Pricing
+##  3. <a name='BillingandPricing'></a>Billing and Pricing
 - Compute: Paying for the amount of time you spend processing (EC2, RDS, ECS, etc)
 - Storage: Paying for amount of data you have stored in Amazon (S3, EBS, EFS, etc)
 - Outbound Data: Transfers are aggregated accross services and then charged at the outbound data transfer rate
 
-### Pricing Models
+###  3.1. <a name='PricingModels'></a>Pricing Models
 - On-Demand: Used for compute and database capacity. No long-term commitments or upfront payments
 - Dedicated Instances: Available for EC2 - Hardware is dedicated to a single customer
 - Spot Instances: Purchase spare capacity with no commitments. Great discounts from hourly rates
 - Reservations: Up to 75% discount in exchange a term commitment. Options for 1 to 3 year terms. No Upfront/Partial Upfront/All upfront
   - EC2, DynamoDB, ElastiCache, RDS, RedShift
 
-### Five Pillars of Cost Optimatization
+###  3.2. <a name='FivePillarsofCostOptimatization'></a>Five Pillars of Cost Optimatization
 - Right size your instances
 - Increase elasticity
 - Choose the right pricing model
 - Match storage to usage
 - Measure and Monitor
 
-## AWS Well-Architected Framework
+##  4. <a name='AWSWell-ArchitectedFramework'></a>AWS Well-Architected Framework
 - Constists of best practices and ore strategies for architecting systems in the cloud. Helps you design and operate reliable, secure, efficient, and cost-effective systems that will greatly increase your likelihood of success
 - Stop guessing capacity needs
 - Test systems at production scale
@@ -167,14 +235,14 @@
 - Drive architectures using data
 - Improve through game days. Practice
 
-### Well-Architected Framework Best Practices for Five Pillars
+###  4.1. <a name='Well-ArchitectedFrameworkBestPracticesforFivePillars'></a>Well-Architected Framework Best Practices for Five Pillars
 - Expenditure Awareness
 - Cost-effective resources
 - Matcing Supply and Demand
 - Optimizing over time
 
-#### Pillar One: Operational Excellence
-- Principes
+####  4.1.1. <a name='PillarOne:OperationalExcellence'></a>Pillar One: Operational Excellence
+- Principles
   - All operations as code
   - Documentation should always be up to date
     - Annotate documentation
@@ -185,13 +253,12 @@
 -  Prepare 
    -  Prioritze to align with business priorities
    -  What is the business goal
-   -  What are the c
 -  Operate 
 -  Evolve  
   
-#### Pillar Two: Security
+####  4.1.2. <a name='PillarTwo:Security'></a>Pillar Two: Security
 - Principles
-  - Implement a strong identity foundation. Least privelege
+  - Implement a strong identity foundation. Least privilege access
   - Enable traceability
   - Apply security at all levels
   - Automate security and best practices
@@ -200,7 +267,7 @@
   - Prepare for security events
 - Identity & Access
   - Who is allowed to do what? When?
-  - Are you apply least privelege
+  - Are you applying least privelege
   - Deny root access
   - Reguarly reviewing access
 - Detective Controlls
@@ -225,7 +292,7 @@
   - Can you redeploy to recover quickly
   - Did you learn from the incident and adjust
 
-#### Pillar Three: Reliability
+####  4.1.3. <a name='PillarThree:Reliability'></a>Pillar Three: Reliability
 - Principles
   - Test recovery procedures
   - Automatically recover from failure
@@ -248,7 +315,7 @@
   - Deploy without issue
   - Can your pplication withstand partial outages
   
-#### Pillar Four:  Performance Efficiency
+####  4.1.4. <a name='PillarFour:PerformanceEfficiency'></a>Pillar Four:  Performance Efficiency
 - Principles
   - let aws do the work whenever possible
   - reduce latency through regions & the aws edge
@@ -281,14 +348,14 @@
   - Can compression improve performance?
   - Is buffering an option?
 
-#### Pillar Five: Cost Optimization
+####  4.1.5. <a name='PillarFive:CostOptimization'></a>Pillar Five: Cost Optimization
 - Principles
   - Adopt a consumption model
   - Measure overall efficiency
   - Stop spending money on data center operations
   - Analyze and attribute expenditure
   - Use managed and application-level services to reduce the cost of ownership
-- Cost Effective REsources
+- Cost Effective Resources
   - Provision to current needs with an eye oo the future
   - Right size to lowest resouce that meta needs
   - Use data to choose your instance
@@ -312,7 +379,7 @@
   - Elvaute new services for values
   - Continue push to managed services
 
-#### Putting the framework to work
+####  4.1.6. <a name='Puttingtheframeworktowork'></a>Putting the framework to work
 ##### Applying the Framework
 - Use resources on demand & reduce idle
 - Automate systems enable flexibility
@@ -328,7 +395,7 @@
   - What skills does your team have?
   - What is the timeline of your project?
 
-##### Moden Application Development Tool Kit
+##### Modern Application Development Tool Kit
 - All about tatics
   - Secure
   - Resilient
@@ -342,10 +409,10 @@
   - Re-factor -- Break up the monolith
   - Re-invent 
 - Checklist
-  - Build secuirty and compliance into the fabric of your application
+  - Build security and compliance into the fabric of your application
   - Microserves by default
   - Serverless is the starting point
-  - Everyting is code
+  - Everything is code
   - CI/CD runs application from day one
   - Monitoring, traceability, and observability from day one
 - Innovation Flywheel
@@ -353,7 +420,7 @@
   - Ideas
   - Feedback
 
-##### Operations, Gamedays, and Incident REsponse
+##### Operations, Gamedays, and Incident Response
 - Does the design translate to reality
 - Do you know if X is broken
 - If x Abreaks, will Y Work?
@@ -387,7 +454,7 @@
   - Aim for end-to-end encryption
   - Use a VPN to connect to on-prem resources
 
-#### Change is constant
+####  4.1.7. <a name='Changeisconstant'></a>Change is constant
 - There is no perfect fit. Always trade-offs. 
 - Reduce risk by making smaller choices more often. Experiment often.
 
@@ -483,7 +550,7 @@
 - Managed services for focus
 - Event Driven Designs
 
-#### Well-Architected Reviews
+####  4.1.8. <a name='Well-ArchitectedReviews'></a>Well-Architected Reviews
 - Lower or mitigate risks by understanding risks as you build or optimize your current architectures
 - Scale up and down as required
 - Automated Systems to ensure consistency and reliability
@@ -500,7 +567,7 @@
 - Each best practice is always changing
 
 
-#### Well Architected Tool
+####  4.1.9. <a name='WellArchitectedTool'></a>Well Architected Tool
 - Generates fast, self service reviews
 - Question and answer format
 - Video explanations for each best practice
@@ -510,10 +577,10 @@
 - Imrpovement plans provide a roadmap for teams
 
 
-### Reporting and Cost Optimization Tools
+###  4.2. <a name='ReportingandCostOptimizationTools'></a>Reporting and Cost Optimization Tools
 - Right Sizing: Matching instance types and sizes to your demand and workloads, and making sure you have the correct performance and capacity requirements
 
-## AWS CLI
+##  5. <a name='AWSCLI'></a>AWS CLI
 ```
 $ aws configure
 AWS Access Key ID [None]: Some Access Key
@@ -522,10 +589,9 @@ Default region name [None]: us-west-2
 Default output format [None]: json
 ```
 
-## Management And Governance
-## Networking 
+##  6. <a name='Networking'></a>Networking 
 
-### Route53
+###  6.1. <a name='Route53'></a>Route53
 - DNS: Converts human friendly name to public ip address
 - TopLevel Domain: .com/.edu/etc
   - Second level Domain .co.uk == .co
@@ -539,7 +605,7 @@ Default output format [None]: json
 - Can buy domain names from AWS
   - Can take 3 days to register
 
-#### Routing Policy
+####  6.1.1. <a name='RoutingPolicy'></a>Routing Policy
 - Simple
   - Only have one record with multiple ip addresses. Route 53 returns random to user
 - Weighted
@@ -555,7 +621,7 @@ Default output format [None]: json
 - MultiValue
   - Basically Simple, but only returns healthy resources
 
-### CloudFront
+###  6.2. <a name='CloudFront'></a>CloudFront
 - A CDN
 - Has many edge locations where content will be cached
 - The Origin is of all the files that the CDN willl distribute. 
@@ -571,7 +637,7 @@ Default output format [None]: json
   - Signed cookie is for multiple files
   - If origin is EC2, use cloudfront
 
-### VPC
+###  6.3. <a name='VPC'></a>VPC
 - A virtual isolated network for you to control all things
 - Can create hardware VPN into your VPC to leverage dual envrionment
 - All exists in a region
@@ -589,12 +655,12 @@ Default output format [None]: json
   - Network ACL
   - Default Security group
 
-#### Costs
+####  6.3.1. <a name='Costs'></a>Costs
 - Free traffic in through internet is free
 - Connection from AZ 1 to 2 private costs
 - Connection from AZ 1 to 2 through public costs double
 
-#### Flowlogs
+####  6.3.2. <a name='Flowlogs'></a>Flowlogs
 - Feature that enables you capture info about the IP traffic. 
 - Stored in CloudWatch Logs
 - 3 Levels
@@ -605,7 +671,7 @@ Default output format [None]: json
 - Only VPCs in your account, not peered
 - Cannot change Flow LOgs after creation
 
-#### Subnets
+####  6.3.3. <a name='Subnets'></a>Subnets
 - Subnets = 1 AZ not multiple AZs
 - Amazon reserves 5 Ips
 - Private
@@ -614,17 +680,17 @@ Default output format [None]: json
   - 192.168.0.0 - 192.168.255.255 (192.168/16 prefix)
 - Largest subnet you can have is /16 smallest is /28
 
-#### Network ACLs
+####  6.3.4. <a name='NetworkACLs'></a>Network ACLs
 - Comes with default on VPC
 - Custom ones deny all by default
 - Every subnet must be associated with a NACL
 - Can block IP addresses using NACL, not SG
 - One NACL to many Subnets
 
-#### Security Groups
+####  6.3.5. <a name='SecurityGroups'></a>Security Groups
 - Groups within a VPC that define inbound/outbound traffic
 
-#### NAT Instances + Gateway
+####  6.3.6. <a name='NATInstancesGateway'></a>NAT Instances + Gateway
 - Instance = Single EC2 Instance
   - Choose community NAT AMI
   - If private wants to go out to network, must go through NAT through Route 
@@ -633,7 +699,7 @@ Default output format [None]: json
   - Create NAT Gateway with new Elastic IP
   - Change Route to point to NAT Gateway
 
-#### Bastion Host
+####  6.3.7. <a name='BastionHost'></a>Bastion Host
 - Used to securily  administer EC2 Instances in private subnets
 - Cannot use NAT Gateway as Bastion Host
 - HA
@@ -641,7 +707,7 @@ Default output format [None]: json
   - One host in one AZ behind and auto scaling group with health checks and a EIP.
   - Must be layer 4
 
-#### Direct Connect
+####  6.3.8. <a name='DirectConnect'></a>Direct Connect
 - Creates direct link from On-prem networks to AWS networks
 - Useful for high throoughput workloads
 - Need stable + reliable connection
@@ -654,35 +720,37 @@ Default output format [None]: json
   - Slect virtual private  and customer gateway
   - Once VPN is available  - set up vpn on the customer gateway or firewall
 
-#### VPC Endpoint
+####  6.3.9. <a name='VPCEndpoint'></a>VPC Endpoint
 - VPC to VPC interconnection.
 - Stays in AWS
 - Attach ENI to EC2 instance and it can traverse AWS
 - Interface/Gateway
 - Gateway only supports S3/Dynamo
 
-#### PrivateLink
+####  6.3.10. <a name='PrivateLink'></a>PrivateLink
 - Requires network load balancer on service VPC an ENI on customer VPC
 - Avoid peering to 10000 vpcs or exposing yourself to public
+- Easier to expose just a single API endpoint
 
-#### Transit Gateway
+####  6.3.11. <a name='TransitGateway'></a>Transit Gateway
 - Simplifies Network Topology
 - Allows transitive peering
 - Works on hub-and-spoke model
 - Works on regional basis, but can be across multiple regions
 - Can be used across multiple AWS accounts
 - Limit communication through Route Tables
+- Good for when you have many VPCs
 
-#### VPN CloudHub
+####  6.3.12. <a name='VPNCloudHub'></a>VPN CloudHub
 - Connect multiple VPN sites together
 - Hub-and-Spoke Model
 - Public, but encrypted
 
-### AWS Global Accelerator
+###  6.4. <a name='AWSGlobalAccelerator'></a>AWS Global Accelerator
 - Avoid ISP Jumping and use Edge locations to go over Amazon backbone directly to service
 - Provides two static IP or you can bring your own
 
-### API Gateway
+###  6.5. <a name='APIGateway'></a>API Gateway
 - Build RESTful or Websocket API services. 
 - Endpoints can correspond to AWS Lamda Functions. 
 - Scale effortlessly
@@ -700,8 +768,8 @@ Default output format [None]: json
 - Support SSL with Cert Manager
 - Supports Caching, caches by TTL
 - Can turn on CORS 
-## Security
-### IAM 
+##  7. <a name='Security'></a>Security
+###  7.1. <a name='IAM'></a>IAM 
 - AWS Identity Managemnt
 - IAM is universal
 - Manage resources through use of IAM Policys. Can have users, roles, groups, etc.
@@ -710,7 +778,7 @@ Default output format [None]: json
 - Users start with NO permissions
 - Users are assigned Access Key ID & Secret Access Keys
 - Always set up MFA
-#### ARNS
+####  7.1.1. <a name='ARNS'></a>ARNS
 - ARNS always arn:partition:service:region:account_id:
   - partition: aws-awscn
   - service:s3|ec2
@@ -721,7 +789,7 @@ Default output format [None]: json
     - resource_type/resource
   - Double :: = omitted values
     - iam example: arn:aws:iam::12312:user/mark
-#### Policies
+####  7.1.2. <a name='Policies'></a>Policies
 - Explicity deny > everything else
 - JSON document that defines permissions
 - identity policy
@@ -748,20 +816,21 @@ Default output format [None]: json
 }
 ```
 
-#### Roles
+####  7.1.3. <a name='Roles'></a>Roles
 - Assign permissions to roles and assign them to resources to avoid adding user credentials to resources
 
-### RAM
+###  7.2. <a name='RAM'></a>RAM
 - Resource Access Manager  allows resource sharing between accounts
 - Cant share all resources
 
-### AWS SSO
+###  7.3. <a name='AWSSSO'></a>AWS SSO
 - Can connect to  Business applications or anyone that supports SAML 2 like AD
 - Can grant access to Organizations
 
-### Key Managmenet Service
+###  7.4. <a name='KeyManagmenetService'></a>Key Managmenet Service
 - Regiona Secure Key management System
 - Manage customer master keys
+- Must wait 7 days before deleting key
 - Inegrated with most services
 - 4kb in size
 - Pay per API call
@@ -769,7 +838,7 @@ Default output format [None]: json
 - FIPS 140-2 Level 2
 - Level 3 is CloudHSM
 
-### CloudHSM
+###  7.5. <a name='CloudHSM'></a>CloudHSM
 - Dedicated hardware security model
 - FIPS 140-2 Level 3
 - Manage your own keys
@@ -783,8 +852,8 @@ Default output format [None]: json
   - Microsoft CryptoNG
 - Keep your keys save, irretrievable if lost
 
-### Systems Manager 
-#### Parameter Store
+###  7.6. <a name='SystemsManager'></a>Systems Manager 
+####  7.6.1. <a name='ParameterStore'></a>Parameter Store
 - Serverless storage for config and secrets
   - Password
   - DB Connection Strings
@@ -797,12 +866,12 @@ Default output format [None]: json
 - Track versions
 - Set TTL to expire certain passwords
 
-### Secrets Manager
+###  7.7. <a name='SecretsManager'></a>Secrets Manager
 - Basically Parameter Store but costs
 - Nice feature is be able to rotate secrets and applay the new secrets
 - Can generate random secrets
 
-### AWS Shield
+###  7.8. <a name='AWSShield'></a>AWS Shield
 - Protects against DDoS attacks
 - Standard
   - Enabled for all customers at no cost
@@ -815,7 +884,7 @@ Default output format [None]: json
   - Get 24/7 access to DDoS support team
   - DDoS Cost Protection
 
-### WAF
+###  7.9. <a name='WAF'></a>WAF
 - Lets you monitor HTTP(S) requests to 
   - CloudFront
   - ALB
@@ -838,11 +907,11 @@ Default output format [None]: json
   - Strings in request based on RegEx
   - SQL Code Injection
   - XSS
-#### Firewall Manager
+####  7.9.1. <a name='FirewallManager'></a>Firewall Manager
 - Manager WAF rules for an AWS organization
 
 
-#### CMKs
+####  7.9.2. <a name='CMKs'></a>CMKs
 - AWS managed CMK: Free, used by default if you pick encryption in most services
 - AWS Owned CMK: Used by AWS on a shared basis across many accounts. Typically wont see these
 - Customer Manage CMK: Allows key rotation. controlled via key policies and can be enabled/disabled
@@ -862,8 +931,22 @@ Default output format [None]: json
   - Used by outside users of AWS who cant access KMS
   - AWS services dont use asymettric
 
-## Management and Governance
-### CloudWatch
+###  7.10. <a name='CerticateManager'></a>Certicate Manager
+- Way to provision certificates
+- When creating the cert, make sure you creat in US-East-1 and apply to all your required domains (www and not)
+
+###  7.11. <a name='Cognito'></a>Cognito
+- Managed Auth and OAuth through AWS. Allowing you to make pools of users with Authnetication workflows for accessing resoures without managing IAM accounts per user
+- Acts as identity broker between your aplpication and Web ID providers
+- Synchronizes user data for multiple devices  
+####  7.11.1. <a name='Pools'></a>Pools
+- User Pools: user directories used to manage sign-up and sign-in functionality for mobile and web applications
+- Identity pools: provide temp access to aws credentials for service access 
+####  7.11.2. <a name='WebIdentityFederation'></a>Web Identity Federation
+- Give access to resources after authneticating through web-based identity provider like Facebook/Google/etc. Trade ID for temporary AWS credentials
+
+##  8. <a name='ManagementandGovernance'></a>Management and Governance
+###  8.1. <a name='CloudWatch'></a>CloudWatch
 - Can be used to manage, monitor and trigger infastructure
 - Can monitor Host level metrics
   - DIsk
@@ -873,35 +956,173 @@ Default output format [None]: json
 - 5 minute logs by default, but can go to 1 minute for EC2
 - Can create alarms with CloudWatch trigger notifications
 
-### CloudTrail
+###  8.2. <a name='CloudTrail'></a>CloudTrail
 - Records all AWS API calls 
 - Tracks user activity in your AWS platform
-### Organizations
+- Logs to S3
+- Can use S3 log file validation to make sure no tampering
+
+###  8.3. <a name='Organizations'></a>Organizations
 - Allow you to create organizations to consolidate billing across many accounts
 - Paying account should be used for billing purposes only
 - Use Service Control Policies either on Organization or on individual acccounts
 
-### SAM
+###  8.4. <a name='SAM'></a>SAM
 - Open Source CloudFormation Extension optimized for serverless apps
 - New Types: Functions, APIs, Tables
 - Supports anything CloudFormation supports
 - Run serverless app localy
 - Package and Deploy using CodeDeploy
 
+###  8.5. <a name='CloudFormation'></a>CloudFormation
+- AWS language to provision resources
+- Take YAML and uploads to S3 to be consumed by CloudFormation Orchestrator. 
+- Resource is required for template
+- Example of provisions EC2 Instance
+```
+Resources:
+  Ec2Instance:
+    Type: ' AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-467ca739
+      UserData:
+        !Base64 |
+          #!/bin/bash -xe
+          yum update -y
+          yum install httpd -y
+          service httpd start
+      Tags:
+        Key: Name
+        Value: A Simple example
+      SecurityGroups:
+        - !Ref MySecurityGroup
+  MySecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup`
+    Properties:
+      GroupDescription: Enable SSH access
+      SecurityGroupIngress:
+        - IpProtocal: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 0.0.0.0/0
+```
+- Steps to manually create stack
+  - Go to CloudFormation
+  - Click Create STack
+  - Upload template
+  - Give name
 
-## Compute
+###  8.6. <a name='Terminology'></a>Terminology
+- Templates: text input to define resources
+- Stack: a single collection of resources is a stack. You create and edit stacks
+- Change Set: Can generate a change set to see the changes that will be made by your template to a specific stack
 
-###  Elastic Compute Cloud - EC2
+###  8.7. <a name='TemplateAnatomy'></a>Template Anatomy
+- Description: 
+- Metadata: provides additional info about template
+- Parameters: allow you to pass values at run time
+- Mappings: Set of key/value lookups to provide at run time
+- Conditions: Condtionals to determine if resources will be provisioned
+- Resources: stack resources
+- Outputs: output of stack
+
+###  8.8. <a name='IntrinisicFunctionsExample'></a>Intrinisic Functions Example
+- Join: `!Join[delmiter,[comma-delimited list of values]]`
+  - !Join [":", [a, b, c]] = "a:b:c'
+- Ref: `!Ref LogicalId`
+  - !Ref MySecurityGroup
+- FindInMap: `!FindInMap [MapName, TopLevelKey, SecondLevelKey]`
+```
+Mappings:
+  RegionMap:
+    us-east-1: 
+      AMI: ami-xxxxxx
+...
+ImageId: !FindInMap 
+  - RegionMap
+  - !Ref 'AWS::Region'
+  - AMI
+```
+
+###  8.9. <a name='PsuedoParameters'></a>Psuedo Parameters
+- AWS::AcountId : Aws Account
+- AWS::NotificationARNS: list of notification Arns
+- AWS::StackId - returns id of stack
+- AWS::StackName - returns name of the stack
+- AWS::Region - returns name of region in wich the resource is being created
+
+###  8.10. <a name='InputParameters'></a>Input Parameters
+- String
+- Number
+- List<Number>
+- CommaDelimitedList
+- AWs-specific types `AWS::EC2:Image::Id`
+- Systems manager parameters types
+
+```
+Parameters:
+  InstTypeParam:
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t2.micro
+      - m1.small
+      - m1.large
+    Description: EC2 Instance Type
+
+Resources:
+...
+  Instance Type: !Ref InstTypeParam
+```
+
+###  8.11. <a name='Outputs'></a>Outputs 
+- Can get output information from a stack, like public IP or DNS
+```
+Outputs:
+  InstanceDns:
+    Description: The Instance DNS
+  Value:
+    !GetAtt
+      - EC2Instance
+      - PublicDnsName
+```
+
+###  8.12. <a name='CloudformationHelperScripts'></a>Cloudformation Helper Scripts
+- cfn-init: Reads and interprets Metadata to execute AWS::CloudFormation::Init
+- cfn-signal: Used to signal when resources or application is ready
+- cfn-get-metadata: used to retrieve metadata based on a key
+- cfn-hup: Used to check for updaes to metadata and execute custom hooks
+
+```
+Resources:
+...
+  Metadata:
+    AWS::CloudFormation::Init:
+      config/Configsets:
+        packages:
+        groups:
+        users:
+        sources:
+        files:
+        commands:
+        services:
+```
+
+
+##  9. <a name='Compute'></a>Compute
+
+###  9.1. <a name='ElasticComputeCloud-EC2'></a> Elastic Compute Cloud - EC2
 - Provides bare metal instances to deploy and do whatever with.
 
-#### Pricing Models
+####  9.1.1. <a name='PricingModels-1'></a>Pricing Models
   - All variable based on instance type
   - On Demand: Pay a fixed rate by the hour with no commitment
   - Reserved:  Proivdes with ccapacity resveration and offer a significant discount on the hourtly charge for instance. 1-3 year terms
   - Spot: Enables you to bid wahtever price you want for instance capacity, provider for even greater savings if you have applications have flexible start and end times
   - Dedicated Hosts: Phyiscal Ec2 server dedicated for your use
 
-#### Instance Types
+####  9.1.2. <a name='InstanceTypes'></a>Instance Types
 - F1: Field Programmable Gate Array -- Genomics research, financial analytics, real time video processing, big data, etc
 - I3: High Speed Storage: NoSQL, DBs, Datwarehousing
 - G3: Graphics Intensive: Video Encoding/3D App Streaming
@@ -918,7 +1139,7 @@ Default output format [None]: json
 - U6tb1: Bare Metal - Eliminate virtualization overhead
 - FIGHTDRMCPXZAU
 
-#### Nice to Knows
+####  9.1.3. <a name='NicetoKnows'></a>Nice to Knows
 - AMI:The type of OS you want on the EC2 Instance
   - Can pick AMI based on EBS Volume or Instance Store
     - Instance store is created from a template store in S3
@@ -928,7 +1149,7 @@ Default output format [None]: json
 - On EBS-baked instance, default action is for the root EBS volume to be deleted - but rest of EBS volumes wont delete
 - EBS Root volumes of your default AMI CAN be encrypted
 
-#### Seucirty Groups
+####  9.1.4. <a name='SeucirtyGroups'></a>Seucirty Groups
 - All Inbound traffic is blocked by default
 - all outbound traffic is allowed
 - Changes to security Groups take effect immediately
@@ -938,7 +1159,7 @@ Default output format [None]: json
 - Inbound traffic is allowed out
 - Cannot block specific network IP, need to use Network ACLss
 
-#### ENI vs ENA vs EFA
+####  9.1.5. <a name='ENIvsENAvsEFA'></a>ENI vs ENA vs EFA
 - ENI: Elastic network interface: essentially a virtual network card
   - Good for managemnet network
   - use network and security appliances in your vpc
@@ -951,7 +1172,7 @@ Default output format [None]: json
   - Enable using ENA
 - EFA: Elastic Fabric Adapter: Network device that you can attach to your Amazon EC2 instance to accelerate high performance computing and ML apps
 
-#### Ways to achieve HPC
+####  9.1.6. <a name='WaystoachieveHPC'></a>Ways to achieve HPC
 - Data Transfer
   - Snowball
   - DataSync
@@ -975,8 +1196,9 @@ Default output format [None]: json
   - AWS ParalleleClusterß
     - Simple text file to model and provision all the resources needed
 
-#### Spot Instances
+####  9.1.7. <a name='SpotInstances'></a>Spot Instances
 - Can save up to 90%
+- For termination, will be notified 2 minutes through ec2 metadata
 - Useful when you dont need persistent storage
 - Spot block to stop instances from terminating
 - Spot fleet is a collection of spot instances
@@ -990,7 +1212,7 @@ Default output format [None]: json
   - Image + media rendering
   - HPC
 
-#### Hibernate
+####  9.1.8. <a name='Hibernate'></a>Hibernate
 - Saves content from RAM to EBS and persists
 - Makes faster to reboot. No need to run bootstrap scripts or OS install
 - Retains Instance ID
@@ -999,7 +1221,7 @@ Default output format [None]: json
 - Windows, Amazon Linux AMI, Ubunut
 - Can hibernate for more than 60 days
 
-#### Placement Groups
+####  9.1.9. <a name='PlacementGroups'></a>Placement Groups
 - Cluster
   - grouping of instances within a single AZ
   - Recommended for apps that need low network latency, high network throughput, or both.
@@ -1008,7 +1230,7 @@ Default output format [None]: json
   - each instance is placed on distinct underlying hardware
   - recommended for applications that have a small number of cirtifical instances they should be kept separate from eachother
 
-#### WAF
+####  9.1.10. <a name='WAF-1'></a>WAF
 - Configure conditions such as what IP addresses are allowed to make this request
 - Configure what query string parameters need to be passed
 - Passes to ALB ClourFront or API Gateway.
@@ -1022,7 +1244,8 @@ Default output format [None]: json
   - Presense of SQL code sql injection
   - Presence of a script in XSS
 
-#### Load Balancers
+####  9.1.11. <a name='LoadBalancers'></a>Load Balancers
+- Must configure Static IP address, not by odefault
 - ALB
   - Best used for HTTP/S. 
   - Operate at Layer 7. 
@@ -1046,8 +1269,9 @@ Default output format [None]: json
   - Allow equal weight across many zones
 - Path Routing
   - Create listeners to route based on URL
+- If no endpoints are healthy, ELB will try to send to all hosts
 
-#### Auto Scaling
+####  9.1.12. <a name='AutoScaling'></a>Auto Scaling
 - Groups
   - Logical Component (Web Server, etc)
 - Configuration Templates
@@ -1062,11 +1286,11 @@ Default output format [None]: json
     - use predictive scaling
 
 
-### Elastic BeanStalk
+###  9.2. <a name='ElasticBeanStalk'></a>Elastic BeanStalk
 - Quick way to scaffold entire applications based on templates of popular application infrastructures
 - Can auto scale
 
-###  AWS Lambda 
+###  9.3. <a name='AWSLambda'></a> AWS Lambda 
 - Serverless Functions  - lets you run code without provisioning or managing servers, creating workload-aware cluster scaling logic, maintaining event integrations, or managing runtimes.
 - Use as event system
 - Use as compute service  based on HTTP requests or using AWS SDKs
@@ -1081,25 +1305,25 @@ Default output format [None]: json
 - 1 event = 1 function
 - Use X-Ray to Debug 
 
-#### Layers
+####  9.3.1. <a name='Layers'></a>Layers
 - Use Layers to reduce bundle per lambda sizing
 
-### Elastic Container Service - ECS
+###  9.4. <a name='ElasticContainerService-ECS'></a>Elastic Container Service - ECS
 - Amazons built in way of deploying and scaling containers outside of the context of K8s.
 - You deploy Clusters, which have Services, which have Familys or Tasks that are responsible for deploying your containers.
 - Try to reuse names where possible to make your life easier. 
 - To have a custom domain on top of this, you will need a ELB to resolve the load balancing requirements for containers
 
-## Storage
+##  10. <a name='Storage'></a>Storage
 
-### AWS DataSync
+###  10.1. <a name='AWSDataSync'></a>AWS DataSync
 - Used to move large amounts of data from on-prem to AWS
 - Used with NFS- and SMB-compat file systems
 - Replication can be done hourly, daily, or weekly
 - Install the DataSync agent on server
 - Can be used to replicate EFS to EFS as well
 
-### Storage Gateway
+###  10.2. <a name='StorageGateway'></a>Storage Gateway
 - Connects on prem appliciance with cloud based storage to provide seamless and secure integration between an orgs on prem It environment and AWS storage infra.
 - Has Software appliance with a VM image that you install on host in data center.
   - File Gateway (NFS & SMB)
@@ -1108,7 +1332,7 @@ Default output format [None]: json
     - Cached Volumes
   - Tape Gateway (VTL)ss
 
-### EBS
+###  10.3. <a name='EBS'></a>EBS
 - Provides persistent block storage volumes. 
 - Automatically replicated in AZ
 - To Migrate EBS
@@ -1119,14 +1343,14 @@ Default output format [None]: json
 - Snapshots exist on S3 and are incremental
 - Can Encrypt by taking Snapshot and copy to Encrypted than create AMI and launch EC2
 
-#### Types
+####  10.3.1. <a name='Types'></a>Types
 - General Purpose SSD: Most Load works
 - Provisioned IOPs: Databses
 - Throoughput Optimised Hard Disk Drive: Big Data & Data Warehouses
 - Cold Hard Disk Drive: File Servers
 - Magnetic: Workloads where data is infrequently accessed
 
-### Athena/Macie
+###  10.4. <a name='AthenaMacie'></a>Athena/Macie
 - Athena
   - Interactive query service which enables you to run querues against s3 using SQL
     - Serverless
@@ -1135,7 +1359,7 @@ Default output format [None]: json
 - Macie
   - Security service which uses ML and MLP to disocver, classify, and protect sensitive data stored in s3
   
-### EFS
+###  10.5. <a name='EFS'></a>EFS
 - Elastic File System
 - Easy to use file system that attaches to EC2.
 - Storage grows and expands based on how you uses it
@@ -1146,13 +1370,13 @@ Default output format [None]: json
 - Read After Write consistency
 - Expands up to petabytes
 
-### Amazon FSx
+###  10.6. <a name='AmazonFSx'></a>Amazon FSx
 - Managed window server that runs window server message block based file services
 - Designed for Windows and windows applications
 - Supports AD users, Access control lists, groups and security polices
 - FSx For Lustre is fully managed FS that is otpimized for HPC
 
-### Amazon Simple Storage Service - S3
+###  10.7. <a name='AmazonSimpleStorageService-S3'></a>Amazon Simple Storage Service - S3
 - You can use Amazon S3 to store and retrieve any amount of data at any time, from anywhere on the web.
 - Amazon S3 stores data as objects within buckets. An object is a file and any optional metadata that describes the file. To store a file in Amazon S3, you upload it to a bucket. When you upload a file as an object, you can set permissions on the object and any metadata.
 - Buckets are containers for objects. You can have one or more buckets. You can control access for each bucket, deciding who can create, delete, and list objects in it. You can also choose the geographical Region where Amazon S3 will store the bucket and its contents and view access logs for the bucket and its objects.
@@ -1162,7 +1386,7 @@ Default output format [None]: json
 - You can use S3 bucket redirects to send from www. to non-www.
 - Objects consist of
   - Key == name of object
-  - Value: data being stored (5tb)
+  - Value: data being stored (maximum of 5tb)
   - Version ID: version # assigned when versioning is enabled
   - Bucket + Key + Version ID uniquely identify and object in s3
   - Metadata = Name-value pairs which are used to store info about the object
@@ -1198,7 +1422,7 @@ Default output format [None]: json
   - Disaster Recover
   - Big Data/Anayltics
 
-#### Storage Classes/ Tiers
+####  10.7.1. <a name='StorageClassesTiers'></a>Storage Classes/ Tiers
 - AWS provides different tiers
   - Depends on use case and access requirement
 - When oject is stored, it MUST have storage class associated with it
@@ -1227,7 +1451,7 @@ Default output format [None]: json
     - Expiration Rules: Define when objects expire
     - Good when you have defined lifecycles
 
-#### S3 Select
+####  10.7.2. <a name='S3Select'></a>S3 Select
 - Allows you to query files from data files instead of Get and then query
 - Uses "Query in place"
 - Uses subset of SQL
@@ -1265,7 +1489,7 @@ for event in resp['Payload']:
         print(statsDetails['BytesReturned'])
 ```
 
-#### S3 Permissions
+####  10.7.3. <a name='S3Permissions'></a>S3 Permissions
 - By default all s3 resources are private.
 - Can grant access by writing a policy.
 - Policies can be Resource or User based
@@ -1412,7 +1636,7 @@ for event in resp['Payload']:
 }
 ```
 
-#### S3 Security
+####  10.7.4. <a name='S3Security'></a>S3 Security
 - Block Public Access
   - Overrides ACLs and Policies
   - Can be bucket or account level or access point level
@@ -1443,7 +1667,7 @@ url = s3.generate_presigned_url(
 print(url)
 ```
 
-#### S3 Monitoring/Logging 
+####  10.7.5. <a name='S3MonitoringLogging'></a>S3 Monitoring/Logging 
 - Monitor with CloudWatch
 - S3 Metrics
   - Daily Storage Metrics
@@ -1503,7 +1727,7 @@ print(url)
     - Monitor and alert on specific metrics as hhey occur
     - Events: Take a specific acction as events occur
 
-#### S3 Data Protection
+####  10.7.6. <a name='S3DataProtection'></a>S3 Data Protection
 - S3 Encryption
   - Refers to proection of data either in ransfer for at rest
 - Server Side Encryption
@@ -1597,7 +1821,7 @@ print(url)
   - Useful when replicating objects toa  bucket in a different account
     - Provides distinct ownership between the original object and the replica
 
-#### S3 Life Cycle Management
+####  10.7.7. <a name='S3LifeCycleManagement'></a>S3 Life Cycle Management
 - Allows you to automaticaly manage object lifecycle.
 - Ideal for objects with a defined lifecycle
 - Ability to switch obhects between different storage calsses in order to reduce cost
@@ -1625,7 +1849,7 @@ print(url)
    -  Can specify actions to take on current version or non current
    -  For previous version rules, the action only cccurs after the object becomes non-current and time only starts then as well
 
-#### S3 Storage Class Analsis
+####  10.7.8. <a name='S3StorageClassAnalsis'></a>S3 Storage Class Analsis
 - Automatic analysis of your storage classes with recommendations
 - Can configure up to 1000 storage class filters
 - Can filter by
@@ -1636,7 +1860,7 @@ print(url)
 - Data is updated daily and visualations are avialable in the S3 COnsole
 - Chargeable feature (.10 per million objects analysed)
 
-#### S3 Event Notifications
+####  10.7.9. <a name='S3EventNotifications'></a>S3 Event Notifications
 - Provide the ability to trigger notifications when certain events happen within s3
 - enabled by adding a notification configuration to the bucket identify the events to be published and the destionation where the notifications should be sent
 - Can send events to
@@ -1655,7 +1879,7 @@ print(url)
   - Grant S3 permissions to the use the destination service
   - Create any filter rules
 
-#### S3 Performance Optimization
+####  10.7.10. <a name='S3PerformanceOptimization'></a>S3 Performance Optimization
 - Requests per second are by prefix, scale horizontally by using prefixes
 - Remember KMS Request limits
 - Minimize Latency
@@ -1731,7 +1955,7 @@ print(url)
   - The endpoint can be used for PUT and GET requests
   - Can still use standard endpoint
 
-#### S3 Static Website hosting
+####  10.7.11. <a name='S3StaticWebsitehosting'></a>S3 Static Website hosting
 - Can contain static content
 - Extremely los cost
 - HA
@@ -1755,13 +1979,13 @@ print(url)
   - Create a CORS configuration on bucket
   - Can have 100 rules on bucket
 
-## Database
+##  11. <a name='Database'></a>Database
 
 
-### RDS
+###  11.1. <a name='RDS'></a>RDS
 - Relatonal Database Service manged by AWS
   
-#### Terminology
+####  11.1.1. <a name='Terminology-1'></a>Terminology
 - Database Instance: An isolated DB environment, can have many user created databases within it
 - Database Engine: Type of DB to run
 - Database Instance Type: Determines type of hardware
@@ -1771,7 +1995,7 @@ print(url)
 - Secondary Host: Doesn't handle writes, acts as failover
 - Aurora: MySQL and PostgreSQL compatible Relational DB
 
-#### Provisioning a Database
+####  11.1.2. <a name='ProvisioningaDatabase'></a>Provisioning a Database
 - Database Engine Options
   - Oracle: Enterprise, Standard, Standard Edition One, Standard Edition 2
   - SQL Server: Express, Web, Standard and Enterprise
@@ -1824,13 +2048,13 @@ print(url)
     - Major version upgrades: manually applied
     - Version deprecation - three to six month notification before scheduled upgrades
 
-#### RDS Pricing
+####  11.1.3. <a name='RDSPricing'></a>RDS Pricing
 - Instance Hours
 - Database Storage
 - Backup Storage: No charge for backup storage up to 100% of total database storage
 - Database Transfer: Outgoing traffic only. Regional Data Transfer pricing
 
-#### Scaling RDS
+####  11.1.4. <a name='ScalingRDS'></a>Scaling RDS
 - Scale Computer or memory vertically
   - New host is attached to existing volumes
   - In Multi-AZ, Secondary resizes first
@@ -1848,7 +2072,7 @@ print(url)
   - Minimal downtime when Mutli-AZ environment
   - Single AZ == Downtime
 
-#### Multi-AZ
+####  11.1.5. <a name='Multi-AZ'></a>Multi-AZ
 - Available for all DBS but Aurora, cuz Aurora is already fault tolerant
 - Twice the cost of single AZ Config.
 - Used for fail-overs. 
@@ -1865,7 +2089,7 @@ print(url)
     - Manual Failover (reboots)
     - Not good just for failovers, but planned downtime as well
 
-#### Read Replicas
+####  11.1.6. <a name='ReadReplicas'></a>Read Replicas
 - Read only DB
 - Async replication to Read Replica
   - Eventually consistent
@@ -1878,7 +2102,7 @@ print(url)
   - Disaster Recovery - can promote read recovery
   - Lower Latency:
 
-#### Backups
+####  11.1.7. <a name='Backups'></a>Backups
 - Automated backups:
   - Stored in hidden S3 buckets of secondary ost.
   - Transaction Logs are stored every 5 minutes
@@ -1896,14 +2120,14 @@ print(url)
 - Multi-AZ performance impact: taken from the secondary host, should be no impact
 - Restoring Backups:
 
-#### Security
+####  11.1.8. <a name='Security-1'></a>Security
 - Layers of Security: Network Isolation, IAM, Encryption at rest, SSL
   - Network Isolation: Use VPC to place rds instance into private subnet, use security groups for specific traffic, turn off public accessibility, use ClassicLink for non-vpc resources, use direct dconnect to replicate on-prem DBs, and VPC peering to share between VPCs 
   - Access Control: Use IAM to perforamn actions on RDS resources. Use MFA to provide extra level of protection. Dont use master credentials on DB Instance. Use integrated security with AD or IAM Auth
   - Encryption at rest: It's free. AES-256. All nodes are replicated. Encryption performed at volume level. Access to keys are logged. Can encrypt only once. Have two tier encryption
   - SSL Connectivity: SSL is turned on, but must be enforced through Parameter groups
 
-#### Monitoring RDS
+####  11.1.9. <a name='MonitoringRDS'></a>Monitoring RDS
 - Metrics to Watch
   - CPU 
   - Storage Space
@@ -1911,7 +2135,7 @@ print(url)
   - DB Connections
   - IOPS
 
-#### Amazon Aurora
+####  11.1.10. <a name='AmazonAurora'></a>Amazon Aurora
 - Cloud-first built RDS instance that abstracts the storage and logging layers away using SOA architecture so they can be indepdently scaled
 - 10GB to 64TB storage
 - Compute resources can scale  up to 32vCPUS to 244 GB of Memory
@@ -1943,35 +2167,35 @@ print(url)
   - Create read replica aurora then promote
 
 
-### DynamoDB
+###  11.2. <a name='DynamoDB'></a>DynamoDB
 - Support document and key-value stores
 - Stored on SSD Storage
 - Spread across 3 geographically distinct data centres
 
-#### Eventual vs Consistent Reads
+####  11.2.1. <a name='EventualvsConsistentReads'></a>Eventual vs Consistent Reads
 - Eventual reads Consistency across all copies of data is usually reached within a second
 - Strong consistent reads - Always most up to date data
 
-#### DynamoDB Accelerator
+####  11.2.2. <a name='DynamoDBAccelerator'></a>DynamoDB Accelerator
 - Fully managed, highly available, in-memory cache
 - 10x performance improvement
 - Reduces request time from milliseconds to microseconds 
 - No need for devs to manage caching logic
 - Compatible with DynamoDB API calls
 
-#### Transactions
+####  11.2.3. <a name='Transactions'></a>Transactions
 - Multiple all-or-nothing conditions
 - Two underlying reads or writes - prepare commit
 - Up to 25 items or 4mb of data
 
-#### On-Demand Capacity
+####  11.2.4. <a name='On-DemandCapacity'></a>On-Demand Capacity
 - Pay-per-request pricing
 - Balance cost and performance
 - No minimum capacity
 - Pay more for requests
 - Use for new products and maybe switch once you recognize workload
 
-#### Backup + Restore
+####  11.2.5. <a name='BackupRestore'></a>Backup + Restore
 - On-Demand
   - Full backjups at any time
   - Zero Impat on table performance or availability
@@ -1984,20 +2208,20 @@ print(url)
   - Not enbabled by default
   - Latest restorable: five minutes in the past
 
-#### Streams
+####  11.2.6. <a name='Streams'></a>Streams
 - Time-ordered sequence of item-level changes in a table
 - Stored for 24 hours
 - Inserts, updates, and deletes are published
 - Combine with Lambda functions for functionality like stored procedures
 
-#### Global Tables
+####  11.2.7. <a name='GlobalTables'></a>Global Tables
 - Globablly Distrubted applications
 - Based on DynamoDB Stream
 - Multio-region redundancy for DR or HA
 - No application rewrites
 - Replicaiton latency under one sefcond
 
-#### Security
+####  11.2.8. <a name='Security-1'></a>Security
 - Encreyption at rest using KMS
 - site-to-site VPN
 - Direct Connect
@@ -2006,10 +2230,13 @@ print(url)
 - CloudWatch and CloudTrail
 - VPC Endpoints
 
-### RedShift
+###  11.3. <a name='RedShift'></a>RedShift
 - fast powerfuly, fully managed, petabyte scale data warehouse
+- Can store up to 8PBP of Data
+- Does not support multi-az deployments currently
+- Automatic backups retained 1 day
 
-### ElasticCache
+###  11.4. <a name='ElasticCache'></a>ElasticCache
 - Managed in-memory cache server
 - MemCache or Redis
 - Use MemCache if you want horitonztable scalings
@@ -2018,7 +2245,7 @@ print(url)
   - Backup + Restores
   - Persistence
 
-### Database Migration Service
+###  11.5. <a name='DatabaseMigrationService'></a>Database Migration Service
 - Migrate from On-Prem or cloud DBs to the Cloud
 - Server that creates replicas
 - You create source and tell where from and to to etract/load data
@@ -2026,7 +2253,7 @@ print(url)
 - Can also precreate using AWS Schema Conversion Tool
 - Supports different database migration to different database migration
 
-### EMR
+###  11.6. <a name='EMR'></a>EMR
 - Elastic Map Reduce
 - Run petabyte scale analysis on less than half the cost of tradtional on-prem solutions and over 3 times faster than Spark
 - EMR is cluster of EC2 instances (nodes). Each node has a role referred as node type
@@ -2044,9 +2271,9 @@ print(url)
   - Optional
 
 
-## Application Integration
+##  12. <a name='ApplicationIntegration'></a>Application Integration
 
-### SQS
+###  12.1. <a name='SQS'></a>SQS
 - Way to store messages on a queue
 - Allows decoupled services by allow communication to happen on the queue
 - Messages can be up to 256 KB of TXT. 
@@ -2074,7 +2301,7 @@ print(url)
     - Returns immediately
 - Rention period of 14 days
 
-### Simple Workflow Service
+###  12.2. <a name='SimpleWorkflowService'></a>Simple Workflow Service
 - Web service makes it easy to coordinate work across distrbuted services using tasks/workflows
 - Tasks can last up to a year
 - Task oriented-API
@@ -2085,7 +2312,7 @@ print(url)
   - Deciders: Controls the flow of activity in a tasks
   - Activity Workers:  Carry out the activity tasks
 
-### Simple Notification Service
+###  12.3. <a name='SimpleNotificationService'></a>Simple Notification Service
 - Setup and send notifications from the cloud.
 - Publishes (push notifications) to other services
 - Cam deliver messages  by SMS or email
@@ -2094,22 +2321,23 @@ print(url)
 - Messages store redunantly across many AZs
 - Pay as you go model
 
-## Media Services
-### Elastic Transcoder
+##  13. <a name='MediaServices'></a>Media Services
+###  13.1. <a name='ElasticTranscoder'></a>Elastic Transcoder
 - Media transcoder in the cloud
 - Convert media  files from original source format into different formats
 - provides popular output formats
 - Pay based on minutes and resolution you transcode
 
-## Analytics
+##  14. <a name='Analytics'></a>Analytics
 
-### Kinesis
+###  14.1. <a name='Kinesis'></a>Kinesis
 - Streaming Data is data that is generated continously by thousands of data sources
 - Data is sent in small sizes incrementally
 - Kinesis loads and anaalyze streaming data
 - Types
   - Streams 
     - Stores data from multiple sources in shards
+    - Real time-streaming of dfata
     - Consumers can pull that data
     - Shards
       - 5 transactions per second for reads, up to max of 2mb per second.
@@ -2119,151 +2347,4 @@ print(url)
     - Must analyze and output 
   - Analytics
 
-## Certicate Manager
-- Way to provision certificates
-- When creating the cert, make sure you creat in US-East-1 and apply to all your required domains (www and not)
 
-## Cognito
-- Managed Auth and OAuth through AWS. Allowing you to make pools of users with Authnetication workflows for accessing resoures without managing IAM accounts per user
-- Acts as identity broker between your aplpication and Web ID providers
-- Synchronizes user data for multiple devices  
-#### Pools
-- User Pools: user directories used to manage sign-up and sign-in functionality for mobile and web applications
-- Identity pools: provide temp access to aws credentials for service access 
-#### Web Identity Federation
-- Give access to resources after authneticating through web-based identity provider like Facebook/Google/etc. Trade ID for temporary AWS credentials
-
-
-## CloudFormation
-- AWS language to provision resources
-- Take YAML and uploads to S3 to be consumed by CloudFormation Orchestrator. 
-- Example of provisions EC2 Instance
-```
-Resources:
-  Ec2Instance:
-    Type: ' AWS::EC2::Instance'
-    Properties:
-      InstanceType: t2.micro
-      ImageId: ami-467ca739
-      UserData:
-        !Base64 |
-          #!/bin/bash -xe
-          yum update -y
-          yum install httpd -y
-          service httpd start
-      Tags:
-        Key: Name
-        Value: A Simple example
-      SecurityGroups:
-        - !Ref MySecurityGroup
-  MySecurityGroup:
-    Type: 'AWS::EC2::SecurityGroup`
-    Properties:
-      GroupDescription: Enable SSH access
-      SecurityGroupIngress:
-        - IpProtocal: tcp
-          FromPort: '22'
-          ToPort: '22'
-          CidrIp: 0.0.0.0/0
-```
-- Steps to manually create stack
-  - Go to CloudFormation
-  - Click Create STack
-  - Upload template
-  - Give name
-
-### Terminology
-- Templates: text input to define resources
-- Stack: a single collection of resources is a stack. You create and edit stacks
-- Change Set: Can generate a change set to see the changes that will be made by your template to a specific stack
-
-### Template Anatomy
-- Description: 
-- Metadata: provides additional info about template
-- Parameters: allow you to pass values at run time
-- Mappings: Set of key/value lookups to provide at run time
-- Conditions: Condtionals to determine if resources will be provisioned
-- Resources: stack resources
-- Outputs: output of stack
-
-### Intrinisic Functions Example
-- Join: `!Join[delmiter,[comma-delimited list of values]]`
-  - !Join [":", [a, b, c]] = "a:b:c'
-- Ref: `!Ref LogicalId`
-  - !Ref MySecurityGroup
-- FindInMap: `!FindInMap [MapName, TopLevelKey, SecondLevelKey]`
-```
-Mappings:
-  RegionMap:
-    us-east-1: 
-      AMI: ami-xxxxxx
-...
-ImageId: !FindInMap 
-  - RegionMap
-  - !Ref 'AWS::Region'
-  - AMI
-```
-
-### Psuedo Parameters
-- AWS::AcountId : Aws Account
-- AWS::NotificationARNS: list of notification Arns
-- AWS::StackId - returns id of stack
-- AWS::StackName - returns name of the stack
-- AWS::Region - returns name of region in wich the resource is being created
-
-### Input Parameters
-- String
-- Number
-- List<Number>
-- CommaDelimitedList
-- AWs-specific types `AWS::EC2:Image::Id`
-- Systems manager parameters types
-
-```
-Parameters:
-  InstTypeParam:
-    Type: String
-    Default: t2.micro
-    AllowedValues:
-      - t2.micro
-      - m1.small
-      - m1.large
-    Description: EC2 Instance Type
-
-Resources:
-...
-  Instance Type: !Ref InstTypeParam
-```
-
-### Outputs 
-- Can get output information from a stack, like public IP or DNS
-```
-Outputs:
-  InstanceDns:
-    Description: The Instance DNS
-  Value:
-    !GetAtt
-      - EC2Instance
-      - PublicDnsName
-```
-
-### Cloudformation Helper Scripts
-- cfn-init: Reads and interprets Metadata to execute AWS::CloudFormation::Init
-- cfn-signal: Used to signal when resources or application is ready
-- cfn-get-metadata: used to retrieve metadata based on a key
-- cfn-hup: Used to check for updaes to metadata and execute custom hooks
-
-```
-Resources:
-...
-  Metadata:
-    AWS::CloudFormation::Init:
-      config/Configsets:
-        packages:
-        groups:
-        users:
-        sources:
-        files:
-        commands:
-        services:
-```
