@@ -681,14 +681,21 @@ Default output format [None]: json
 - Largest subnet you can have is /16 smallest is /28
 
 ####  6.3.4. <a name='NetworkACLs'></a>Network ACLs
-- Comes with default on VPC
+- Comes with default on VPC. Allows all by defaults
 - Custom ones deny all by default
 - Every subnet must be associated with a NACL
 - Can block IP addresses using NACL, not SG
 - One NACL to many Subnets
+- Rules are evaluated in order ascending. First rule that applies is taken.
 
 ####  6.3.5. <a name='SecurityGroups'></a>Security Groups
 - Groups within a VPC that define inbound/outbound traffic
+- You can specify allow rules, but not deny rules.
+-  can specify separate rules for inbound and outbound traffic.
+- When you create a security group, it has no inbound rules.
+- By default, a security group includes an outbound rule that allows all outbound traffic
+- Security groups are stateful. If you send a request from your instance, the response traffic for that request is allowed to flow in regardless of inbound security group rules.
+- There are quotas on the number of security groups that you can create per VPC, the number of rules that you can add to each security group, and the number of security groups that you can associate with a network interface.
 
 ####  6.3.6. <a name='NATInstancesGateway'></a>NAT Instances + Gateway
 - Instance = Single EC2 Instance
@@ -719,6 +726,7 @@ Default output format [None]: json
   - Select VPN Connection and create new VPN connection
   - Slect virtual private  and customer gateway
   - Once VPN is available  - set up vpn on the customer gateway or firewall
+- Private, dedicated conecction which bypasses the Internet and can provide throughput up to 10gbps
 
 ####  6.3.9. <a name='VPCEndpoint'></a>VPC Endpoint
 - VPC to VPC interconnection.
@@ -955,6 +963,7 @@ Default output format [None]: json
   - Status Check
 - 5 minute logs by default, but can go to 1 minute for EC2
 - Can create alarms with CloudWatch trigger notifications
+  - Can also provide terminate actions to alarms
 
 ###  8.2. <a name='CloudTrail'></a>CloudTrail
 - Records all AWS API calls 
@@ -1119,6 +1128,7 @@ Resources:
   - All variable based on instance type
   - On Demand: Pay a fixed rate by the hour with no commitment
   - Reserved:  Proivdes with ccapacity resveration and offer a significant discount on the hourtly charge for instance. 1-3 year terms
+    - Can sell unused reserved on Marketplace
   - Spot: Enables you to bid wahtever price you want for instance capacity, provider for even greater savings if you have applications have flexible start and end times
   - Dedicated Hosts: Phyiscal Ec2 server dedicated for your use
 
@@ -1284,6 +1294,7 @@ Resources:
     - Scale based on a schedule
     - scale based on demand
     - use predictive scaling
+- Auto scaling can only hit the maximum vCPU limit per region
 
 
 ###  9.2. <a name='ElasticBeanStalk'></a>Elastic BeanStalk
@@ -1341,6 +1352,7 @@ Resources:
   - Launch new instance in region
 - Only the root EBS gets deleted
 - Snapshots exist on S3 and are incremental
+- Can perform normal operations during snapshot
 - Can Encrypt by taking Snapshot and copy to Encrypted than create AMI and launch EC2
 
 ####  10.3.1. <a name='Types'></a>Types
@@ -2076,6 +2088,7 @@ print(url)
 - Available for all DBS but Aurora, cuz Aurora is already fault tolerant
 - Twice the cost of single AZ Config.
 - Used for fail-overs. 
+  - Only takes 1-2 minutes
 - Improves backups cuz using secondary host
 - Writes tad slower due to duplicte writes
 - Failovers:
@@ -2284,12 +2297,14 @@ print(url)
   - nearly unlimited number of transactions per seconds
   - Garauntees messages delivered once
   - Standard queue may send things out of order, but attempts to send things in order
+  - Can use unique Ordering ID and the backend to deduplicate messages
 - FIFO Queues
+  - Not for extreme performance
   - First In and First Out Queue
   - Exactly-One processing event
   - Remains until consumer deltes it
   - Support message groups that allow multiple ordered message groups
-  - Limited to 300 transactions per second, have all capabilites on standard queues
+  - Limited to 3000 transactions per second, have all capabilites on standard queues
 - Visibility Timeout
   - Amount of time a message is invisible in the SQS queue after a reader picks up that message
   - If job is processed before visibility timeout expires, message will be deleted from the queu
